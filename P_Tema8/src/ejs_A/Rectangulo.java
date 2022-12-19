@@ -7,6 +7,6 @@ cuatro atributos enteros: x1, y1, x2, y2.
 */
 
 public class Rectangulo {
-    int x1, x2;
-    int y1, y2;
+    int x1, y1;
+    int x2, y2;
 }

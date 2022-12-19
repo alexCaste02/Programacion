@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="" />
+    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="some work">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_A/Articulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_A/MainArticulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/MainPersona.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/MainPunto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/MainRectangulo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/Persona.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/Punto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/Rectangulo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_A/MainRectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_A/MainRectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_A/Rectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_A/Rectangulo.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +36,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IwQuvVuYjrc4NFdgsuiLwoDMJU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,7 +47,11 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "F:/...Clases/Progra/UD8",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "Console"
   }
 }]]></component>
@@ -87,5 +107,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="some work" />
+    <option name="LAST_COMMIT_MESSAGE" value="some work" />
   </component>
 </project>
