@@ -9,4 +9,11 @@ dimensiones en un plano. Solo contendrá dos atributos enteros llamadas x e y
 public class Punto {
     int x;
     int y;
+
+    public Punto(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
 }
+
+

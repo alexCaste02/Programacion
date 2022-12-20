@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="Articulo">
-      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Articulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainArticulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainPersona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainPunto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainRectangulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Punto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Rectangulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="copied package to B">
+      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainPunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainPunto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Punto.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Punto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +31,7 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
@@ -45,9 +39,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/alexc/OneDrive/Documentos/GitHub/UD8/P_Tema8/src/ejs_B",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "Console"
   }
 }]]></component>
@@ -75,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671523091944</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="copied package to B">
+      <created>1671523815052</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671523815052</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,6 +119,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="some work" />
     <MESSAGE value="Articulo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Articulo" />
+    <MESSAGE value="copied package to B" />
+    <option name="LAST_COMMIT_MESSAGE" value="copied package to B" />
   </component>
 </project>
