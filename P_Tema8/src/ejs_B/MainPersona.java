@@ -40,8 +40,8 @@ public class MainPersona {
         Persona per2 = new Persona(dni,nombre,apellidos,edad);
 
 
-        System.out.println(per1.nombre+" "+per1.apellidos+" con DNI "+per1.dni+((per1.edad<18)?" no ":"")+"es mayor de edad");
-        System.out.println(per2.nombre+" "+per1.apellidos+" con DNI "+per2.dni+((per2.edad<18)?" no ":"")+"es mayor de edad");
+        System.out.println(per1.nombre+" "+per1.apellidos+" con DNI "+per1.dni+((per1.edad<18)?" no":"")+" es mayor de edad");
+        System.out.println(per2.nombre+" "+per1.apellidos+" con DNI "+per2.dni+((per2.edad<18)?" no":"")+" es mayor de edad");
 
     }
 }

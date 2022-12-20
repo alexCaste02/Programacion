@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="finished B1">
-      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainPersona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Persona.java" afterDir="false" />
-    </list>
+    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="versioned?" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +39,7 @@
     "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Console"
+    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -83,7 +80,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671524116285</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="finished B2 + some cleanup in B1">
+      <created>1671524588267</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671524588267</updated>
+    </task>
+    <task id="LOCAL-00005" summary="versioned?">
+      <created>1671524656618</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671524656618</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,13 +109,6 @@
                     <value>
                       <list>
                         <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="text">
-                    <value>
-                      <list>
-                        <option value="git config --global --add safe.directory" />
                       </list>
                     </value>
                   </entry>
@@ -124,10 +128,13 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="some work" />
     <MESSAGE value="Articulo" />
     <MESSAGE value="copied package to B" />
     <MESSAGE value="finished B1" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished B1" />
+    <MESSAGE value="finished B2 + some cleanup in B1" />
+    <MESSAGE value="versioned?" />
+    <option name="LAST_COMMIT_MESSAGE" value="versioned?" />
   </component>
 </project>
