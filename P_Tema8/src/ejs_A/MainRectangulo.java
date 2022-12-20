@@ -29,8 +29,8 @@ public class MainRectangulo {
         System.out.println("area x: "+Math.abs(rec1.x1- rec1.x2)*Math.abs(rec1.y1- rec1.y2));
 
         System.out.println("y: "+rec2.x1+","+rec2.x2+"/"+rec2.y1+","+rec2.y2);
-        System.out.println("perimetro x: "+ (Math.abs(rec2.x1 - rec2.x2)*2+Math.abs(rec2.y1- rec2.y2)*2));
-        System.out.println("area x: "+Math.abs(rec2.x1- rec2.x2)*Math.abs(rec2.y1- rec2.y2));
+        System.out.println("perimetro y: "+ (Math.abs(rec2.x1 - rec2.x2)*2+Math.abs(rec2.y1- rec2.y2)*2));
+        System.out.println("area y: "+Math.abs(rec2.x1- rec2.x2)*Math.abs(rec2.y1- rec2.y2));
 
         System.out.println();
 
@@ -51,8 +51,8 @@ public class MainRectangulo {
         System.out.println("area x: "+Math.abs(rec1.x1- rec1.x2)*Math.abs(rec1.y1- rec1.y2));
 
         System.out.println("y: "+rec2.x1+","+rec2.x2+"/"+rec2.y1+","+rec2.y2);
-        System.out.println("perimetro x: "+ (Math.abs(rec2.x1 - rec2.x2)*2+Math.abs(rec2.y1- rec2.y2)*2));
-        System.out.println("area x: "+Math.abs(rec2.x1- rec2.x2)*Math.abs(rec2.y1- rec2.y2));
+        System.out.println("perimetro y: "+ (Math.abs(rec2.x1 - rec2.x2)*2+Math.abs(rec2.y1- rec2.y2)*2));
+        System.out.println("area y: "+Math.abs(rec2.x1- rec2.x2)*Math.abs(rec2.y1- rec2.y2));
 
         
     }

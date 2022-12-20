@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="some work">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_A/Articulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_A/MainArticulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/MainPersona.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/MainPunto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/MainRectangulo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/Persona.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/Punto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/Rectangulo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_A/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_A/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_A/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_A/MainArticulo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_A/MainRectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_A/MainRectangulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_A/Rectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_A/Rectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UD8/ejs_A/MainRectangulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UD8/ejs_A/MainRectangulo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "F:/...Clases/Progra/UD8",
+    "last_opened_file_path": "D:/DAM/Programacion/Ejercicios/tema8",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",

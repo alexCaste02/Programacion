@@ -8,4 +8,21 @@ decir, el precio con IVA). Luego, cambia el precio y vuelve a imprimir el mensaj
  */
 
 public class MainArticulo {
+    public static void main(String[] args) {
+
+        Articulo art = new Articulo();
+        art.nombre = "Cereales";
+        art.precio = 4.30;
+        art.cuantosQuedan = 12;
+
+        System.out.printf("%s - Precio: %.2f - IVA: %d - PVP: %.2f %n",art.nombre,art.precio,art.IVA,art.precio+art.precio*art.IVA/100);
+
+
+        art.precio = 2.15;
+
+        System.out.printf("%s - Precio: %.2f - IVA: %d - PVP: %.2f",art.nombre,art.precio,art.IVA,art.precio+art.precio*art.IVA/100);
+
+    }
+
+
 }
