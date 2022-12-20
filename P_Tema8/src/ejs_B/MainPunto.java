@@ -15,12 +15,9 @@ public class MainPunto {
         Punto punto3 = new Punto(3,7);
 
 
-        System.out.println(punto1.x);
-        System.out.println(punto1.y);
-        System.out.println(punto2.x);
-        System.out.println(punto2.y);
-        System.out.println(punto3.x);
-        System.out.println(punto3.y);
+        System.out.println(punto1.x+","+punto1.y);
+        System.out.println(punto2.x+","+punto2.y);
+        System.out.println(punto3.x+","+punto3.y);
 
 
         punto1.x+=1;
@@ -30,12 +27,10 @@ public class MainPunto {
         punto3.x++;
         punto3.y--;
 
-        System.out.println(punto1.x);
-        System.out.println(punto1.y);
-        System.out.println(punto2.x);
-        System.out.println(punto2.y);
-        System.out.println(punto3.x);
-        System.out.println(punto3.y);
+        System.out.println(punto1.x+","+punto1.y);
+        System.out.println(punto2.x+","+punto2.y);
+        System.out.println(punto3.x+","+punto3.y);
+
 
     }
 }

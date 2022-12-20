@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="copied package to B">
-      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainPunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainPunto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Punto.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Punto.java" afterDir="false" />
+    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="finished B1">
+      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/MainPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/P_Tema8/src/ejs_B/Persona.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671523815052</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finished B1">
+      <created>1671524116285</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671524116285</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +127,7 @@
     <MESSAGE value="some work" />
     <MESSAGE value="Articulo" />
     <MESSAGE value="copied package to B" />
-    <option name="LAST_COMMIT_MESSAGE" value="copied package to B" />
+    <MESSAGE value="finished B1" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished B1" />
   </component>
 </project>
