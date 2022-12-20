@@ -9,7 +9,19 @@ el almacén).
 public class Articulo {
     String nombre;
     double precio;
-    final int IVA = 21;
+    int IVA;
     int cuantosQuedan;
 
+    public Articulo(String nombre, double precio, int IVA, int cuantosQuedan) {
+
+        if (IVA==21 && precio>0 && cuantosQuedan>0){
+            this.nombre = nombre;
+            this.precio = precio;
+            this.IVA = IVA;
+            this.cuantosQuedan = cuantosQuedan;
+        } else {
+            System.err.println("ERROR al instanciar Articulo...");
+        }
+
+    }
 }

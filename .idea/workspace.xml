@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="partial work on B3.Rectangulo">
-      <change beforePath="$PROJECT_DIR$/Programacion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Programacion.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/MainPunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/MainPunto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/Rectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/Rectangulo.java" afterDir="false" />
+    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/out/production/P_Tema8/E_1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/out/production/P_Tema8/Punto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/MainArticulo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +113,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671526309128</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed dumbass mistake + work on B">
+      <created>1671566833700</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671566833700</updated>
+    </task>
+    <task id="LOCAL-00009" summary="finished B3.Rec">
+      <created>1671566969360</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671566969360</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +170,8 @@
     <MESSAGE value="versioned?" />
     <MESSAGE value="minor fix B2.Persona" />
     <MESSAGE value="partial work on B3.Rectangulo" />
-    <option name="LAST_COMMIT_MESSAGE" value="partial work on B3.Rectangulo" />
+    <MESSAGE value="fixed dumbass mistake + work on B" />
+    <MESSAGE value="finished B3.Rec" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished B3.Rec" />
   </component>
 </project>
