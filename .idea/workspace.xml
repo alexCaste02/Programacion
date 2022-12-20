@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/out/production/P_Tema8/E_1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/out/production/P_Tema8/Punto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/Articulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/MainArticulo.java" afterDir="false" />
-    </list>
+    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671566969360</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finished B4.Articulo">
+      <created>1671567440903</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1671567440903</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +174,7 @@
     <MESSAGE value="partial work on B3.Rectangulo" />
     <MESSAGE value="fixed dumbass mistake + work on B" />
     <MESSAGE value="finished B3.Rec" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished B3.Rec" />
+    <MESSAGE value="finished B4.Articulo" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished B4.Articulo" />
   </component>
 </project>
