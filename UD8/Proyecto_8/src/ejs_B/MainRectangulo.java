@@ -17,7 +17,7 @@ public class MainRectangulo {
 
 
         System.out.println("x: "+rec1.x1+","+rec1.y1+"/"+rec1.x2+","+rec1.y2);
-        System.out.println("perimetro x: "+ ((rec1.x2 - rec1.x1)*2+(rec1.y2- rec1.y1)*2));
+        System.out.println("perimetro x: "+ ((rec1.x2 - rec1.x1)*2+(rec1.y2 - rec1.y1)*2));
         System.out.println("area x: "+(rec1.x2 - rec1.x1)*(rec1.y2- rec1.y1));
 
         System.out.println("y: "+rec2.x1+","+rec2.y1+"/"+rec2.x2+","+rec2.y2);
