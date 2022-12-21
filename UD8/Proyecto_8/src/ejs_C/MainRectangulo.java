@@ -16,35 +16,34 @@ public class MainRectangulo {
 
 
 
-        System.out.println("x: "+rec1.x1+","+rec1.y1+"/"+rec1.x2+","+rec1.y2);
-        System.out.println("perimetro x: "+ ((rec1.x2 - rec1.x1)*2+(rec1.y2 - rec1.y1)*2));
-        System.out.println("area x: "+(rec1.x2 - rec1.x1)*(rec1.y2- rec1.y1));
+        System.out.println("x: "+rec1.getX1()+","+rec1.getY1()+"/"+rec1.getX2()+","+rec1.getY2());
+        System.out.println("perimetro x: "+ ((rec1.getX2() - rec1.getX1())*2+(rec1.getY2() - rec1.getY1())*2));
+        System.out.println("area x: "+(rec1.getX2() - rec1.getX1())*(rec1.getY2()- rec1.getY1()));
 
-        System.out.println("y: "+rec2.x1+","+rec2.y1+"/"+rec2.x2+","+rec2.y2);
-        System.out.println("perimetro y: "+ ((rec2.x2 - rec2.x1)*2+(rec2.y2- rec2.y1)*2));
-        System.out.println("area y: "+(rec2.x2 - rec2.x1)*(rec2.y2- rec2.y1));
+        System.out.println("x: "+rec2.getX1()+","+rec2.getY1()+"/"+rec2.getX2()+","+rec2.getY2());
+        System.out.println("perimetro x: "+ ((rec2.getX2() - rec2.getX1())*2+(rec2.getY2() - rec2.getY1())*2));
+        System.out.println("area x: "+(rec2.getX2() - rec2.getX1())*(rec2.getY2()- rec2.getY1()));
 
         System.out.println();
 
+        rec1.setX1(rec1.getX1()+1);
+        rec1.setY1(rec1.getY1()+1);
+        rec1.setX2(rec1.getX2()-1);
+        rec1.setY2(rec1.getY2()-1);
 
-        rec1.x1+=1;
-        rec1.y1+=1;
-        rec1.x2-=1;
-        rec1.y2-=1;
-
-        rec2.x1+=1;
-        rec2.y1+=1;
-        rec2.x2-=1;
-        rec2.y2-=1;
+        rec2.setX1(rec1.getX1()+1);
+        rec2.setY1(rec1.getY1()+1);
+        rec2.setX2(rec1.getX2()-1);
+        rec2.setY2(rec1.getY2()-1);
 
 
-        System.out.println("x: "+rec1.x1+","+rec1.y1+"/"+rec1.x2+","+rec1.y2);
-        System.out.println("perimetro x: "+ ((rec1.x2 - rec1.x1)*2+(rec1.y2- rec1.y1)*2));
-        System.out.println("area x: "+(rec1.x2 - rec1.x1)*(rec1.y2- rec1.y1));
+        System.out.println("x: "+rec1.getX1()+","+rec1.getY1()+"/"+rec1.getX2()+","+rec1.getY2());
+        System.out.println("perimetro x: "+ ((rec1.getX2() - rec1.getX1())*2+(rec1.getY2() - rec1.getY1())*2));
+        System.out.println("area x: "+(rec1.getX2() - rec1.getX1())*(rec1.getY2()- rec1.getY1()));
 
-        System.out.println("y: "+rec2.x1+","+rec2.y1+"/"+rec2.x2+","+rec2.y2);
-        System.out.println("perimetro y: "+ ((rec2.x2 - rec2.x1)*2+(rec2.y2- rec2.y1)*2));
-        System.out.println("area y: "+(rec2.x2 - rec2.x1)*(rec2.y2- rec2.y1));
+        System.out.println("x: "+rec2.getX1()+","+rec2.getY1()+"/"+rec2.getX2()+","+rec2.getY2());
+        System.out.println("perimetro x: "+ ((rec2.getX2() - rec2.getX1())*2+(rec2.getY2() - rec2.getY1())*2));
+        System.out.println("area x: "+(rec2.getX2() - rec2.getX1())*(rec2.getY2()- rec2.getY1()));
 
         
     }
