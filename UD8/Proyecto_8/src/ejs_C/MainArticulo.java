@@ -14,12 +14,12 @@ public class MainArticulo {
         Articulo art2 = new Articulo("Arroz",-3,21,12);
         Articulo art3 = new Articulo("Leche",4.3,19,-1);
 
-        System.out.printf("%s - Precio: %.2f - IVA: %d - PVP: %.2f %n",art1.nombre,art1.precio,art1.IVA,art1.precio+art1.precio*art1.IVA/100);
+        System.out.printf("%s - Precio: %.2f - IVA: %d - PVP: %.2f %n",art1.getNombre(),art1.getPrecio(),art1.getIVA(),art1.getPrecio()+art1.getPrecio()*art1.getIVA()/100);
 
 
-        art1.precio = 2.15;
+        art1.setPrecio(2.15);
 
-        System.out.printf("%s - Precio: %.2f - IVA: %d - PVP: %.2f %n",art1.nombre,art1.precio,art1.IVA,art1.precio+art1.precio*art1.IVA/100);
+        System.out.printf("%s - Precio: %.2f - IVA: %d - PVP: %.2f %n",art1.getNombre(),art1.getPrecio(),art1.getIVA(),art1.getPrecio()+art1.getPrecio()*art1.getIVA()/100);
 
 
     }
