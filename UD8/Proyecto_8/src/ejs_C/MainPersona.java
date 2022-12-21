@@ -39,9 +39,14 @@ public class MainPersona {
 
         Persona per2 = new Persona(dni,nombre,apellidos,edad);
 
+        per2.setNombre("Nombre");
+        per2.setApellidos("Ap1 Ap2");
+        per2.setDni("51879xxxxy");
+        per2.setEdad(15);
 
-        System.out.println(per1.nombre+" "+per1.apellidos+" con DNI "+per1.dni+((per1.edad<18)?" no":"")+" es mayor de edad");
-        System.out.println(per2.nombre+" "+per1.apellidos+" con DNI "+per2.dni+((per2.edad<18)?" no":"")+" es mayor de edad");
+
+        System.out.println(per1.getNombre()+" "+per1.getApellidos()+" con DNI "+per1.getDni()+((per1.getEdad()<18)?" no":"")+" es mayor de edad");
+        System.out.println(per2.getNombre()+" "+per2.getApellidos()+" con DNI "+per2.getDni()+((per2.getEdad()<18)?" no":"")+" es mayor de edad");
 
     }
 }
