@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b841242f-6afc-4e1e-853c-a1f588295ea5" name="Changes" comment="some changes?">
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/Articulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/MainArticulo.java" afterDir="false" />
+    <list default="true" id="b841242f-6afc-4e1e-853c-a1f588295ea5" name="Changes" comment="finished C4.Art">
+      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Articulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainArticulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainPersona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainPunto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainRectangulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Punto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Rectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_C/Articulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_C/Articulo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_C/MainArticulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_C/MainArticulo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +24,16 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/alexc/OneDrive/Documentos/GitHub/Programacion/UD8/Proyecto_8/src/ejs_D"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alexc\OneDrive\Documentos\GitHub\Programacion\UD8\Proyecto_8\src\ejs_D" />
       <recent name="C:\Users\alexc\OneDrive\Documentos\GitHub\Programacion\UD8\Proyecto_8\src\ejs_C" />
     </key>
   </component>
@@ -98,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671619485272</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="finished C4.Art">
+      <created>1671619947166</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671619947166</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +168,7 @@
     <MESSAGE value="finished C2.Persona" />
     <MESSAGE value="finished C3.Rectan" />
     <MESSAGE value="some changes?" />
-    <option name="LAST_COMMIT_MESSAGE" value="some changes?" />
+    <MESSAGE value="finished C4.Art" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished C4.Art" />
   </component>
 </project>
