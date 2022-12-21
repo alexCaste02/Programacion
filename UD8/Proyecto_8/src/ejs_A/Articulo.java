@@ -11,5 +11,4 @@ public class Articulo {
     double precio;
     final int IVA = 21;
     int cuantosQuedan;
-
 }

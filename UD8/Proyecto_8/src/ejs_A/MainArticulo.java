@@ -21,7 +21,6 @@ public class MainArticulo {
         art.precio = 2.15;
 
         System.out.printf("%s - Precio: %.2f - IVA: %d - PVP: %.2f",art.nombre,art.precio,art.IVA,art.precio+art.precio*art.IVA/100);
-
     }
 
 
