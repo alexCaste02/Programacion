@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b841242f-6afc-4e1e-853c-a1f588295ea5" name="Changes" comment="finished C2.Persona">
+    <list default="true" id="b841242f-6afc-4e1e-853c-a1f588295ea5" name="Changes" comment="finished C3.Rectan">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/MainRectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/MainRectangulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/Rectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/Rectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_C/MainRectangulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_C/MainRectangulo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_C/Rectangulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_C/Rectangulo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671617633714</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="finished C3.Rectan">
+      <created>1671619046983</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671619046983</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +137,7 @@
     <MESSAGE value="finished C1.Punto" />
     <MESSAGE value="some work C2" />
     <MESSAGE value="finished C2.Persona" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished C2.Persona" />
+    <MESSAGE value="finished C3.Rectan" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished C3.Rectan" />
   </component>
 </project>
