@@ -15,22 +15,25 @@ public class MainPunto {
         Punto punto3 = new Punto(3,7);
 
 
-        System.out.println(punto1.x+","+punto1.y);
-        System.out.println(punto2.x+","+punto2.y);
-        System.out.println(punto3.x+","+punto3.y);
+        System.out.println(punto1.getX()+","+punto1.getY());
+        System.out.println(punto2.getX()+","+punto2.getY());
+        System.out.println(punto3.getX()+","+punto3.getY());
 
 
-        punto1.x+=1;
-        punto1.y-=2;
-        punto2.x*=3;
-        punto2.y/=4;
-        punto3.x++;
-        punto3.y--;
+        punto1.setX(punto1.getX()+1);
+        punto1.setY(punto1.getY()-2);
 
-        System.out.println(punto1.x+","+punto1.y);
-        System.out.println(punto2.x+","+punto2.y);
-        System.out.println(punto3.x+","+punto3.y);
+        punto2.setX(punto1.getX()*3);
+        punto2.setY(punto1.getY()/4);
 
+        punto3.setX(punto1.getX()+5);
+        punto3.setY(punto1.getY()-6);
+
+
+
+        System.out.println(punto1.getX()+","+punto1.getY());
+        System.out.println(punto2.getX()+","+punto2.getY());
+        System.out.println(punto3.getX()+","+punto3.getY());
 
     }
 }

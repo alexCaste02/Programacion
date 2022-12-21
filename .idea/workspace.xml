@@ -1,187 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="" />
-=======
-    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="partial work on B3.Rectangulo">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/Articulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/MainArticulo.java" afterDir="false" />
-    </list>
->>>>>>> Stashed changes
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
+  <component name="RunManager">
+    <configuration name="MainPunto" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ejs_C.MainPunto" />
+      <module name="Programacion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ejs_C.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
       <list>
-        <option value="Class" />
+        <item itemvalue="Application.MainPunto" />
       </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2IwQuvVuYjrc4NFdgsuiLwoDMJU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-    <option name="sortByType" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/alexc/OneDrive/Documentos/GitHub/UD8/P_Tema8/src/ejs_B&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Confirmation&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\alexc\OneDrive\Documentos\GitHub\UD8\P_Tema8\src\ejs_B" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="" />
-      <created>1671090446834</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1671090446834</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Articulo">
-      <created>1671523091944</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1671523091944</updated>
-    </task>
-    <task id="LOCAL-00002" summary="copied package to B">
-      <created>1671523815052</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1671523815052</updated>
-    </task>
-    <task id="LOCAL-00003" summary="finished B1">
-      <created>1671524116285</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1671524116285</updated>
-    </task>
-    <task id="LOCAL-00004" summary="finished B2 + some cleanup in B1">
-      <created>1671524588267</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1671524588267</updated>
-    </task>
-    <task id="LOCAL-00005" summary="versioned?">
-      <created>1671524656618</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1671524656618</updated>
-    </task>
-    <task id="LOCAL-00006" summary="minor fix B2.Persona">
-      <created>1671524954854</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1671524954854</updated>
-    </task>
-    <task id="LOCAL-00007" summary="partial work on B3.Rectangulo">
-      <created>1671526309128</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1671526309128</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fixed dumbass mistake + work on B">
-      <created>1671566833700</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1671566833700</updated>
-    </task>
-    <task id="LOCAL-00009" summary="finished B3.Rec">
-      <created>1671566969360</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1671566969360</updated>
-    </task>
-    <task id="LOCAL-00010" summary="finished B4.Articulo">
-      <created>1671567440903</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1671567440903</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
-    <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-              <option name="COLUMN_ID_WIDTH">
-                <map>
-                  <entry key="Table.Default.Author.ColumnIdWidth" value="66" />
-                  <entry key="Table.Default.Date.ColumnIdWidth" value="77" />
-                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="43" />
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="some work" />
-    <MESSAGE value="Articulo" />
-    <MESSAGE value="copied package to B" />
-    <MESSAGE value="finished B1" />
-    <MESSAGE value="finished B2 + some cleanup in B1" />
-    <MESSAGE value="versioned?" />
-    <MESSAGE value="minor fix B2.Persona" />
-    <MESSAGE value="partial work on B3.Rectangulo" />
-    <MESSAGE value="fixed dumbass mistake + work on B" />
-    <MESSAGE value="finished B3.Rec" />
-    <MESSAGE value="finished B4.Articulo" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished B4.Articulo" />
+    </recent_temporary>
   </component>
 </project>
