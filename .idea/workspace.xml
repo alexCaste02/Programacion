@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b841242f-6afc-4e1e-853c-a1f588295ea5" name="Changes" comment="finished C4.Art">
-      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Articulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainArticulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainPersona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainPunto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainRectangulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Punto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Rectangulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_C/Articulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_C/Articulo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_C/MainArticulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_C/MainArticulo.class" afterDir="false" />
-    </list>
+    <list default="true" id="b841242f-6afc-4e1e-853c-a1f588295ea5" name="Changes" comment="started D2.Pers" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +110,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671619947166</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="finished D1.Punto">
+      <created>1671620681706</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671620681706</updated>
+    </task>
+    <task id="LOCAL-00010" summary="started D2.Pers">
+      <created>1671620924958</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1671620924958</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +171,8 @@
     <MESSAGE value="finished C3.Rectan" />
     <MESSAGE value="some changes?" />
     <MESSAGE value="finished C4.Art" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished C4.Art" />
+    <MESSAGE value="finished D1.Punto" />
+    <MESSAGE value="started D2.Pers" />
+    <option name="LAST_COMMIT_MESSAGE" value="started D2.Pers" />
   </component>
 </project>
