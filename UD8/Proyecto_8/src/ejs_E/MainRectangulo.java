@@ -64,6 +64,13 @@ public class MainRectangulo {
         System.out.println(rec2.getPerimetro());
         System.out.println(rec2.getArea());
 
+        System.out.println("\n\n");
+
+        Rectangulo recR1 = Rectangulo.creaRectanguloAleatorio();
+        recR1.imprime();
+
+        Rectangulo recR2 = Rectangulo.creaRectanguloAleatorio();
+        recR2.imprime();
         
     }
 }

@@ -6,12 +6,17 @@ mediante dos coordenadas (x1,y1) y (x2,y2) en un plano, por lo que la clase debe
 cuatro atributos enteros: x1, y1, x2, y2.
 */
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Rectangulo {
     private int x1, y1, x2, y2;
+    private static final int min = 0;
+    private static final int max = 100;
+
 
     public Rectangulo(int x1,int y1,int x2,int y2) {
 
-        if (x1<x2 && y1<y2){
+        if (x1<x2 && y1<y2 && x1>=min && y1>=min && x2<=max && y2<=max){
             this.x1 = x1;
             this.y1 = y1;
             this.x2 = x2;
@@ -39,28 +44,28 @@ public class Rectangulo {
     }
 
     public void setX1(int x1) {
-        if(x1<x2)
+        if(x1<x2 && x1>=min)
             this.x1 = x1;
         else
             System.err.println("ERROR al instanciar Rectangulo...");
     }
 
     public void setY1(int y1) {
-        if(y1<y2)
+        if(y1<y2 && y1>=min)
             this.y1 = y1;
         else
             System.err.println("ERROR al instanciar Rectangulo...");
     }
 
     public void setX2(int x2) {
-        if(x1<x2)
+        if(x1<x2 && x2<=max)
             this.x2 = x2;
         else
             System.err.println("ERROR al instanciar Rectangulo...");
     }
 
     public void setY2(int y2) {
-        if(y1<y2)
+        if(y1<y2 && y2<=max)
             this.y2 = y2;
         else
             System.err.println("ERROR al instanciar Rectangulo...");
@@ -75,7 +80,7 @@ public class Rectangulo {
     }
 
     public void setX1Y1(int x1, int y1){
-        if(x1<x2 && y1<y2) {
+        if(x1<x2 && y1<y2 && x1>=min && y1>=min) {
             this.x1 = x1;
             this.y1 = y1;
         }else
@@ -83,7 +88,7 @@ public class Rectangulo {
     }
 
     public void setX2Y2(int x2, int y2){
-        if(x1<x2 && y1<y2) {
+        if(x1<x2 && y1<y2 && x2<=max && y2<=max) {
             this.x2 = x2;
             this.y2 = y2;
         }else
@@ -91,7 +96,7 @@ public class Rectangulo {
     }
 
     public void setAll(int x1, int y1, int x2, int y2){
-        if(x1<x2 && y1<y2) {
+        if(x1<x2 && y1<y2 && x1>=min && y1>=min && x2<=max && y2<=max) {
             this.x1 = x1;
             this.y1 = y1;
             this.x2 = x2;
@@ -107,4 +112,18 @@ public class Rectangulo {
     public int getArea(){
         return ((x2-x1)*(y2-y1));
     }
+
+    public static Rectangulo creaRectanguloAleatorio() {
+
+        int x1 = ThreadLocalRandom.current().nextInt(0, 100);
+        int y1 = ThreadLocalRandom.current().nextInt(0, 100);
+        int x2 = ThreadLocalRandom.current().nextInt(x1+1, 101);
+        int y2 = ThreadLocalRandom.current().nextInt(y1+1, 101);
+
+        return new Rectangulo(x1,y1,x2,y2);
+
+    }
+
+
+
 }
