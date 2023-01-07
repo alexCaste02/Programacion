@@ -42,5 +42,15 @@ public class MainPunto {
 //        punto1.imprime();
 //        punto2.imprime();
 //        System.out.println(punto1.distancia(punto2));
+
+        Punto p1 = Punto.creaPuntoAleatorio();
+        p1.imprime();
+
+        Punto p2 = Punto.creaPuntoAleatorio();
+        p2.imprime();
+
+        Punto p3 = Punto.creaPuntoAleatorio();
+        p3.imprime();
+
     }
 }

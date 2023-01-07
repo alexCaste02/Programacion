@@ -32,6 +32,7 @@ public class Punto {
         this.y = y;
     }
 
+
     public void imprime() {
         System.out.println("(" + this.x + "," + this.y + ")");
     }
@@ -49,6 +50,7 @@ public class Punto {
     public int distancia(Punto p) {
         return (int) Math.sqrt(Math.pow(p.x - x, 2) + Math.pow(p.y - y, 2));
     }
+
 
     public static Punto creaPuntoAleatorio() {
         return new Punto(
