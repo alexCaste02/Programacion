@@ -7,17 +7,35 @@ el almacén).
  */
 
 public class Articulo {
+
+    private static final int IVAGeneral = 21;
+    private static final int IVAReducido = 10;
+    private static final int IVASuper = 4;
     private String nombre;
     private double precio;
-    private int IVA;
+    private int IVAProducto;
     private int cuantosQuedan;
 
-    public Articulo(String nombre, double precio, int IVA, int cuantosQuedan) {
+    public Articulo(String nombre, double precio, int cuantosQuedan, char tipoIVA) {
 
-        if (IVA==21 && precio>0 && cuantosQuedan>0){
+        if ( (tipoIVA=='g' || tipoIVA=='r' || tipoIVA=='s') && precio>0 && cuantosQuedan>0){
+
+            switch (tipoIVA){
+                case 'g':
+                    IVAProducto=IVAGeneral;
+                    break;
+
+                case 'r':
+                    IVAProducto=IVAReducido;
+                    break;
+
+                case 's':
+                    IVAProducto=IVASuper;
+                    break;
+
+            }
             this.nombre = nombre;
             this.precio = precio;
-            this.IVA = IVA;
             this.cuantosQuedan = cuantosQuedan;
         } else {
             System.err.println("ERROR al instanciar Articulo...");
@@ -42,12 +60,10 @@ public class Articulo {
     }
 
     public int getIVA() {
-        return IVA;
+        return IVAProducto;
     }
 
-    public void setIVA(int IVA) {
-        this.IVA = IVA;
-    }
+
 
     public int getCuantosQuedan() {
         return cuantosQuedan;
@@ -65,11 +81,11 @@ public class Articulo {
                 IVA: %d
                 Quedan: %d
                 
-                """,nombre,precio,getPVP(),IVA,cuantosQuedan);
+                """,nombre,precio,getPVP(),IVAProducto,cuantosQuedan);
     }
 
     public double getPVP(){
-        return (precio+precio*IVA/100);
+        return (precio+precio*IVAProducto/100);
     }
 
     public double getPVPDescuento(double descuento){

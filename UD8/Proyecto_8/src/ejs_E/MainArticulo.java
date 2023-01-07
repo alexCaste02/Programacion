@@ -10,9 +10,9 @@ decir, el precio con IVA). Luego, cambia el precio y vuelve a imprimir el mensaj
 public class MainArticulo {
     public static void main(String[] args) {
 
-        Articulo art1 = new Articulo("Cereales",4.3,21,12);
-        Articulo art2 = new Articulo("Arroz",-3,21,12);
-        Articulo art3 = new Articulo("Leche",4.3,19,-1);
+        Articulo art1 = new Articulo("zapas cool",14.3,12,'g');
+        Articulo art2 = new Articulo("Arroz",3,12,'x');
+        Articulo art3 = new Articulo("Leche",4.3,-1,'g');
 
         art1.imprime();
         System.out.println(art1.getPVP());
