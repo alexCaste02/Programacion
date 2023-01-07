@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainRectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainRectangulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Rectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Rectangulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_D/MainPersona.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_D/MainPersona.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_D/MainRectangulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_D/MainRectangulo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_D/Rectangulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_D/Rectangulo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainArticulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_D/Articulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_D/Articulo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programacion/ejs_D/MainArticulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programacion/ejs_D/MainArticulo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673094291875</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="finished D3.Rec">
+      <created>1673096932102</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673096932102</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +203,7 @@
     <MESSAGE value="finished D1.Punto" />
     <MESSAGE value="started D2.Pers" />
     <MESSAGE value="finished D2.Pers" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished D2.Pers" />
+    <MESSAGE value="finished D3.Rec" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished D3.Rec" />
   </component>
 </project>

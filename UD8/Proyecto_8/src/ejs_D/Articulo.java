@@ -56,4 +56,42 @@ public class Articulo {
     public void setCuantosQuedan(int cuantosQuedan) {
         this.cuantosQuedan = cuantosQuedan;
     }
+
+    public void imprime(){
+        System.out.printf("""
+                Nombre: %s
+                Precio: %.2f
+                PVP: %.2f
+                IVA: %d
+                Quedan: %d
+                
+                """,nombre,precio,getPVP(),IVA,cuantosQuedan);
+    }
+
+    public double getPVP(){
+        return (precio+precio*IVA/100);
+    }
+
+    public double getPVPDescuento(double descuento){
+        return ( getPVP() * (1-(descuento/100)) );
+        //hace falta comprobar que es de 0-100?
+    }
+
+    public boolean vender(int cantVendida){
+        if (cantVendida>cuantosQuedan || cantVendida<1) {
+            return false;
+        }else{
+            cuantosQuedan-=cantVendida;
+            return true;
+        }
+    }
+
+    public boolean almacenar(int cantAlmacenar){
+        if (cantAlmacenar<1) {
+            return false;
+        }else{
+            cuantosQuedan+=cantAlmacenar;
+            return true;
+        }
+    }
 }
