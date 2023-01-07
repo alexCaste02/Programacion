@@ -65,4 +65,46 @@ public class Rectangulo {
         else
             System.err.println("ERROR al instanciar Rectangulo...");
     }
+
+
+    public void imprime(){
+        System.out.printf("""
+                Punto inferior izquierdo: (x=%d,y=%d)
+                Punto superior derecho: (x=%d,y=%d)
+                """,x1,y1,x2,y2);
+    }
+
+    public void setX1Y1(int x1, int y1){
+        if(x1<x2 && y1<y2) {
+            this.x1 = x1;
+            this.y1 = y1;
+        }else
+            System.err.println("ERROR al instanciar Rectangulo...");
+    }
+
+    public void setX2Y2(int x2, int y2){
+        if(x1<x2 && y1<y2) {
+            this.x2 = x2;
+            this.y2 = y2;
+        }else
+            System.err.println("ERROR al instanciar Rectangulo...");
+    }
+
+    public void setAll(int x1, int y1, int x2, int y2){
+        if(x1<x2 && y1<y2) {
+            this.x1 = x1;
+            this.y1 = y1;
+            this.x2 = x2;
+            this.y2 = y2;
+        }else
+            System.err.println("ERROR al instanciar Rectangulo...");
+    }
+
+    public int getPerimetro(){
+        return ((x2-x1)*2+(y2-y1)*2);
+    }
+
+    public int getArea(){
+        return ((x2-x1)*(y2-y1));
+    }
 }
