@@ -37,7 +37,7 @@ public class MainPersona {
 //        System.out.println("Introduce la edad");
 //        edad= Integer.parseInt(input.nextLine());
 //
-        Persona per2 = new Persona("dni","nombre","apellidos",15);
+        Persona per2 = new Persona("51796121Y","nombre","apellidos",15);
 //
 //        per2.setNombre("Nombre");
 //        per2.setApellidos("Ap1 Ap2");
@@ -53,7 +53,6 @@ public class MainPersona {
         System.out.println(per1.esJubilado()?"es jubilado":"no es jubilado");
 
         System.out.println("La diferencia de edad es de "+per1.diferenciaEdad(per2)+" años");
-
 
     }
 }

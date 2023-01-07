@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/MainPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/MainPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Persona.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673099234558</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="finished E1.Punto">
+      <created>1673101713434</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673101713434</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,6 +229,22 @@
     <MESSAGE value="finished D3.Rec" />
     <MESSAGE value="finished D4.Art" />
     <MESSAGE value="almost finished E1.Punto" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost finished E1.Punto" />
+    <MESSAGE value="finished E1.Punto" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished E1.Punto" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Persona.java</url>
+          <line>81</line>
+          <properties class="ejs_E.Persona" method="validarDNI">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
