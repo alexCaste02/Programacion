@@ -28,25 +28,32 @@ public class MainPersona {
         Persona per1 = new Persona(dni,nombre,apellidos,edad);
 
 
-        System.out.println("Introduce el nombre de la persona: ");
-        nombre = input.nextLine();
-        System.out.println("Introduce el DNI de la persona: ");
-        dni = input.nextLine();
-        System.out.println("Introduce los apellidos de la persona");
-        apellidos = input.nextLine();
-        System.out.println("Introduce la edad");
-        edad= Integer.parseInt(input.nextLine());
+//        System.out.println("Introduce el nombre de la persona: ");
+//        nombre = input.nextLine();
+//        System.out.println("Introduce el DNI de la persona: ");
+//        dni = input.nextLine();
+//        System.out.println("Introduce los apellidos de la persona");
+//        apellidos = input.nextLine();
+//        System.out.println("Introduce la edad");
+//        edad= Integer.parseInt(input.nextLine());
+//
+        Persona per2 = new Persona("dni","nombre","apellidos",15);
+//
+//        per2.setNombre("Nombre");
+//        per2.setApellidos("Ap1 Ap2");
+//        per2.setDni("51879xxxxy");
+//        per2.setEdad(15);
 
-        Persona per2 = new Persona(dni,nombre,apellidos,edad);
 
-        per2.setNombre("Nombre");
-        per2.setApellidos("Ap1 Ap2");
-        per2.setDni("51879xxxxy");
-        per2.setEdad(15);
+//        System.out.println(per1.getNombre()+" "+per1.getApellidos()+" con DNI "+per1.getDni()+((per1.getEdad()<18)?" no":"")+" es mayor de edad");
+//        System.out.println(per2.getNombre()+" "+per2.getApellidos()+" con DNI "+per2.getDni()+((per2.getEdad()<18)?" no":"")+" es mayor de edad");
 
+        per1.imprime();
+        System.out.println(per1.esMayorEdad()?"es mayor de edad":"no es mayor de edad");
+        System.out.println(per1.esJubilado()?"es jubilado":"no es jubilado");
 
-        System.out.println(per1.getNombre()+" "+per1.getApellidos()+" con DNI "+per1.getDni()+((per1.getEdad()<18)?" no":"")+" es mayor de edad");
-        System.out.println(per2.getNombre()+" "+per2.getApellidos()+" con DNI "+per2.getDni()+((per2.getEdad()<18)?" no":"")+" es mayor de edad");
+        System.out.println("La diferencia de edad es de "+per1.diferenciaEdad(per2)+" años");
+
 
     }
 }
