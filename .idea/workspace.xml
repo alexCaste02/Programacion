@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7e63ba6-579a-4fb9-bea1-472e96345364" name="Changes" comment="">
+    <list default="true" id="b841242f-6afc-4e1e-853c-a1f588295ea5" name="Changes" comment="started D2.Pers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Articulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/MainArticulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1A/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1A/MainArticulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/MainPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1A/MainPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/MainPunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1A/MainPunto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/MainRectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1A/MainRectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1A/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/Punto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1A/Punto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_A/Rectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1A/Rectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1B/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1B/MainArticulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/MainPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1B/MainPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/MainPunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1B/MainPunto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/MainRectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1B/MainRectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1B/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/Punto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1B/Punto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_B/Rectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1B/Rectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1C/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1C/MainArticulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/MainPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1C/MainPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/MainPunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1C/MainPunto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/MainRectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1C/MainRectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1C/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/Punto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1C/Punto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_C/Rectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1C/Rectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1D/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1D/MainArticulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1D/MainPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainPunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1D/MainPunto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/MainRectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1D/MainRectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1D/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Punto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1D/Punto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_D/Rectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1D/Rectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1E/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/MainArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1E/MainArticulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/MainPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1E/MainPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/MainPunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1E/MainPunto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/MainRectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1E/MainRectangulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1E/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Punto.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1E/Punto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Rectangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1E/Rectangulo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,11 +82,11 @@
   </component>
   <component name="RunManager">
     <configuration name="MainPunto" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ejs_C.MainPunto" />
+      <option name="MAIN_CLASS_NAME" value="ejs_1C.MainPunto" />
       <module name="Programacion" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ejs_C.*" />
+          <option name="PATTERN" value="ejs_1C.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -250,30 +288,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="finished E3.Rec" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Persona.java</url>
-          <line>81</line>
-          <properties class="ejs_E.Persona" method="validarDNI">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Rectangulo.java</url>
-          <line>16</line>
-          <properties class="ejs_E.Rectangulo" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_E/Persona.java" line="82">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/UD8/Proyecto_8/src/ejs_1E/Persona.java" line="82">
         <watch expression="(DNI.matches(&quot;\\d{8}[a-zA-Z]&quot;))" />
       </inline-watch>
     </watches-manager>
