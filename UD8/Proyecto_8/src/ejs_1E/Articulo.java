@@ -90,7 +90,7 @@ public class Articulo {
 
     public double getPVPDescuento(double descuento){
         return ( getPVP() * (1-(descuento/100)) );
-        //hace falta comprobar que es de 0-100?
+        //hace falta comprobar que el descuento es de 0-100?
     }
 
     public boolean vender(int cantVendida){

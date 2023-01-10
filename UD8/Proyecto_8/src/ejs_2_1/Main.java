@@ -1,6 +1,6 @@
 package ejs_2_1;
 
-public class MainTriangulo {
+public class Main {
     public static void main(String[] args) {
 
         //    Triangulo tri1 = new Triangulo(new Punto());
