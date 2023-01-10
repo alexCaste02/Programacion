@@ -1,4 +1,4 @@
-package ejs_2;
+package ejs_2_1;
 
 import java.util.concurrent.ThreadLocalRandom;
 
