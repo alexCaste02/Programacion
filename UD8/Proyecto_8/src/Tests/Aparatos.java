@@ -28,9 +28,9 @@ public class Aparatos {
 
 
 
-    public int consumoTotal(){
-
-    }
+//    public int consumoTotal(){
+//
+//    }
 
     public static void main(String[] args) {
 
