@@ -20,7 +20,7 @@ public class Trabajador {
         this.tipoIRPF = tipoIRPF;
     }
 
-    public calcularImporteHorasExtras(){
-
-    }
+//    public calcularImporteHorasExtras(){
+//
+//    }
 }

@@ -9,7 +9,7 @@ public class Bombilla {
         interruptor=!interruptor;
     }
 
-    public void pulsarInterruptorCasa(){
+    public static void pulsarInterruptorCasa(){
         interrCasa=!interrCasa;
     }
 

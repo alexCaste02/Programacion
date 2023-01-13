@@ -9,7 +9,7 @@ public class Main {
         bom1.pulsarInterruptor();
         System.out.println(bom1.estaLuciendo()?"Esta encendida":"Esta apagada");
 
-        bom1.pulsarInterruptorCasa();
+        Bombilla.pulsarInterruptorCasa();
         System.out.println(bom1.estaLuciendo()?"Esta encendida":"Esta apagada");
 
     }
