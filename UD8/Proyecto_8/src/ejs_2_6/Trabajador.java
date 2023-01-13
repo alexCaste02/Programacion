@@ -8,59 +8,28 @@ public class Trabajador {
     private static double importeHoraExtra;
 
 
+    private int horasExtra;
     private String nombre, DNI;
-    private double sueldoBase, horasExtra,tipoIRPF;
+    private double sueldoBase,tipoIRPF;
 
 
 
+    /* CONSTRUCTORES */
     public Trabajador(){
-        DNI="00000000A";
+        numTrabajadores++;
     }
 
-    public Trabajador(double importeHoraExtra, int numTrabajadores, String dni, String nombre, double sueldoBase, double horasExtra, double tipoIRPF) {
+    public Trabajador(String nombre, String dni,  double sueldoBase, int horasExtra, double tipoIRPF) {
         this.DNI = dni;
         this.nombre = nombre;
         this.sueldoBase = sueldoBase;
         this.horasExtra = horasExtra;
         this.tipoIRPF = tipoIRPF;
+        numTrabajadores++;
     }
 
 
-    public double calcularImporteHorasExtras(){
-        return horasExtra *importeHoraExtra;
-    }
-
-    public double calcularSueldoBruto(){
-        return sueldoBase+calcularImporteHorasExtras();
-    }
-
-    public double calcularRetencionIRPF(){
-        return calcularSueldoBruto()*tipoIRPF/100;
-    }
-
-    public double calcularSueldo(){
-        return calcularSueldoBruto()-calcularRetencionIRPF();
-    }
-
-    @Override
-    public String toString() {
-        return DNI+" "+nombre+
-                "\nSueldo Base: "+sueldoBase+
-                "\nHoras Extra: "+ horasExtra +
-                "\nTipo IRPF: "+tipoIRPF+
-                "\nSueldo Bruto: "+calcularSueldoBruto()+
-                "\nRetencion por IRPF: "+calcularRetencionIRPF()+
-                "\nSueldo Neto: "+calcularSueldo();
-    }
-
-    public static int getNumTrabajadores() {
-        return numTrabajadores;
-    }
-
-    public static void setNumTrabajadores(int numTrabajadores) {
-        Trabajador.numTrabajadores = numTrabajadores;
-    }
-
+    /* GETTERS Y SETTERS */
     public String getNombre() {
         return nombre;
     }
@@ -89,7 +58,7 @@ public class Trabajador {
         return horasExtra;
     }
 
-    public void setHorasExtra(double horasExtra) {
+    public void setHorasExtra(int horasExtra) {
         this.horasExtra = horasExtra;
     }
 
@@ -97,11 +66,57 @@ public class Trabajador {
         return tipoIRPF;
     }
 
+    public static int getNumTrabajadores() {
+        return numTrabajadores;
+    }
+
+    public static void setNumTrabajadores(int numTrabajadores) {
+        Trabajador.numTrabajadores = numTrabajadores;
+    }
+
+    /* OTROS METODOS */
     public void setTipoIRPF(double tipoIRPF) {
         this.tipoIRPF = tipoIRPF;
     }
 
+    public static double getImporteHoraExtra() {
+        return importeHoraExtra;
+    }
+
+    public static void setImporteHoraExtra(double importeHoraExtra) {
+        Trabajador.importeHoraExtra = importeHoraExtra;
+    }
+    public double calcularImporteHorasExtras(){
+        return horasExtra *importeHoraExtra;
+    }
+
+    public double calcularSueldoBruto(){
+        return sueldoBase+calcularImporteHorasExtras();
+    }
+
+    public double calcularRetencionIRPF(){
+        return calcularSueldoBruto()*tipoIRPF/100;
+    }
+
+    public double calcularSueldo(){
+        return calcularSueldoBruto()-calcularRetencionIRPF();
+    }
+
+    @Override
+    public String toString() {
+        return DNI+" "+nombre+
+                "\nSueldo Base: "+sueldoBase+
+                "\nHoras Extra: "+ horasExtra +
+                "\nTipo IRPF: "+tipoIRPF+
+                "\nSueldo Bruto: "+calcularSueldoBruto()+
+                "\nRetencion por IRPF: "+calcularRetencionIRPF()+
+                "\nSueldo Neto: "+calcularSueldo();
+    }
+
+
+
     public void leerTrabajador(){
+
         Scanner input = new Scanner(System.in);
 
 
@@ -124,4 +139,5 @@ public class Trabajador {
         tipoIRPF=input.nextDouble();
 
     }
+
 }
