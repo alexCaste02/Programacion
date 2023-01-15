@@ -1,4 +1,4 @@
-package ejs_2_8;
+package ejs_2_8_ALT;
 
 import java.util.Scanner;
 
@@ -138,6 +138,7 @@ public class DawBank {
 
                     System.out.println("==============================================\n");
                 }
+
                 case 6 -> {
                     System.out.print(
                             "\n==============================================\n"+

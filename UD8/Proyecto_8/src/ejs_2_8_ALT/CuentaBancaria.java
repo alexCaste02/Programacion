@@ -1,4 +1,4 @@
-package ejs_2_8;
+package ejs_2_8_ALT;
 
 public class CuentaBancaria {
 
@@ -29,7 +29,7 @@ public class CuentaBancaria {
     /* OTROS */
     @Override
     public String toString() {
-        return  "\n===================================\n"+
+        return  "\n=====================================\n"+
                 "Titular: " + TITULAR +
                 "\nIBAN: " + IBAN +
                 "\nSaldo: " + saldo+
