@@ -29,9 +29,12 @@ public class CuentaBancaria {
     /* OTROS */
     @Override
     public String toString() {
-        return  "Titular: " + TITULAR +
+        return  "\n=====================================\n"+
+                "Titular: " + TITULAR +
                 "\nIBAN: " + IBAN +
-                "\nSaldo: " + saldo;
+                "\nSaldo: " + saldo+
+                "\n===================================\n";
+
     }
 
     public boolean ingresar(double dinero){
@@ -54,10 +57,13 @@ public class CuentaBancaria {
 
             if(saldo-dinero<-50)
                 return -1;
+
+            saldo-=dinero;
+
             if (saldo<0){
                 System.out.println("AVISO: Saldo negativo");
             }
-            saldo-=dinero;
+
             return 1;
 
         }
@@ -65,5 +71,6 @@ public class CuentaBancaria {
         return 0;
     }
 
+    // ES1234567890123456789012
 
 }

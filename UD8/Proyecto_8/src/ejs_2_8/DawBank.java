@@ -6,10 +6,13 @@ public class DawBank {
 
     public static void main(String[] args) {
 
-        CuentaBancaria cuenta1 = crearCuenta();
+        System.out.println("======================================================================================================\n");
+
+        CuentaBancaria cuenta1 = crearCuenta(); // ES1234567890123456789012
         menuCuenta(cuenta1);
 
     }
+
 
     //Esto seria util en caso de tener arrays
 
@@ -62,12 +65,12 @@ public class DawBank {
         do {
             System.out.print("Introduce el IBAN: ");
             iban = input.next();
-            System.out.println(esValidoIBAN(iban)?"IBAN valido":"IBAN invalido, vuelve a intentarlo");
+            System.out.print(esValidoIBAN(iban) ? "IBAN valido" : "IBAN invalido, vuelve a intentarlo");
         } while (!esValidoIBAN(iban));
 
-        System.out.println("\n=== Cuenta creada con exito! ===");
+        System.out.println("\n\n===== Cuenta creada con exito! =====\n");
 
-        return (new CuentaBancaria(titular,iban));
+        return (new CuentaBancaria(titular, iban));
 
     }
 
@@ -75,87 +78,114 @@ public class DawBank {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("""
-                Que accion desea realizar:
-                                
-                (1) Datos de la cuenta
-                (2) IBAN
-                (3) Titular
-                (4) Saldo
-                (5) Ingreso
-                (6) Retirada
-                                
-                (7) Salir
-                """);
 
         //variables convenientes
         boolean repeat = true;
-        boolean valido = false;
         double dinero;
 
         do {
-            valido = false; //resetear valido (para ingreso y retiro
+
+            System.out.print("""
+                    Que accion desea realizar:
+                                    
+                    (1) Datos de la cuenta
+                    (2) IBAN
+                    (3) Titular
+                    (4) Saldo
+                    (5) Ingreso
+                    (6) Retirada
+                                    
+                    (7) Salir
+                                    
+                    >""");
 
             switch (input.nextInt()) {
                 case 1 -> {
                     System.out.println(cuenta);
-                    break;
                 }
                 case 2 -> {
-                    System.out.println("IBAN: " + cuenta.getIBAN());
-                    break;
+                    System.out.println(
+                            "\n==============================================\n" +
+                            "IBAN: " + cuenta.getIBAN() +
+                            "\n==============================================\n"
+                    );
                 }
                 case 3 -> {
-                    System.out.println("Titular: " + cuenta.getTITULAR());
-                    break;
+                    System.out.println(
+                            "\n==============================================\n"+
+                            "Titular: " + cuenta.getTITULAR()+
+                            "\n==============================================\n"
+                    );
                 }
                 case 4 -> {
-                    System.out.println("Saldo: " + cuenta.getSaldo());
-                    break;
+                    System.out.println(
+                            "\n==============================================\n"+
+                            "Saldo: " + cuenta.getSaldo()+
+                            "\n==============================================\n"
+                    );
                 }
                 case 5 -> {
-                    do {
-                        System.out.print("Introduce la cantidad de dinero a ingresar: ");
 
-                        valido = cuenta.ingresar(input.nextDouble());
-                        System.out.println(valido ? "Operacion realizada con exito" : "Operacion fallida. Introduzca un valor superior a 0");
+                    System.out.print(
+                            "\n==============================================\n"+
+                            "Introduce la cantidad de dinero a ingresar: "
+                    );
 
-                    } while (!valido);
-                    break;
+                    System.out.println(
+                            cuenta.ingresar( input.nextDouble() )?
+                                "\nOperacion realizada con exito":
+                                "\nOperacion fallida. Introduzca un valor superior a 0"
+                    );
+
+                    System.out.println("==============================================\n");
                 }
                 case 6 -> {
-                    do {
-                        System.out.print("Introduce la cantidad de dinero a retirar: ");
+                    System.out.print(
+                            "\n==============================================\n"+
+                            "Introduce la cantidad de dinero a retirar: "
+                    );
 
-                        switch (cuenta.retirar(input.nextDouble())) {
-                            case -1:
-                                System.out.println("Operacion fallida. Saldo insuficiente (Balance resultante seria menor de-50)");
-                            case 0:
-                                System.out.println("Operacion fallida. Introduzca un valor superior a 0");
-                            case 1:
-                                System.out.println("Operacion realizada con exito");
-                                valido = true;
+                    switch (cuenta.retirar(input.nextDouble())) {
+                        case -1 -> {
+                            System.out.println("\nOperacion fallida. Saldo insuficiente (Balance resultante seria menor de -50)");
                         }
+                        case 0 -> {
+                            System.out.println("\nOperacion fallida. Introduzca un valor superior a 0");
+                        }
+                        case 1 -> {
+                            System.out.println("\nOperacion realizada con exito");
 
-                    } while (!valido);
-                    break;
+                        }
+                    }
+
+                    System.out.println("==============================================\n");
                 }
                 case 7 -> {
-                    System.out.println("Finalizando programa...");
+                    System.out.println("""
+                            
+                            ==============================================
+                            Finalizando programa...
+                            ==============================================
+                            """);
+
                     repeat = false;
-                    break;
                 }
                 default -> {
-                    System.out.println("Introduzca un valor de operacion correcto");
-                    break;
+                    System.out.println("""
+                            
+                            ==============================================
+                            Introduzca un valor de operacion correcto
+                            ==============================================
+                            """);
                 }
             }
 
-        }while (repeat);
+        } while (repeat);
     }
 
-    public static boolean esValidoIBAN(String iban){
+    public static boolean esValidoIBAN(String iban) {
         return iban.toUpperCase().matches("[A-Z]{2}\\d{22}");
     }
+
 
 }
