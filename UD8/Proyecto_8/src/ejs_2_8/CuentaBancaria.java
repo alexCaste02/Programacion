@@ -64,6 +64,10 @@ public class CuentaBancaria {
                 System.out.println("AVISO: Saldo negativo");
             }
 
+            if (dinero>3000){
+                System.out.println("AVISO: Notificar a hacienda");
+            }
+
             return 1;
 
         }
