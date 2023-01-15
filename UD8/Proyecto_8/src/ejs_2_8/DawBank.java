@@ -81,7 +81,6 @@ public class DawBank {
 
         //variables convenientes
         boolean repeat = true;
-        double dinero;
 
         do {
 
