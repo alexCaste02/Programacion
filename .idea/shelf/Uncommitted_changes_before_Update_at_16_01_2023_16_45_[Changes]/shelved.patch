@@ -1,0 +1,55 @@
+Index: UD8/Proyecto_8/src/ejs_2_9/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ejs_2_9;\r\n\r\npublic class Main {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UD8/Proyecto_8/src/ejs_2_9/Main.java b/UD8/Proyecto_8/src/ejs_2_9/Main.java
+--- a/UD8/Proyecto_8/src/ejs_2_9/Main.java	(revision 8ab20f096cb6b9a5c37ad26f84882f167389301c)
++++ b/UD8/Proyecto_8/src/ejs_2_9/Main.java	(date 1673883907262)
+@@ -1,4 +1,16 @@
+ package ejs_2_9;
++import java.util.Scanner;
+ 
+ public class Main {
++    public static void main(String[] args) {
++        public static void main(String[] args) {
++
++
++            MasterMind game = new MasterMind(4, 10);
++            Scanner scanner = new Scanner(System.in);
++            while (true) {
++                System.out.print("Introduce una combinación de 4 dígitos sin repetir: ");
++            }
++        }
++    }
+ }
+Index: UD8/Proyecto_8/src/ejs_2_9_ALT/MasterMind.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UD8/Proyecto_8/src/ejs_2_9_ALT/MasterMind.java b/UD8/Proyecto_8/src/ejs_2_9_ALT/MasterMind.java
+new file mode 100644
+--- /dev/null	(date 1673797429076)
++++ b/UD8/Proyecto_8/src/ejs_2_9_ALT/MasterMind.java	(date 1673797429076)
+@@ -0,0 +1,4 @@
++package ejs_2_9_ALT;
++
++public class MasterMind {
++}
+Index: UD8/Proyecto_8/src/ejs_2_9_ALT/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UD8/Proyecto_8/src/ejs_2_9_ALT/Main.java b/UD8/Proyecto_8/src/ejs_2_9_ALT/Main.java
+new file mode 100644
+--- /dev/null	(date 1673797429091)
++++ b/UD8/Proyecto_8/src/ejs_2_9_ALT/Main.java	(date 1673797429091)
+@@ -0,0 +1,4 @@
++package ejs_2_9_ALT;
++
++public class Main {
++}
