@@ -4,10 +4,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MasterMind {
 
-    String numeroCorrecto = "";
-    StringBuilder numerosDisponibles = new StringBuilder("0123456789");
-    String numIntroducido;
-    int digitosPosCorrecta, digitosMalColocados;
+    private String numeroCorrecto = "";
+    private StringBuilder numerosDisponibles = new StringBuilder("0123456789");
+    private String numIntroducido;
+    private int digitosPosCorrecta, digitosMalColocados, intentos = 10;
 
 
     public MasterMind(int longitudNumero) {
@@ -60,11 +60,18 @@ public class MasterMind {
         this.digitosMalColocados = digitosMalColocados;
     }
 
+    public int getIntentos() {
+        return intentos;
+    }
+    public void setIntentos(int intentos) {
+        this.intentos = intentos;
+    }
 
+    public boolean comprobarRespuesta(){
 
-
-
-    public void comprobarRespuesta(){
+        digitosMalColocados=0;
+        digitosPosCorrecta=0;
+        intentos--;
 
         for(int i = 0; i< numeroCorrecto.length(); i++){
 
@@ -72,14 +79,20 @@ public class MasterMind {
 
                 if (posicionCorrecta(numIntroducido.charAt(i))) {
                     digitosPosCorrecta++;
+                } else {
+                    digitosMalColocados++;
                 }
-
-                digitosMalColocados++;
-
             }
-
         }
 
+        if(digitosPosCorrecta==numeroCorrecto.length())
+            return true;
+
+        return false;
+    }
+
+    public boolean quedanIntentos(){
+        return intentos != 0;
     }
 
     public boolean estaDentro(char c){
