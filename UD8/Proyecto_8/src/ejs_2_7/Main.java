@@ -15,7 +15,18 @@ public class Main {
 
         System.out.println("Saldo: "+movil1.consultarSaldo()+"\n");
 
-        movil1.recargar(5);
+        System.out.println(
+                movil1.recargar(4)?
+                        "Recarga completada":
+                        "Recarga fallida"
+        );
+
+        System.out.println(
+                movil1.recargar(5)?
+                        ("Recarga completada"):
+                        ("Recarga fallida")
+        );
+
         System.out.println("Saldo: "+movil1.consultarSaldo()+"\n");
 
         movil1.efectuarLlamada(135);
@@ -26,9 +37,6 @@ public class Main {
 
         movil1.recargar(5);
         System.out.println("Saldo: "+movil1.consultarSaldo()+"\n");
-
-
-
 
     }
 }

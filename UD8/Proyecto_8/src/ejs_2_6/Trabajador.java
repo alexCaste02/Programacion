@@ -28,48 +28,37 @@ public class Trabajador {
         numTrabajadores++;
     }
 
-
     /* GETTERS Y SETTERS */
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public String getDNI() {
         return DNI;
     }
-
     public void setDNI(String DNI) {
         this.DNI = DNI;
     }
-
     public double getSueldoBase() {
         return sueldoBase;
     }
-
     public void setSueldoBase(double sueldoBase) {
         this.sueldoBase = sueldoBase;
     }
-
     public double getHorasExtra() {
         return horasExtra;
     }
-
     public void setHorasExtra(int horasExtra) {
         this.horasExtra = horasExtra;
     }
-
     public double getTipoIRPF() {
         return tipoIRPF;
     }
-
     public static int getNumTrabajadores() {
         return numTrabajadores;
     }
-
     public static void setNumTrabajadores(int numTrabajadores) {
         Trabajador.numTrabajadores = numTrabajadores;
     }
@@ -86,6 +75,7 @@ public class Trabajador {
     public static void setImporteHoraExtra(double importeHoraExtra) {
         Trabajador.importeHoraExtra = importeHoraExtra;
     }
+
     public double calcularImporteHorasExtras(){
         return horasExtra *importeHoraExtra;
     }
@@ -112,8 +102,6 @@ public class Trabajador {
                 "\nRetencion por IRPF: "+calcularRetencionIRPF()+
                 "\nSueldo Neto: "+calcularSueldo();
     }
-
-
 
     public void leerTrabajador(){
 

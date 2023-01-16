@@ -56,18 +56,16 @@ public class Main {
         System.out.print("Nombre: ");
         t1.setNombre(input.nextLine());
 
-        // TODO: 13/01/2023 -Validar DNI (copiar de antes)
         System.out.print("DNI: ");
         t1.setDNI(input.nextLine());
 
         System.out.print("Sueldo Base: ");
         t1.setSueldoBase(input.nextDouble());
 
-        // TODO: 13/01/2023 -Quitar negativos
+
         System.out.print("Horas Extra: ");
         t1.setHorasExtra(input.nextInt());
 
-        // TODO: 13/01/2023 -Poner limites
         System.out.print("Sueldo Base: ");
         t1.setTipoIRPF(input.nextDouble());
 

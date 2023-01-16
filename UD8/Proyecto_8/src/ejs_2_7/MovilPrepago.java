@@ -8,6 +8,7 @@ public class MovilPrepago {
     private float saldo=0;
 
     /* CONSTRUCTORES */
+
     public MovilPrepago(long numeroMovil) {
         if ( (numeroMovil+"").length()==13 ) {
             this.numeroMovil=numeroMovil;
@@ -26,17 +27,30 @@ public class MovilPrepago {
     public static void setCosteEstableceLLamada(float costeEstableceLLamada) {
         MovilPrepago.costeEstableceLLamada = costeEstableceLLamada;
     }
+
     public static float getCosteMinutoLLamada() {
         return costeMinutoLLamada;
     }
     public static void setCosteMinutoLLamada(float costeMinutoLLamada) {
         MovilPrepago.costeMinutoLLamada = costeMinutoLLamada;
     }
+
     public static float getCosteConsumoMB() {
         return costeConsumoMB;
     }
     public static void setCosteConsumoMB(float costeCostumoMB) {
         MovilPrepago.costeConsumoMB = costeCostumoMB;
+    }
+
+    public long getNumeroMovil() {
+        return numeroMovil;
+    }
+
+    public float getSaldo() {
+        return saldo;
+    }
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
     }
 
 
@@ -101,7 +115,7 @@ public class MovilPrepago {
     }
 
     public boolean recargar (int importe){
-        if (importe%5==0) {
+        if (importe%5==0 && importe>0) {
             saldo+=importe;
             return true;
         }
@@ -111,9 +125,6 @@ public class MovilPrepago {
     public float consultarSaldo(){
         return saldo;
     }
-
-
-
 
 
 }
