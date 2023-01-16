@@ -65,7 +65,11 @@ public class DawBank {
         do {
             System.out.print("Introduce el IBAN: ");
             iban = input.next();
-            System.out.print(esValidoIBAN(iban) ? "IBAN valido" : "IBAN invalido, vuelve a intentarlo");
+
+            System.out.print(esValidoIBAN(iban) ?
+                    "IBAN valido" :
+                    "IBAN invalido, vuelve a intentarlo");
+
         } while (!esValidoIBAN(iban));
 
         System.out.println("\n\n===== Cuenta creada con exito! =====\n");
