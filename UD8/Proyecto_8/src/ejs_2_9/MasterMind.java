@@ -15,11 +15,9 @@ public class MasterMind {
         int posRand;
 
         for(int i=longitudNumero; i>0; i--){
-
             posRand = ThreadLocalRandom.current().nextInt(0,numerosDisponibles.length());
             numeroCorrecto += numerosDisponibles.charAt(posRand);
             numerosDisponibles.deleteCharAt(posRand);
-
         }
 
     }
@@ -59,8 +57,6 @@ public class MasterMind {
     public void setDigitosMalColocados(int digitosMalColocados) {
         this.digitosMalColocados = digitosMalColocados;
     }
-
-
 
 
 

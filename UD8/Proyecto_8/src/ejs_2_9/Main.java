@@ -14,9 +14,5 @@ public class Main {
         System.out.println("Introduce un numero de "+resp1.getNumeroCorrecto().length()+" digitos");
         resp1.setNumIntroducido(input.next());
 
-
-
-
-
     }
 }
