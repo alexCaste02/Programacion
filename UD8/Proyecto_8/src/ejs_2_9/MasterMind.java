@@ -4,10 +4,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MasterMind {
 
-    private String numeroCorrecto = "";
-    private StringBuilder numerosDisponibles = new StringBuilder("0123456789");
-    private String numIntroducido;
-    private int digitosPosCorrecta, digitosMalColocados, intentos = 10;
+    String numeroCorrecto = "";
+    StringBuilder numerosDisponibles = new StringBuilder("0123456789");
+    String numIntroducido;
+    int digitosPosCorrecta, digitosMalColocados;
 
 
     public MasterMind(int longitudNumero) {
@@ -15,11 +15,9 @@ public class MasterMind {
         int posRand;
 
         for(int i=longitudNumero; i>0; i--){
-
             posRand = ThreadLocalRandom.current().nextInt(0,numerosDisponibles.length());
             numeroCorrecto += numerosDisponibles.charAt(posRand);
             numerosDisponibles.deleteCharAt(posRand);
-
         }
 
     }
@@ -60,18 +58,9 @@ public class MasterMind {
         this.digitosMalColocados = digitosMalColocados;
     }
 
-    public int getIntentos() {
-        return intentos;
-    }
-    public void setIntentos(int intentos) {
-        this.intentos = intentos;
-    }
 
-    public boolean comprobarRespuesta(){
 
-        digitosMalColocados=0;
-        digitosPosCorrecta=0;
-        intentos--;
+    public void comprobarRespuesta(){
 
         for(int i = 0; i< numeroCorrecto.length(); i++){
 
@@ -79,20 +68,14 @@ public class MasterMind {
 
                 if (posicionCorrecta(numIntroducido.charAt(i))) {
                     digitosPosCorrecta++;
-                } else {
-                    digitosMalColocados++;
                 }
+
+                digitosMalColocados++;
+
             }
+
         }
 
-        if(digitosPosCorrecta==numeroCorrecto.length())
-            return true;
-
-        return false;
-    }
-
-    public boolean quedanIntentos(){
-        return intentos != 0;
     }
 
     public boolean estaDentro(char c){

@@ -68,7 +68,7 @@ public class DawBank {
 
             System.out.print(esValidoIBAN(iban) ?
                     "IBAN valido" :
-                    "IBAN invalido, vuelve a intentarlo");
+                    "IBAN invalido, vuelve a introducirlo");
 
         } while (!esValidoIBAN(iban));
 
