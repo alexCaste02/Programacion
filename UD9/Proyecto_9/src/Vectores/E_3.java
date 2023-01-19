@@ -15,28 +15,22 @@ public class E_3 {
         Scanner input = new Scanner(System.in);
 
         int[] nums = new int[10];
-        int max=0;
-        int min=0;
-
 
         for (int i = 0; i < nums.length; i++) {
             System.out.println("Introduce el numero en la posicion "+(i+1)+": ");
             nums[i] = input.nextInt();
         }
 
-        for (int i = 0; i < nums.length; i++) {
+        int max=nums[0];
+        int min=nums[0];
 
-            if (i==0){
-                max=nums[i];
-                min=nums[i];
-            }
 
-            if (nums[i]>max) {
-                max = nums[i];
+        for (double n :
+                nums) {
 
-            } else if (nums[i]<min) {
-                min = nums[i];
-            }
+            max = (int)Math.max(max,n);
+            min = (int)Math.max(min,n);
+
         }
 
         System.out.println(

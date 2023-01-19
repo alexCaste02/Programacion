@@ -26,14 +26,14 @@ public class E_4 {
 
         for (int num : nums) {
             if (num >= 0)
-                pos++;
+                pos+=num;
             else
-                neg++;
+                neg+=num;
         }
 
         System.out.println(
-                "Positivos = "+pos+
-                "\nNegativos = "+neg
+                "Suma de positivos = "+pos+
+                "\nSuma de negativos = "+neg
         );
 
     }
