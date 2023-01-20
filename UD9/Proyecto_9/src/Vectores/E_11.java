@@ -23,6 +23,7 @@ public class E_11 {
             arr1[i] = i + 1;
         }
 
+        //arr.length - 1 == ultima pos del array
         for (int i = 0; i < arr1.length; i++) {
             arr2[i] = arr1[(arr1.length - 1) - i];
         }

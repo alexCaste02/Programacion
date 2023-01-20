@@ -14,26 +14,22 @@ public class E_1 {
 
         Scanner input = new Scanner(System.in);
 
-        int[] nums = new int[10];
+        double[] nums = new double[10];
 
-//        for (int n :
-//                nums) {
-//            System.out.println("Introduce el valor");
-//        }
 
         for (int i = 0; i < nums.length; i++) {
             System.out.println("Introduce el numero en la posicion "+(i+1)+": ");
-            nums[i] = input.nextInt();
+            nums[i] = input.nextDouble();
         }
 
-        for (int i = 0; i < nums.length; i++) {
-            System.out.println("El valor de la posicion "+(i+1)+" es: "+nums[i]);
-        }
-
-//        for (int n :
-//                nums) {
-//            System.out.println("El valor de la posicion es: "+n);
+//        for (int i = 0; i < nums.length; i++) {
+//            System.out.println("El valor de la posicion "+(i+1)+" es: "+nums[i]);
 //        }
+
+        for (double n :
+                nums) {
+            System.out.println("El valor de la posicion es: "+n);
+        }
 
 
     }

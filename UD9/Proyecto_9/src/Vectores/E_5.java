@@ -15,7 +15,7 @@ public class E_5 {
         Scanner input = new Scanner(System.in);
 
 
-        int[] nums = new int[20];
+        double[] nums = new double[20];
         double suma = 0;
 
 
@@ -24,7 +24,7 @@ public class E_5 {
             nums[i] = input.nextInt();
         }
 
-        for (int n : nums) {
+        for (double n : nums) {
             suma += n;
         }
 

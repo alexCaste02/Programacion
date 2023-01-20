@@ -14,22 +14,22 @@ public class E_3 {
 
         Scanner input = new Scanner(System.in);
 
-        int[] nums = new int[10];
+        double[] nums = new double[10];
 
         for (int i = 0; i < nums.length; i++) {
             System.out.println("Introduce el numero en la posicion "+(i+1)+": ");
-            nums[i] = input.nextInt();
+            nums[i] = input.nextDouble();
         }
 
-        int max=nums[0];
-        int min=nums[0];
+        double max=nums[0];
+        double min=nums[0];
 
 
         for (double n :
                 nums) {
 
-            max = (int)Math.max(max,n);
-            min = (int)Math.max(min,n);
+            max = Math.max(max,n);
+            min = Math.max(min,n);
 
         }
 

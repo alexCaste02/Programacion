@@ -14,16 +14,16 @@ public class E_2 {
 
         Scanner input = new Scanner(System.in);
 
-        int[] nums = new int[10];
-        int suma=0;
+        double[] nums = new double[10];
+        double suma=0;
 
 
         for (int i = 0; i < nums.length; i++) {
             System.out.println("Introduce el numero en la posicion "+(i+1)+": ");
-            nums[i] = input.nextInt();
+            nums[i] = input.nextDouble();
         }
 
-        for (int n : nums) {
+        for (double n : nums) {
             suma+=n;
         }
 
