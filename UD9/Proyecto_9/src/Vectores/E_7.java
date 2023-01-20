@@ -20,16 +20,13 @@ public class E_7 {
 
 
         int[] nums = new int[Math.abs(p - q) + 1];
-        int x = Math.min(p, q);
+
 
         for (int i = 0; i < nums.length; i++) {
-            nums[i] = x;
-            x++;
+            nums[i] = Math.min(p, q)+i;
         }
 
-        for (int n : nums)
-            System.out.println(n);
-
+        for (int n : nums) System.out.print(n+"  ");
 
     }
 }
