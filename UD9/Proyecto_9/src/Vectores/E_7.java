@@ -1,4 +1,3 @@
-
 /*
 7. Crea un programa que pida dos valores enteros P y Q, luego cree un array que
 contenga todos los valores desde P hasta Q, y lo muestre por pantalla.
@@ -6,7 +5,6 @@ contenga todos los valores desde P hasta Q, y lo muestre por pantalla.
 
 package Vectores;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class E_7 {
@@ -20,19 +18,18 @@ public class E_7 {
         System.out.println("Introduce un segundo valor (Q)");
         int q = input.nextInt();
 
-        int[] nums = new int[Math.abs(p-q)+1];
-        int x=Math.min(p,q);
+
+        int[] nums = new int[Math.abs(p - q) + 1];
+        int x = Math.min(p, q);
 
         for (int i = 0; i < nums.length; i++) {
-            nums[i]=x;
+            nums[i] = x;
             x++;
         }
 
-        for (int n :
-                nums) {
+        for (int n : nums)
             System.out.println(n);
-        }
 
-        
+
     }
 }
