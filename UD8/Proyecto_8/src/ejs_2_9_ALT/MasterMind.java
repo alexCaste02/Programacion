@@ -25,37 +25,23 @@ public class MasterMind {
         attemptsLeft = totalAttempts;
     }
 
-    public int getNumberOfDigits() {
-        return numberOfDigits;
-    }
-
-    public int getTotalAttempts() {
-        return totalAttempts;
-    }
 
     public String getCorrectNumber() {
         return correctNumber;
     }
-
     public void setEnteredNumber(String enteredNumber) {
         this.enteredNumber = enteredNumber;
     }
-
-    public String getEnteredNumber() {
-        return enteredNumber;
-    }
-
     public int getAttemptsLeft() {
         return attemptsLeft;
     }
-
     public int getCorrectlyPlacedDigits() {
         return correctlyPlacedDigits;
     }
-
     public int getIncorrectlyPlacedDigits() {
         return incorrectlyPlacedDigits;
     }
+
 
     public boolean isValidInput(String input) {
         if (input.length() != numberOfDigits) {
