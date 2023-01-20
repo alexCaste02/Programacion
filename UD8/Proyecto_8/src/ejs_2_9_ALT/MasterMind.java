@@ -44,9 +44,13 @@ public class MasterMind {
 
 
     public boolean isValidInput(String input) {
+
+        // logitud incorrecta
         if (input.length() != numberOfDigits) {
             return false;
         }
+
+        // repeticion
         for (int i = 0; i < numberOfDigits; i++) {
             for (int j = i+1; j < numberOfDigits; j++) {
                 if (input.charAt(i) == input.charAt(j)) {
@@ -54,6 +58,8 @@ public class MasterMind {
                 }
             }
         }
+
+        // TODO: 20/01/2023 -Probar por metodos
         return true;
     }
 
