@@ -1,4 +1,3 @@
-
 /*
 12. Crea un programa que cree un array de 10 enteros y luego muestre el siguiente
 menú con distintas opciones:
@@ -24,9 +23,7 @@ public class E_12 {
     public static void main(String[] args) {
 
         int[] array = new int[10];
-
         menu(array);
-
 
     }
 
@@ -34,10 +31,9 @@ public class E_12 {
 
         char resp;
         do {
-
             System.out.println("""
-                    
-                    
+                                        
+                                        
                     a. Mostrar valores.
                     b. Introducir valor.
                     c. Salir.
@@ -54,23 +50,21 @@ public class E_12 {
 
     }
 
-    public static void mostrarValores(int[] arr){
+    public static void mostrarValores(int[] arr) {
         System.out.print("Los valores actuales son: ");
-        for (int valor :
-                arr) {
-            System.out.print(valor+"  ");
+        for (int valor : arr) {
+            System.out.print(valor + "  ");
         }
     }
 
-    public static void introValor(int[] arr){
+    public static void introValor(int[] arr) {
         System.out.print("Introduzca el valor: ");
         int v = input.nextInt();
 
         System.out.print("Introduzca la posicion para ese valor: ");
         int p = input.nextInt();
 
-        arr[p-1]=v;
-
+        arr[p - 1] = v;
     }
 
 }
