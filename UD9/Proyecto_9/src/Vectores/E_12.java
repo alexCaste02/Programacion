@@ -25,6 +25,8 @@ public class E_12 {
         int[] array = new int[10];
         menu(array);
 
+
+
     }
 
     public static void menu(int[] arr) {
