@@ -4,7 +4,12 @@ public class UsefulFunctions {
 
     static Scanner input = new Scanner(System.in);
 
-    //valida si es un numero
+    /**
+     * Empieza a leer por teclado una linea de texto
+     * Bucle hasta que se introduzca un numero valido
+     *
+     * @return Int validado
+     */
     public static int leerInput() {
         while (true) {
             String inputLine = input.nextLine();
@@ -15,5 +20,6 @@ public class UsefulFunctions {
             System.out.println("El valor introducido no es valido, intentelo de nuevo");
         }
     }
+
 
 }
