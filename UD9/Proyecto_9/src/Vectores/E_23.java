@@ -29,28 +29,33 @@ public class E_23 {
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                System.out.println("Introduce el valor de indices "+i+","+j);
+                System.out.println("Introduce el valor de indices " + i + "," + j);
                 matrix[i][j] = readAndValidate();
             }
         }
 
-        int pos= 0;
-        int neg= 0;
-        int zero= 0;
+        int pos = 0;
+        int neg = 0;
+        int cero = 0;
 
         for (int[] ints : matrix) {
             for (int anInt : ints) {
 
-                if (anInt>0) {
+                if (anInt > 0) {
                     pos++;
-                } else-if (anInt<0) {
+                } else if (anInt < 0) {
                     neg++;
                 } else {
-                    zero++;
+                    cero++;
                 }
 
             }
         }
+
+        System.out.println("Valores positivos: " + pos);
+        System.out.println("Valores negativos: " + neg);
+        System.out.println("Valores 0: " + cero);
+
 
     }
 
