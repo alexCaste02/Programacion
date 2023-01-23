@@ -1,3 +1,5 @@
+package Vectores;
+
 /*
 
 14. Crea un programa que cree un array de enteros e introduzca la siguiente secuencia
@@ -6,7 +8,6 @@ la muestre por pantalla.
 
 */
 
-package Vectores;
 
 import java.util.Scanner;
 
