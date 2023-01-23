@@ -20,7 +20,7 @@ public class E_25 {
 
     public static void main(String[] args) {
 
-        System.out.println("");
+        System.out.println("Introduce el numero total de trabajadores");
         int n = (int) readAndValidate();
 
         Double[][] sueldos = new Double[2][n];
@@ -54,14 +54,16 @@ public class E_25 {
             suma=0;
             for (int trabajador = 0; trabajador < sueldos[0].length; trabajador++) {
 
-                if (sueldos[g][trabajador]==0)
-                    break;
+                if (sueldos[g][trabajador]!=null && sueldos[g][trabajador]!=0) {
+                    suma += sueldos[g][trabajador];
+                }
 
-                suma+=sueldos[g][trabajador];
             }
 
-            System.out.println(g==o?
-                    "Sueldo de hombres: ");
+            System.out.println(g==0?
+                    "Sueldo medio de hombres: "+suma/(trabajadorH):
+                    "Sueldo medio de mujeres: "+suma/(trabajadorM)
+            );
 
         }
 
