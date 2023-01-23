@@ -1,3 +1,5 @@
+package Vectores;
+
 /*
 
 14. Crea un programa que cree un array de enteros e introduzca la siguiente secuencia
@@ -6,18 +8,20 @@ la muestre por pantalla.
 
 */
 
-package Vectores;
 
-import java.util.Scanner;
 
 public class E_14 {
 
-    static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         // debemos contar 55 o programarlo?
-        int[] arrayEnteros = new int[55];
+        int t=0;
+        for (int i = 1; i <= 10; i++) {
+            t+=i;
+        }
+
+        int[] arrayEnteros = new int[t];
         int indice=0;
 
         for(int num=1;num<=10;num++){
@@ -27,6 +31,8 @@ public class E_14 {
             }
 
         }
+
+
 
         for (int valor : arrayEnteros) {
             System.out.print(valor+"  ");
