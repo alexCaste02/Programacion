@@ -10,11 +10,11 @@ public class UsefulFunctions {
      *
      * @return Int validado
      */
-    public static int leerInput() {
+    public static int readAndValidate() {
         while (true) {
             String inputLine = input.nextLine();
 
-            if (inputLine.matches("\\d+"))
+            if (inputLine.matches("-?\\d+"))
                 return Integer.parseInt(inputLine);
 
             System.out.println("El valor introducido no es valido, intentelo de nuevo");
