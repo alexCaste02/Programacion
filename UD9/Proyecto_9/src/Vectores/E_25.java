@@ -20,42 +20,50 @@ public class E_25 {
 
     public static void main(String[] args) {
 
-        double[][] notas = new double[4][5];
+        System.out.println("");
+        int n = (int) readAndValidate();
 
-        for (int alumno = 0; alumno < notas.length; alumno++) {
-            for (int asignatura = 0; asignatura < notas[0].length; asignatura++) {
-                System.out.println("Introduce la asignatura "+(asignatura+1)+" del alumno "+(alumno+1));
-                notas[alumno][asignatura] = readAndValidate();
+        Double[][] sueldos = new Double[2][n];
+
+        int gen;
+        int trabajadorH=0;
+        int trabajadorM=0;
+
+
+        for (int totalTrabajadores = 0; totalTrabajadores < sueldos[0].length; totalTrabajadores++) {
+
+            System.out.println("Introduce el genero del trabajador (0=hombre, 1=mujer)");
+            //FIXME: -validar diferente 0 o 1
+            gen = (int) readAndValidate();
+            System.out.println("Introduce el sueldo del trabajador");
+
+            if (gen==0) {
+                sueldos[gen][trabajadorH] = readAndValidate();
+                trabajadorH++;
+            } else {
+                sueldos[gen][trabajadorM] = readAndValidate();
+                trabajadorM++;
             }
-        }
 
-        double notaMax;
-        double notaMin;
+        }
 
         double suma;
 
-        for (int alumno = 0; alumno < notas.length; alumno++) {
-            notaMax = notas[alumno][0];
-            notaMin = notas[alumno][0];
-            suma = 0;
+        for (int g = 0; g < 2; g++) {
 
-            for (int asignatura = 0; asignatura < notas[0].length; asignatura++) {
-                notaMax = Math.max(notaMax,notas[alumno][asignatura]);
-                notaMin = Math.min(notaMin,notas[alumno][asignatura]);
-                suma+=notas[alumno][asignatura];
+            suma=0;
+            for (int trabajador = 0; trabajador < sueldos[0].length; trabajador++) {
+
+                if (sueldos[g][trabajador]==0)
+                    break;
+
+                suma+=sueldos[g][trabajador];
             }
 
-            System.out.printf("""
-                    
-                    Alumno %d
-                    Nota Maxima: %.2f
-                    Nota Minima: %.2f
-                    Nota Media: %.2f
-                    
-                    """,alumno+1,notaMin,notaMax,suma/5);
+            System.out.println(g==o?
+                    "Sueldo de hombres: ");
+
         }
-
-
 
     }
 
@@ -70,5 +78,6 @@ public class E_25 {
             System.out.println("El valor introducido no es valido, intentelo de nuevo");
         }
     }
+
 
 }
