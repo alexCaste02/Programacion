@@ -9,16 +9,19 @@ la muestre por pantalla.
 */
 
 
-import java.util.Scanner;
 
 public class E_14 {
 
-    static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         // debemos contar 55 o programarlo?
-        int[] arrayEnteros = new int[55];
+        int t=0;
+        for (int i = 1; i <= 10; i++) {
+            t+=i;
+        }
+
+        int[] arrayEnteros = new int[t];
         int indice=0;
 
         for(int num=1;num<=10;num++){
