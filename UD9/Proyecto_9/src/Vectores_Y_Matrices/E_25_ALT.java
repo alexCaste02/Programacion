@@ -33,6 +33,7 @@ public class E_25_ALT {
                 mujeres++;
                 sumaSalariosMujeres += sueldos[genero][i];
             }
+
         }
 
         System.out.println("Sueldo medio de hombres: " + sumaSalariosHombres / hombres);
