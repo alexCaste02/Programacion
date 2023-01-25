@@ -3,7 +3,7 @@
 contenga todos los valores desde P hasta Q, y lo muestre por pantalla.
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

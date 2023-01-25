@@ -6,7 +6,7 @@ arrays y le dirá al usuario si son iguales o no.
 
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Arrays;
 import java.util.Scanner;

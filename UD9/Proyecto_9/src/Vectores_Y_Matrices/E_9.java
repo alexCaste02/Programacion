@@ -5,7 +5,7 @@ enteros aleatorios entre 1 y 10 (utiliza 1 + Math.random()*10). Luego pedirá un
 y mostrará en qué posiciones del array aparece N.
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

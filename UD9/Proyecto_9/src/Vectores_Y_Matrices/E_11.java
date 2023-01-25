@@ -6,7 +6,7 @@ valores del primer array al segundo array en orden inverso, y mostrar ambos por
 pantalla.
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

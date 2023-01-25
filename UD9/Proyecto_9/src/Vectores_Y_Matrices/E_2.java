@@ -4,7 +4,7 @@
 array, y luego muestre la suma de todos los valores
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

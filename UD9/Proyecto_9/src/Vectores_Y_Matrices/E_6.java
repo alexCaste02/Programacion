@@ -4,7 +4,7 @@
 N, escriba M en todas sus posiciones y lo muestre por pantalla.
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Arrays;
 import java.util.Scanner;

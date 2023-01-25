@@ -3,7 +3,7 @@
 array, y luego lo recorra para averiguar el máximo y mínimo y mostrarlos por pantalla.
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

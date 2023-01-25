@@ -8,7 +8,7 @@ El programa solicitará al usuario V, I además de N (nº de valores a crear).
 
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

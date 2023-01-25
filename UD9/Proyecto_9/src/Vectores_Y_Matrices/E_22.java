@@ -6,7 +6,7 @@ pantalla
 
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 
 public class E_22 {

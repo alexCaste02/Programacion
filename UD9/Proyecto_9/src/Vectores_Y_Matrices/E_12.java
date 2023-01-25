@@ -12,7 +12,7 @@ indefinidamente hasta que el usuario elija la opción ‘c’ que terminará el 
 
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

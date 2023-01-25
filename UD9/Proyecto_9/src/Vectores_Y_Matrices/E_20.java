@@ -6,9 +6,8 @@ si N existe en el array, además de cuantas veces.
 
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 

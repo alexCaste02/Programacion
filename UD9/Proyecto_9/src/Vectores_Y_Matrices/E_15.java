@@ -6,7 +6,7 @@ pantalla.
 
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Arrays;
 import java.util.Scanner;

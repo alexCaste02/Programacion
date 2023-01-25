@@ -7,7 +7,7 @@ que cero, cuántos son menores que cero y cuántos son igual a cero.
 
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 
 import java.util.Scanner;

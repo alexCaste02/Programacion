@@ -5,7 +5,7 @@ utilizando Math.random(), y luego le pida al usuario un valor real R. Por últim
 mostrará cuántos valores del array son igual o superiores a R.
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

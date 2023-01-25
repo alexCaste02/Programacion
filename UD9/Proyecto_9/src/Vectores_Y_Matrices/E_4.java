@@ -3,7 +3,7 @@
 array y luego muestre por separado la suma de todos los valores positivos y negativos.
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

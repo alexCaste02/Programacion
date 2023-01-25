@@ -4,7 +4,7 @@ array y luego lo recorra para calcular y mostrar la media: (suma de valores) / n
 valores.
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

@@ -5,7 +5,7 @@ entre 0 y 9. Luego ordena los valores del array y los mostrará por pantalla.
 
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Arrays;
 import java.util.Scanner;

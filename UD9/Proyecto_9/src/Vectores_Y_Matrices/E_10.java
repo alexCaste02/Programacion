@@ -6,7 +6,7 @@ teclado. Luego mostrará la altura media, máxima y mínima así como cuántas p
 miden por encima y por debajo de la media.
 */
 
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 

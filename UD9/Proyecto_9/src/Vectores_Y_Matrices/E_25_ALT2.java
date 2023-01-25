@@ -1,4 +1,4 @@
-package Vectores;
+package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 
