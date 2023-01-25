@@ -21,9 +21,9 @@ public class E_25 {
     public static void main(String[] args) {
 
         System.out.println("Introduce el numero total de trabajadores");
-        int n = (int) readAndValidate();
+        int nTrabajadores = (int) readAndValidate();
 
-        Double[][] sueldos = new Double[2][n];
+        Double[][] sueldos = new Double[2][nTrabajadores];
 
         int genero;
         int hombres=0;

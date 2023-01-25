@@ -8,44 +8,44 @@ public class E_25_ALT2 {
 
     public static void main(String[] args) {
 
-        System.out.println("Enter the number of workers: ");
-        int nWorkers = input.nextInt();
+        System.out.println("Introduce el numero total de trabajadores");
+        int nTrabajadores = input.nextInt();
 
-        double[][] workers = new double[nWorkers][2];
+        double[][] trabajadoresArray = new double[nTrabajadores][2];
 
-        for (int i = 0; i < nWorkers; i++) {
-            System.out.println("Enter the worker's gender (0 for male, 1 for female): ");
-            workers[i][0] = input.nextInt();
-            System.out.println("Enter the worker's salary: ");
-            workers[i][1] = input.nextDouble();
+        for (int i = 0; i < nTrabajadores; i++) {
+            System.out.println("Introduce el genero del trabajador (0=hombre, 1=mujer)");
+            trabajadoresArray[i][0] = input.nextInt();
+            System.out.println("Introduce el sueldo del trabajador");
+            trabajadoresArray[i][1] = input.nextDouble();
         }
 
-        double maleSalarySum = 0;
-        double femaleSalarySum = 0;
-        int maleWorkers = 0;
-        int femaleWorkers = 0;
+        double sumaSalarioH = 0;
+        double sumaSalarioM = 0;
+        int trabajadoresH = 0;
+        int trabajadoresM = 0;
 
-        for (int i = 0; i < nWorkers; i++) {
-            if (workers[i][0] == 0) {
-                maleSalarySum += workers[i][1];
-                maleWorkers++;
+        for (int i = 0; i < nTrabajadores; i++) {
+            if (trabajadoresArray[i][0] == 0) {
+                sumaSalarioH += trabajadoresArray[i][1];
+                trabajadoresH++;
             } else {
-                femaleSalarySum += workers[i][1];
-                femaleWorkers++;
+                sumaSalarioM += trabajadoresArray[i][1];
+                trabajadoresM++;
             }
         }
 
-        double maleAverage = maleSalarySum / maleWorkers;
-        double femaleAverage = femaleSalarySum / femaleWorkers;
-        System.out.println("Average salary for male workers: " + maleAverage);
-        System.out.println("Average salary for female workers: " + femaleAverage);
+        double mediaH = sumaSalarioH / trabajadoresH;
+        double mediaM = sumaSalarioM / trabajadoresM;
+        System.out.println("Sueldo medio de hombres: " + mediaH);
+        System.out.println("Sueldo medio de mujeres: " + mediaM);
 
-        if (maleAverage > femaleAverage) {
-            System.out.println("There is a wage gap, with male workers earning more on average than female workers.");
-        } else if (femaleAverage > maleAverage) {
-            System.out.println("There is a wage gap, with female workers earning more on average than male workers.");
+        if (mediaH > mediaM) {
+            System.out.println("hombres ganan mas");
+        } else if (mediaM > mediaH) {
+            System.out.println("mujeres ganan mas");
         } else {
-            System.out.println("There is no wage gap, male and female workers earn the same average salary.");
+            System.out.println("ganan lo mismo");
         }
     }
 }
