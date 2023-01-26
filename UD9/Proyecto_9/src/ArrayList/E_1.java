@@ -17,6 +17,8 @@ e) Ordenar la lista
 package ArrayList;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class E_1 {
@@ -27,36 +29,13 @@ public class E_1 {
 
         ArrayList<Object> alturaAlumnos = new ArrayList<>();
 
-        menu(alturaAlumnos);
-
+        while (menu(alturaAlumnos));
 
     }
 
-    public static char readAndValidateOption(){
-        while (true){
-            String inputLine = input.nextLine();
-            if (inputLine.matches("[a-e]"))
-                return inputLine.charAt(0);
-
-            System.out.println("El caracter introducido no es valido, vuelve a intentarlo");
-        }
-    }
-
-    public static double readAndValidateAltura(){
-        while (true){
-            String inputLine = input.nextLine();
-            if (inputLine.matches("[0-2]([.]\\d+)")
-                    && Double.parseDouble(inputLine)>=0.5
-                    && Double.parseDouble(inputLine)<=0.5) {
-                return Double.parseDouble(inputLine);
-            }
-
-            System.out.println("La altura introducida no es valida, vuelve a intentarlo");
-        }
-    }
 
 
-    public static void menu(ArrayList<Object> list){
+    public static boolean menu(ArrayList<Object> list){
         System.out.println("""
                 Elige una opcion:
                 
@@ -68,28 +47,109 @@ public class E_1 {
                 posiciones en las que se encuentre dicha altura. Devuelve la cantidad de
                 eliminaciones.
                 e) Ordenar la lista
+                
+                x) Salir
 
                 """);
-        switch (readAndValidateOption()){
-            case 'a':
-                System.out.println("Introduce la altura del alumno");
-                list.add(readAndValidateAltura());
-                break;
-            case 'b':
-                System.out.println(list);
-                break;
-            case 'c':
-                System.out.println("Introduce la altura del alumno");
 
-                break;
-            case 'd':
-                break;
-            case 'e':
-                break;
+        switch (readAndValidateOption()) {
+
+            case 'a' -> addAltura(list);
+
+            case 'b' -> showAlturas(list);
+
+            case 'c' -> removePosAlturas(list);
+
+
+
+            case 'd'-> removeValueAlturas();
+
+
+
+            case 'e'-> sortAlturas();
+
+            case 'x'-> exit();
+
+
+
 
         }
 
+        return true;
+
     }
+
+    public static char readAndValidateOption(){
+        while (true){
+            String inputLine = input.nextLine();
+            if (inputLine.matches("[a-e] | x"))
+                return inputLine.charAt(0);
+
+            System.out.println("El caracter introducido no es una opcion valida, vuelve a intentarlo");
+        }
+    }
+
+    public static double readAndValidateAltura(){
+
+        while (true){
+            String inputLine = input.nextLine();
+            if (inputLine.matches("[0-2]([.]\\d+)")
+                    && Double.parseDouble(inputLine)>=0.5
+                    && Double.parseDouble(inputLine)<=0.5) {
+                return Double.parseDouble(inputLine);
+            } else{
+                System.out.println("La altura introducida no es valida, vuelve a intentarlo");
+            }
+        }
+    }
+
+    public static void addAltura(ArrayList<Object> list){
+        System.out.println("Introduce la altura del alumno a añadir");
+        list.add(readAndValidateAltura());
+
+    }
+
+    public static void showAlturas(ArrayList<Object> list){
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println("Altura " + (i + 1) + ": " + list.get(i));
+        }
+    }
+
+    public static void removePosAlturas(ArrayList<Object> list){
+        System.out.println("Introduce la posicion que quieres eliminar");
+
+        boolean valido = false;
+        while (!valido){
+            String inputLine = input.nextLine();
+            if (inputLine.matches("\\d")
+                    && Integer.parseInt(inputLine) <= list.size()) {
+                list.remove( Integer.parseInt(inputLine) );
+                valido=true;
+                System.out.println("Posicion "+Integer.parseInt(inputLine)+" borrada correctamente");
+            } else{
+                System.out.println("La posicion introducida no es valida, vuelve a intentarlo");
+            }
+        }
+
+    }
+
+    public static void removeValueAlturas(ArrayList<Object> list){
+        System.out.println("Introduce el valor que quieres eliminar");
+        Object AlturaToRemove = readAndValidateAltura();
+        while (list.remove(AlturaToRemove));
+    }
+
+    public static void sortAlturas(ArrayList<Object> list){
+        Collections.sort(list);
+    }
+
+
+
+
+
+
+
+
 
 
 
