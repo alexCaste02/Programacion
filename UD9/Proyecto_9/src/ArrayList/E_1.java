@@ -16,10 +16,7 @@ e) Ordenar la lista
 
 package ArrayList;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class E_1 {
 
@@ -137,10 +134,11 @@ public class E_1 {
         System.out.println("Introduce el valor que quieres eliminar");
         Object AlturaToRemove = readAndValidateAltura();
         while (list.remove(AlturaToRemove));
+        System.out.println("Todas las instancias de "+AlturaToRemove+" borradas correctamentes");
     }
 
     public static void sortAlturas(ArrayList<Object> list){
-        Collections.sort(list);
+        Collections.sort((List) list);
     }
 
 
