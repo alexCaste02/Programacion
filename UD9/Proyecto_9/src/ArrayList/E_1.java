@@ -38,11 +38,8 @@ public class E_1 {
                 
                 a) Añadir altura.
                 b) Mostrar lista actual con el número de posición.
-                c) Eliminar por posición. Se le pasa como parámetro una posición y elimina la altura
-                en dicha posición.
-                d) Eliminar por valor. Se le pasa como parámetro una altura y elimina todas las
-                posiciones en las que se encuentre dicha altura. Devuelve la cantidad de
-                eliminaciones.
+                c) Eliminar por posición. Se le pasa como parámetro una posición y elimina la altura en dicha posición.
+                d) Eliminar por valor. Se le pasa como parámetro una altura y elimina todas las posiciones en las que se encuentre dicha altura. Devuelve la cantidad de eliminaciones.
                 e) Ordenar la lista
                 
                 x) Salir
@@ -57,18 +54,12 @@ public class E_1 {
 
             case 'c' -> removePosAlturas(list);
 
+            case 'd'-> removeValueAlturas(list);
+
+            case 'e'-> sortAlturas(list);
 
 
-            case 'd'-> removeValueAlturas();
-
-
-
-            case 'e'-> sortAlturas();
-
-            case 'x'-> exit();
-
-
-
+            case 'x' -> { return exit(); }
 
         }
 
@@ -79,7 +70,7 @@ public class E_1 {
     public static char readAndValidateOption(){
         while (true){
             String inputLine = input.nextLine();
-            if (inputLine.matches("[a-e] | x"))
+            if (inputLine.matches("[a-e]|x"))
                 return inputLine.charAt(0);
 
             System.out.println("El caracter introducido no es una opcion valida, vuelve a intentarlo");
@@ -92,7 +83,7 @@ public class E_1 {
             String inputLine = input.nextLine();
             if (inputLine.matches("[0-2]([.]\\d+)")
                     && Double.parseDouble(inputLine)>=0.5
-                    && Double.parseDouble(inputLine)<=0.5) {
+                    && Double.parseDouble(inputLine)<=2.5) {
                 return Double.parseDouble(inputLine);
             } else{
                 System.out.println("La altura introducida no es valida, vuelve a intentarlo");
@@ -103,6 +94,7 @@ public class E_1 {
     public static void addAltura(ArrayList<Object> list){
         System.out.println("Introduce la altura del alumno a añadir");
         list.add(readAndValidateAltura());
+        System.out.println("Altura añadida!");
 
     }
 
@@ -120,9 +112,9 @@ public class E_1 {
             String inputLine = input.nextLine();
             if (inputLine.matches("\\d")
                     && Integer.parseInt(inputLine) <= list.size()) {
-                list.remove( Integer.parseInt(inputLine) );
+                list.remove( Integer.parseInt(inputLine)-1 );
                 valido=true;
-                System.out.println("Posicion "+Integer.parseInt(inputLine)+" borrada correctamente");
+                System.out.println("Posicion "+(Integer.parseInt(inputLine)-1)+" borrada correctamente");
             } else{
                 System.out.println("La posicion introducida no es valida, vuelve a intentarlo");
             }
@@ -134,11 +126,18 @@ public class E_1 {
         System.out.println("Introduce el valor que quieres eliminar");
         Object AlturaToRemove = readAndValidateAltura();
         while (list.remove(AlturaToRemove));
-        System.out.println("Todas las instancias de "+AlturaToRemove+" borradas correctamentes");
+        System.out.println("Todas las instancias de "+AlturaToRemove+" borradas correctamente");
     }
 
     public static void sortAlturas(ArrayList<Object> list){
+        System.out.println("Ordenando lista...");
         Collections.sort((List) list);
+        System.out.println("Lista ordenada con exito!");
+    }
+
+    public static boolean exit(){
+        System.out.println("Saliendo...");
+        return false;
     }
 
 
