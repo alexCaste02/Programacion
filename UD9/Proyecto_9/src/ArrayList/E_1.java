@@ -52,7 +52,7 @@ public class E_1 {
 
             case 'b' -> showAlturas(list);
 
-            case 'c' -> removePosAlturas(list);
+            case 'c' -> removePosAlturas(list,0);
 
             case 'd'-> removeValueAlturas(list);
 
@@ -104,7 +104,8 @@ public class E_1 {
         }
     }
 
-    public static void removePosAlturas(ArrayList<Object> list){
+    //FIXME: -USAR POS COMO PARAM
+    public static void removePosAlturas(ArrayList<Object> list, int pos){
         System.out.println("Introduce la posicion que quieres eliminar");
 
         boolean valido = false;
@@ -125,8 +126,11 @@ public class E_1 {
     public static void removeValueAlturas(ArrayList<Object> list){
         System.out.println("Introduce el valor que quieres eliminar");
         Object AlturaToRemove = readAndValidateAltura();
-        while (list.remove(AlturaToRemove));
-        System.out.println("Todas las instancias de "+AlturaToRemove+" borradas correctamente");
+        int count=0;
+        while (list.remove(AlturaToRemove)){
+            count++;
+        }
+        System.out.println(count+" instancias de "+AlturaToRemove+" borradas correctamente");
     }
 
     public static void sortAlturas(ArrayList<Object> list){

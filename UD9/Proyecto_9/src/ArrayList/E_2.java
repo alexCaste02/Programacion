@@ -37,7 +37,7 @@ public class E_2 {
     public static int readAndValidate(){
         while (true){
             String inputLine = input.nextLine();
-            if (inputLine.matches("\\d+"))
+            if (inputLine.matches("-?\\d+"))
                 return Integer.parseInt(inputLine);
 
             System.out.println("Datos introducidos no validos, intentelo de nuevo.");
