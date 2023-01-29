@@ -4,7 +4,7 @@ Realizar un programa que tenga una función a la que se le pasa un entero y devu
 ArrayList con todos sus divisores.
 */
 
-package ArrayList;
+package ArrayList.E_2;
 
 import java.util.ArrayList;
 import java.util.Collections;
