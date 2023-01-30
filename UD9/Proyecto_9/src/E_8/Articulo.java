@@ -89,6 +89,7 @@ public class Articulo {
             System.err.println("Error de instanciacion. Todos los atributos asignados como nulos/0");
         }
 
+
     }
 
     /*G&S*/
@@ -138,8 +139,9 @@ public class Articulo {
         return stock>=0;
     }
 
+
     /*FUNCTIONAL METHODS*/
-    public boolean venderACliente(int cantidad){
+    public boolean vender(int cantidad){
         if(cantidad>0 && stock-cantidad>=0){
             stock-=cantidad;
             return true;
@@ -148,7 +150,7 @@ public class Articulo {
         return false;
     }
 
-    public boolean comprarAProveedor(int cantidad){
+    public boolean comprar(int cantidad){
         if(cantidad>0){
             stock+=cantidad;
             return true;
@@ -159,6 +161,14 @@ public class Articulo {
 
     public String infoArticulo(){
         return String.format("ID: %d, Nombre: %s, Precio de compra al proveedor: %.2f, Precio de venta al cliente: %.2f, IVA: %d, Stock: %d",identificador,nombre,precioCompraProveedor,precioVenta,IVA,stock);
+    }
+
+    public static Articulo findArticulo(int idArticulo){
+        for (Articulo listaArticulo : listaArticulos) {
+            if (listaArticulo.identificador == idArticulo)
+                return listaArticulo;
+        }
+        return null;
     }
 
 }

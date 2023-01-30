@@ -24,5 +24,26 @@ public class ValidateInput {
         }
     }
 
+    public static int readAndValidateOption(){
+        while(true){
+            String inputLine = input.nextLine();
+            if (inputLine.matches("[1-5]"))
+                return Integer.parseInt(inputLine);
+            System.out.println("No ha introducido una opcion valida. Vuelve a intentarlo.");
+        }
+    }
+
+    public static boolean readAndValidateYN(){
+        while(true){
+            String inputLine = input.nextLine();
+            if (inputLine.matches("[Yy]"))
+                return true;
+            else if(inputLine.matches("[Nn]")){
+                return false;
+            }
+            System.out.println("No ha introducido una opcion valida. Vuelve a intentarlo.");
+        }
+    }
+
 
 }
