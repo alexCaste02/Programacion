@@ -1,4 +1,4 @@
-package ArrayList.E_4;
+package E_4;
 
 public class Validate {
 }

@@ -16,7 +16,7 @@ A continuación, en el programa principal haz lo siguiente:
 8. Elimina todos los valores del ArrayList.
 */
 
-package ArrayList.E_3;
+package E_3;
 
 import java.util.ArrayList;
 import java.util.Iterator;

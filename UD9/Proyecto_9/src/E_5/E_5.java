@@ -9,7 +9,7 @@ número que más ha salido y el que menos ha salido
  */
 
 
-package ArrayList.E_5;
+package E_5;
 
 import java.util.ArrayList;
 import java.util.Collections;

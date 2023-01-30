@@ -1,4 +1,4 @@
-package ArrayList.E_3;
+package E_3;
 
 public class Productos {
 

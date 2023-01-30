@@ -14,7 +14,7 @@ eliminaciones.
 e) Ordenar la lista
 */
 
-package ArrayList.E_1;
+package E_1;
 
 import java.util.*;
 
