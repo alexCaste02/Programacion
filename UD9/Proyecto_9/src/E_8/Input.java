@@ -2,7 +2,7 @@ package E_8;
 
 import java.util.Scanner;
 
-public class ValidateInput {
+public class Input {
 
     static Scanner input = new Scanner(System.in);
 
@@ -27,7 +27,7 @@ public class ValidateInput {
     public static int readAndValidateOption(){
         while(true){
             String inputLine = input.nextLine();
-            if (inputLine.matches("[1-5]"))
+            if (inputLine.matches("\\d"))
                 return Integer.parseInt(inputLine);
             System.out.println("No ha introducido una opcion valida. Vuelve a intentarlo.");
         }

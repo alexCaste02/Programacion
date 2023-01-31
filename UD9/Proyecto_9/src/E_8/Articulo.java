@@ -81,14 +81,14 @@ public class Articulo {
     public Articulo(String nombre, double precioVenta, double precioCompraProveedor, int stock) {
 
         this.nombre = nombre;
-        if (validatePrecioVenta(precioVenta) && validatePrecioCompraProveedor(precioCompraProveedor) && validateStock(stock)) {
-            this.precioVenta = precioVenta;
-            this.precioCompraProveedor = precioCompraProveedor;
-            this.stock = stock;
+        this.precioVenta = precioVenta;
+        this.precioCompraProveedor = precioCompraProveedor;
+        this.stock = stock;
+        if (validateAll(precioVenta,precioCompraProveedor,stock)) {
+            listaArticulos.add(this);
         } else {
-            System.err.println("Error de instanciacion. Todos los atributos asignados como nulos/0");
+            System.err.println("Error de instanciacion. Articulo no ha sido guardado");
         }
-
 
     }
 
@@ -128,17 +128,17 @@ public class Articulo {
 
     /*INTERNAL VALIDATIONS*/
     public boolean validatePrecioCompraProveedor(double precio){
-        return precio > 0;
+        return precio > 0 && precio < precioVenta;
     }
-
     public boolean validatePrecioVenta(double precio){
         return precio > 0 && precio > precioCompraProveedor;
     }
-
-    public boolean validateStock(int stock){
+    public boolean validateStock(int stock) {
         return stock>=0;
     }
-
+    public boolean validateAll(double precioVenta, double precioCompra, int stock) {
+        return precioCompra > 0 && precioVenta > precioCompra && stock >= 0;
+    }
 
     /*FUNCTIONAL METHODS*/
     public boolean vender(int cantidad){
