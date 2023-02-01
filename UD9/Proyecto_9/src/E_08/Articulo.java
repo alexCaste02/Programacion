@@ -127,6 +127,7 @@ public class Articulo {
     }
 
     /*INTERNAL VALIDATIONS*/
+    /*
     public boolean validatePrecioCompraProveedor(double precio){
         return precio > 0 && precio < precioVenta;
     }
@@ -136,6 +137,7 @@ public class Articulo {
     public boolean validateStock(int stock) {
         return stock>=0;
     }
+     */
     public boolean validateAll(double precioVenta, double precioCompra, int stock) {
         return precioCompra > 0 && precioVenta > precioCompra && stock >= 0;
     }
@@ -163,7 +165,7 @@ public class Articulo {
         return String.format("ID: %d, Nombre: %s, Precio de compra al proveedor: %.2f, Precio de venta al cliente: %.2f, IVA: %d, Stock: %d",identificador,nombre,precioCompraProveedor,precioVenta,IVA,stock);
     }
 
-    public static Articulo findArticulo(int idArticulo){
+    public static Articulo findArticuloByID(int idArticulo){
         for (Articulo listaArticulo : listaArticulos) {
             if (listaArticulo.identificador == idArticulo)
                 return listaArticulo;

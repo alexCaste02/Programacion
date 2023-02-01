@@ -49,16 +49,16 @@ public class Tienda {
     }
 
     public static void ventaAlCiente(){
+        System.out.println("Introduce el nombre del cliente");
+        String cliente = input.nextLine();
 
         System.out.println("Introduce el identificador del articulo");
-        Articulo articulo = Articulo.findArticulo(Input.readAndValidateInt());
+        Articulo articulo = Articulo.findArticuloByID(Input.readAndValidateInt());
 
         if(articulo!=null){
 
             System.out.println("Introduce las unidades que desea vender");
             int uds = Input.readAndValidateInt();
-            System.out.println("Introduce el nombre del cliente");
-            String cliente = input.nextLine();
 
             System.out.printf("""
                     Venta de %d unidades de %s.
@@ -70,18 +70,18 @@ public class Tienda {
             if (Input.readAndValidateYN() && articulo.vender(uds)){
                 System.out.println("=== Venta realizada ===");
             } else {
-                System.out.println("=== Venta cancelada ===");
+                System.err.println("=== Venta cancelada ===");
             }
 
         } else {
-            System.out.println("No existe un articulo con ese identificador");
+            System.err.println("No existe un articulo con ese identificador");
         }
     }
 
     public static void compraAlProveedor(){
         System.out.println("=======================");
         System.out.println("Introduce el identificador del articulo");
-        Articulo articulo = Articulo.findArticulo(Input.readAndValidateInt());
+        Articulo articulo = Articulo.findArticuloByID(Input.readAndValidateInt());
 
         if(articulo!=null){
 
@@ -149,7 +149,7 @@ public class Tienda {
 
     public static void editArticulo(){
         System.out.println("Introduce el identificador del articulo a editar");
-        Articulo articulo = Articulo.findArticulo(Input.readAndValidateInt());
+        Articulo articulo = Articulo.findArticuloByID(Input.readAndValidateInt());
 
         if(articulo!=null){
 
@@ -176,7 +176,7 @@ public class Tienda {
 
     public static void removeArticulo(){
         System.out.println("Introduce el identificador del articulo a editar");
-        Articulo articulo = Articulo.findArticulo(Input.readAndValidateInt());
+        Articulo articulo = Articulo.findArticuloByID(Input.readAndValidateInt());
 
         if(articulo!=null){
             Articulo.getListaArticulos().remove(articulo);
