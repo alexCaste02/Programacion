@@ -1,6 +1,4 @@
-package E_4;
-
-import java.util.ArrayList;
+package E_04;
 
 public class LineaFactura {
     private String descripcion;

@@ -14,7 +14,7 @@ eliminaciones.
 e) Ordenar la lista
 */
 
-package E_1;
+package E_01;
 
 import java.util.*;
 

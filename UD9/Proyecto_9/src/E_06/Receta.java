@@ -1,4 +1,4 @@
-package E_6;
+package E_06;
 
 public class Receta {
     private String nombre, elaboracion;

@@ -8,9 +8,8 @@ ingredientes lleva la receta. Una vez introducidos los valores mostrar la receta
  */
 
 
-package E_6;
+package E_06;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MainE_6 {

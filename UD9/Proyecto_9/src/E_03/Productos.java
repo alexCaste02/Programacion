@@ -1,4 +1,4 @@
-package E_3;
+package E_03;
 
 public class Productos {
 

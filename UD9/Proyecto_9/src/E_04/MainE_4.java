@@ -28,7 +28,7 @@ LíneaFactura.
 
 */
 
-package E_4;
+package E_04;
 
 
 import java.util.ArrayList;
