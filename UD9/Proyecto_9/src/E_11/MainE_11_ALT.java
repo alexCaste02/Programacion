@@ -9,7 +9,7 @@ public class MainE_11_ALT {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                matriz[i][j] = ThreadLocalRandom.current().nextInt(0,1+1);
+                matriz[i][j] = ThreadLocalRandom.current().nextInt(0, 1 + 1);
             }
         }
 
@@ -44,7 +44,7 @@ public class MainE_11_ALT {
             }
         }
 
-        // Diagonal izquierda
+        // Diagonal 1
         if (matriz[0][0] == 0 && matriz[1][1] == 0 && matriz[2][2] == 0) {
             ceroGana++;
         }
@@ -52,7 +52,7 @@ public class MainE_11_ALT {
             unoGana++;
         }
 
-        // Diagonal derecha
+        // Diagonal 2
         if (matriz[0][2] == 0 && matriz[1][1] == 0 && matriz[2][0] == 0) {
             ceroGana++;
         }
@@ -67,6 +67,8 @@ public class MainE_11_ALT {
             System.out.println("Jugador 0 gana");
         } else if (unoGana > ceroGana) {
             System.out.println("Jugador 1 gana");
+        } else {
+            System.out.println("Empate");
         }
     }
 }

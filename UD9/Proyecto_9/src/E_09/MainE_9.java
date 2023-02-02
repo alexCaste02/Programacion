@@ -8,8 +8,8 @@ public class MainE_9 {
 
     public static void main(String[] args) {
 
-        int[][] tablero={{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,3},{0,2,2,0,3},{2,2,1,1,3},{0,3,2,2,1},{1,3,2,2,1},{3,3,1,2,1}};
-        ArrayList <int[]> lineas = lineas(tablero);
+        int[][] tablero = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 3}, {0, 2, 2, 0, 3}, {2, 2, 1, 1, 3}, {0, 3, 2, 2, 1}, {1, 3, 2, 2, 1}, {3, 3, 1, 2, 1}};
+        ArrayList<int[]> lineas = lineas(tablero);
 
         for (int[] linea : lineas) {
             System.out.println(Arrays.toString(linea));
@@ -17,7 +17,7 @@ public class MainE_9 {
 
     }
 
-    public static ArrayList<int[]> lineas(int[][] tablero){
+    public static ArrayList<int[]> lineas(int[][] tablero) {
         ArrayList<int[]> lineasCompletas = new ArrayList<>();
 
         boolean eslineaCompleta;
@@ -25,13 +25,13 @@ public class MainE_9 {
             eslineaCompleta = true;
 
             for (int casilla : linea) {
-                if (casilla==0) {
+                if (casilla == 0) {
                     eslineaCompleta = false;
                     break;
                 }
             }
 
-            if (eslineaCompleta){
+            if (eslineaCompleta) {
                 lineasCompletas.add(linea);
             }
         }
