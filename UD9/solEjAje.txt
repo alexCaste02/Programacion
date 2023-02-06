@@ -1,0 +1,150 @@
+package ejercicioAjedrez;
+ 
+import java.awt.Point;
+import java.util.Objects;
+ 
+public abstract class Pieza2 implements JuegoTablero{
+ 
+	enum ColorPieza {BLANCA,NEGRA}
+ 
+	protected ColorPieza color;
+	protected Point posicion;
+	protected boolean comida=false;
+ 
+	public ColorPieza getColor() {
+		return color;
+	}
+	public void setColor(ColorPieza color) {
+		this.color = color;
+	}
+	public Point getPosicion() {
+		return posicion;
+	}
+	public void setPosicion(Point posicion) {
+		this.posicion = posicion;
+	}
+	public boolean isComida() {
+		return comida;
+	}
+	public void setComida(boolean comida) {
+		this.comida = comida;
+	}
+ 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pieza2 other = (Pieza2) obj;
+		return color == other.color && this.posicion.equals(other.posicion);
+	}
+ 
+	protected static boolean comprobarPosicion(int p) {
+		return p>=0 && p<=7;
+	}
+ 
+ 
+	public Pieza2(ColorPieza color,int x,int y) {
+		super();
+		this.color = color;
+		this.posicion=new Point(x,y);
+		if (!comprobarPosicion(x) || !comprobarPosicion(y)) {
+			this.comida=true;
+		}
+	}
+ 
+	public Pieza2() {
+		this(ColorPieza.BLANCA,10,10);
+	}
+ 
+	public Pieza2(Pieza2 p) {
+		this(p.color,p.posicion.x,p.posicion.y);
+	}
+ 
+	public abstract void mover(int x, int y);
+ 
+ 
+	@Override
+	public char indiceAPosicion(int indice) {
+		return "abcdefgh".charAt(indice);
+	}	
+	@Override
+	public int indiceAPosicionN(int indice) {
+		return indice+1;
+	}
+	@Override
+	public int posicionAIndice(char posicion) {
+		return "abcdefgh".indexOf(posicion);
+	}
+	@Override
+	public int posicionAIndice(int posicion) {
+		return --posicion;
+	}
+ 
+	@Override
+	public String toString() {
+		if (comida)
+			return this.getClass().getSimpleName()+" "+color+" COMIDA";
+		else
+			return this.getClass().getSimpleName()+" "+color+", posicion:["+indiceAPosicion(posicion.x)+","+indiceAPosicionN(posicion.y)+"]";
+	}	
+}
+ 
+class Torre2 extends Pieza2{
+ 
+	public Torre2(ColorPieza color, int x, int y) {
+		super(color, x, y);
+	}
+ 
+	@Override
+	public void mover(int x, int y) {
+		if (Pieza.comprobarPosicion(x)&&Pieza.comprobarPosicion(y)&&(x==this.posicion.x || y==this.posicion.y))
+			this.posicion.move(x, y);
+		else
+			System.err.println("El movimiento de la torre no es correcto");
+	}
+ 
+ 
+}
+ 
+class Peon2 extends Pieza2{
+ 
+	public Peon2(ColorPieza color, int x, int y) {
+		super(color, x, y);
+	}
+ 
+	@Override
+	public void mover(int x, int y) {
+		boolean movimientoMal=false;
+		if (Pieza.comprobarPosicion(x) && Pieza.comprobarPosicion(y)) {
+			if (color == ColorPieza.BLANCA) {
+				// Si es la primera fila puede moverse 1 o 2 en la misma columna x
+				if (this.posicion.x == x && this.posicion.y == 1 && y == 3)
+					posicion.move(x, y);
+				else if (this.posicion.x == x && this.posicion.y == (y - 1))
+					posicion.move(x, y);
+				else if ((this.posicion.x == x - 1 || this.posicion.x == x + 1) && this.posicion.y == y - 1)
+					posicion.move(x, y);
+				else
+					movimientoMal=true;
+			} else {
+				// Si es la primera fila puede moverse 1 o 2 en la misma columna x
+				if (this.posicion.x == x && this.posicion.y == 6 && y == 4)
+					posicion.move(x, y);
+				else if (this.posicion.x == x && this.posicion.y == (y + 1))
+					posicion.move(x, y);
+				else if ((this.posicion.x == x + 1 || this.posicion.x == x - 1) && this.posicion.y == y + 1)
+					posicion.move(x, y);
+				else
+					movimientoMal=true;
+			}
+		}
+		else movimientoMal=true;
+		if (movimientoMal)
+			System.err.println("El movimiento del peon es erroneo");
+	}	
+}
+ 
