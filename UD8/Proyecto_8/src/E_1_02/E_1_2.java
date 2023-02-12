@@ -4,11 +4,11 @@
 array, y luego muestre la suma de todos los valores
 */
 
-package Vectores_Y_Matrices;
+package E_1_02;
 
 import java.util.Scanner;
 
-public class E_2 {
+public class E_1_2 {
     public static void main(String[] args) {
 
 
