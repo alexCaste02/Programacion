@@ -1,4 +1,4 @@
-package ex_Zoo;
+package ex_Guiado;
 
 public enum TipoAgua {
     SALADA, DULCE
