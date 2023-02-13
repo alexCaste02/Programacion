@@ -65,7 +65,7 @@ public class Main {
                 """);
 
         switch (optionSelect(input.nextLine(),6)){
-            case 1 -> {}
+            case 1 -> {addPlaneta();}
         }
     }
 
