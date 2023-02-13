@@ -1,8 +1,6 @@
-package E_2_08;
-
 import java.util.Scanner;
 
-public class Input {
+public class InputReaderTemp {
 
     static Scanner input = new Scanner(System.in);
 

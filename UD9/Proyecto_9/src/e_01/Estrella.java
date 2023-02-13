@@ -7,10 +7,22 @@ import java.util.ArrayList;
 
 public class Estrella extends Astros {
 
-    protected static final Astros SOL = new Estrella("Sol", 1.0,Math.pow(1.9891*10,30), 1391016.0, 0.0,0.0,null, new ArrayList<>());
+    //sistema solar
 
-    public Estrella(String nombre, Double masaKG, Double diametroKM, Double periodoRotacionDias, Double periodoTranslacionDias, Double distanciaMediaOrbitaKM, Astros cuerpoOrbitado, ArrayList<Astros> esOrbitadoPor) {
-        super(nombre, masaKG, diametroKM, periodoRotacionDias, periodoTranslacionDias, distanciaMediaOrbitaKM, cuerpoOrbitado, esOrbitadoPor);
+    protected static final Astros SOL = new Estrella(
+            "Sol",
+            Math.pow(1.9891*10,30),
+            1391016.0,
+            0.0,
+            0.0,
+            null,
+            new ArrayList<>(),
+            true
+    );
+
+    public Estrella(String nombre, Double masaKG, Double diametroKM, Double periodoRotacionDias, Double periodoTraslacionDias, Astros cuerpoOrbitado, ArrayList<Astros> orbitadoPor, boolean Orbitable) {
+        super(nombre, masaKG, diametroKM, periodoRotacionDias, periodoTraslacionDias, cuerpoOrbitado, orbitadoPor, Orbitable);
     }
+
 
 }
