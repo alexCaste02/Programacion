@@ -3,9 +3,6 @@ import java.util.Scanner;
 public class ArbolValidacionInput {
     static Scanner input = new Scanner(System.in);
 
-    /**
-     *
-     */
     // TODO: 22/01/2023 -Crear arbol de checks
 //    public static void readAndCheck(char checkType) {
 //        while (true) {

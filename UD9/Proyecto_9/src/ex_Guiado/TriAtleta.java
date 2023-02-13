@@ -1,7 +1,5 @@
 package ex_Guiado;
 
-@SuppressWarnings("all")
-
 public class TriAtleta implements Nadador, Saltador {
 
     private String nombre;
