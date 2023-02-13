@@ -81,6 +81,14 @@ public class Main {
 
     }
 
+    public static void showAll(){
+
+    }
+
+    public static void devTemplate(){
+
+    }
+
 
 
 }
