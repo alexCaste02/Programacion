@@ -3,10 +3,7 @@ package ejs_2_2;
 public class Aparato {
 
 
-    //FIXME Consumo total
-    //  - static consumoTotal
-    //  - metodo static imprimir
-    //  - comprobar si encencido antes de sumar
+
     private int potencia;
     private boolean encendido=false;
 

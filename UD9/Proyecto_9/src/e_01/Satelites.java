@@ -1,6 +1,6 @@
 package e_01;
 
-import java.util.ArrayList;
+
 
 public class Satelites extends Astros {
 
@@ -9,6 +9,7 @@ public class Satelites extends Astros {
     public Satelites(String nombre, Double masaKG, Double diametroKM, Double periodoRotacionDias, Double periodoTraslacionDias, Astros cuerpoOrbitado, boolean conRotacionSincrona) {
         super(nombre, masaKG, diametroKM, periodoRotacionDias, periodoTraslacionDias, cuerpoOrbitado, null, false);
         this.conRotacionSincrona = conRotacionSincrona;
+        cuerpoOrbitado.getOrbitadoPor().add(this);
     }
 
 

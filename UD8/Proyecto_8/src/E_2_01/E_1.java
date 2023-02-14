@@ -104,7 +104,7 @@ public class E_1 {
         }
     }
 
-    //FIXME: -USAR POS COMO PARAM
+
     public static void removePosAlturas(ArrayList<Object> list, int pos){
         System.out.println("Introduce la posicion que quieres eliminar");
 

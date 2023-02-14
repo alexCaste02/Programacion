@@ -46,7 +46,7 @@ public class MainAstros {
                 =============================================""");
 
         switch (InputReader.readAndValidateOption(6)){
-            case 1 -> {while(addAstro());}
+            case 1 -> {addAstro();}
             case 2 -> {editAstro();}
             case 3 -> {removeAstro();}
             case 4 -> {showAstro();}
@@ -81,6 +81,8 @@ public class MainAstros {
     public static void addPlaneta(){
         System.out.print("Introduce el nombre del planeta: ");
         String nombre = input.nextLine();
+        //FIXME: comprobar si ya existe en nombre
+
         System.out.print("Introduce su masa (En KG): ");
         double masa = InputReader.readAndValidateDouble();
         System.out.print("Introduce su diametro (En KM): ");
@@ -97,6 +99,16 @@ public class MainAstros {
     public static boolean addSatelite(){
         System.out.print("Introduce el nombre del satelite: ");
         String nombre = input.nextLine();
+        //FIXME: comprobar si ya existe en nombre
+
+        System.out.print("Introduce el nombre del cuerpo al que orbita: ");
+        String nombreAstroOrbitado = input.nextLine();
+        if(Astros.findAstroByName(nombreAstroOrbitado)==null)
+            return false;
+        Astros cuerpoOrbitado = Astros.findAstroByName(nombreAstroOrbitado);
+
+        System.out.print("Tiene una rotacion sincrona? (Introduce Y o N): ");
+        boolean rotaSinc = InputReader.readAndValidateYN();
         System.out.print("Introduce su masa (En KG): ");
         double masa = InputReader.readAndValidateDouble();
         System.out.print("Introduce su diametro (En KM): ");
@@ -106,19 +118,18 @@ public class MainAstros {
         System.out.print("Introduce su periodo de traslacion (En dias): ");
         double periodoTraslacion = InputReader.readAndValidateDouble();
 
-        System.out.print("Introduce el nombre del cuerpo al que orbita: ");
-        String nombreAstroOrbitado = input.nextLine();
-//        if(nombreAstroOrbitado)
-
-        System.out.print("Tiene una rotacion sincrona? (Introduce Y o N): ");
-        boolean rotaSinc = InputReader.readAndValidateYN();
-
-//        new Satelites(nombre,masa,diametro,periodoRotacion,periodoTraslacion,cuerpoOrbitado,rotaSinc);
+        new Satelites(nombre,masa,diametro,periodoRotacion,periodoTraslacion,cuerpoOrbitado,rotaSinc);
         return true;
     }
 
-    public static void editAstro(){
+    public static boolean editAstro(){
+        System.out.print("Introduce el nombre del cuerpo a editar: ");
+        String nombreAstroOrbitado = input.nextLine();
+        if(Astros.findAstroByName(nombreAstroOrbitado)==null)
+            return false;
+        Astros cuerpoOrbitado = Astros.findAstroByName(nombreAstroOrbitado);
 
+        return true;
     }
 
     public static void removeAstro(){

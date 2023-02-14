@@ -23,6 +23,11 @@ public class Planetas extends Astros {
         getOrbitadoPor().add(satelite);
     }
 
+    public void temp(){
+        getNombre();
+        test=false;
+    }
+
 
 
 

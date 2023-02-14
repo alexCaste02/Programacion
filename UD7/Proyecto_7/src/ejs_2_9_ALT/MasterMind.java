@@ -59,7 +59,7 @@ public class MasterMind {
             }
         }
 
-        // TODO: 20/01/2023 -Probar por metodos
+
         return true;
     }
 

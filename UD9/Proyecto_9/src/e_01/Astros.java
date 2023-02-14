@@ -1,6 +1,7 @@
 package e_01;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Astros {
 
@@ -14,6 +15,7 @@ public abstract class Astros {
     private Astros cuerpoOrbitado;
     private ArrayList<Astros> orbitadoPor;
     private boolean orbitable;
+    protected boolean test;
 
 
 
@@ -80,6 +82,8 @@ public abstract class Astros {
         this.orbitable = orbitable;
     }
 
+
+
     @Override
     public String toString() {
 
@@ -106,4 +110,26 @@ public abstract class Astros {
         return sb.toString();
 
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Astros astros = (Astros) o;
+        return nombre.equals(astros.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre);
+    }
+
+    public static Astros findAstroByName(String nombre){
+        for (Astros astro : Estrella.SOL.getOrbitadoPor()) {
+            if(astro.nombre.equals(nombre))
+                return astro;
+        }
+        return null;
+    }
+
 }
