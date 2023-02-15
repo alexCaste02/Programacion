@@ -12,7 +12,7 @@ public class Submarino extends Vehiculo_Acuatico{
     @Override
     public String toString() {
         return super.toString() +
-                "profundidadMaxima=" + profundidadMaxima +
+                ", profundidadMaxima=" + profundidadMaxima +
                 '}';
     }
 }

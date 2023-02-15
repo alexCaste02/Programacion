@@ -27,7 +27,6 @@ public class Vehiculo_Acuatico extends Vehiculo{
     @Override
     public String toString() {
         return super.toString()+
-                "eslora=" + eslora +
-                '}';
+                ", eslora=" + eslora;
     }
 }

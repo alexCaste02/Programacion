@@ -18,7 +18,7 @@ public abstract class Vehiculo {
     @Override
     public String toString() {
         return this.getClass().getSimpleName() +
-                ": matricula='" + matricula + '\'' +
+                " {matricula='" + matricula + '\'' +
                 ", modelo='" + modelo + '\'';
     }
 }
