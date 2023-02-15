@@ -1,12 +1,22 @@
 package e_01;
 
-import java.util.ArrayList;
+
 
 public class Satelites extends Astros {
 
-    public Satelites(String nombre, Double masaKG, Double diametroKM, Double periodoRotacionDias, Double periodoTranslacionDias, Double distanciaMediaOrbitaKM, Astros cuerpoOrbitado, ArrayList<Astros> esOrbitadoPor) {
-        super(nombre, masaKG, diametroKM, periodoRotacionDias, periodoTranslacionDias, distanciaMediaOrbitaKM, cuerpoOrbitado, esOrbitadoPor);
-        cuerpoOrbitado.getEsOrbitadoPor().add(this);
+    private boolean conRotacionSincrona;
+
+    public Satelites(String nombre, Double masaKG, Double diametroKM, Double periodoRotacionDias, Double periodoTraslacionDias, Astros cuerpoOrbitado, boolean conRotacionSincrona) {
+        super(nombre, masaKG, diametroKM, periodoRotacionDias, periodoTraslacionDias, cuerpoOrbitado, null, false);
+        this.conRotacionSincrona = conRotacionSincrona;
+        cuerpoOrbitado.getOrbitadoPor().add(this);
     }
 
+
+    public boolean isConRotacionSincrona() {
+        return conRotacionSincrona;
+    }
+    public void setConRotacionSincrona(boolean conRotacionSincrona) {
+        this.conRotacionSincrona = conRotacionSincrona;
+    }
 }

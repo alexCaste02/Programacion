@@ -4,8 +4,31 @@ import java.util.ArrayList;
 
 public class Planetas extends Astros {
 
-    public Planetas(String nombre, Double masaKG, Double diametroKM, Double periodoRotacionDias, Double periodoTranslacionDias, Double distanciaMediaOrbitaKM, ArrayList<Astros> esOrbitadoPor) {
-        super(nombre, masaKG, diametroKM, periodoRotacionDias, periodoTranslacionDias, distanciaMediaOrbitaKM, Estrella.SOL, esOrbitadoPor);
-        Estrella.SOL.getEsOrbitadoPor().add(this);
+    private boolean tieneSatelite;
+
+    public Planetas(String nombre, Double masaKG, Double diametroKM, Double periodoRotacionDias, Double periodoTraslacionDias) {
+        super(nombre, masaKG, diametroKM, periodoRotacionDias, periodoTraslacionDias, Estrella.SOL, new ArrayList<>(),true);
+        Estrella.SOL.getOrbitadoPor().add(this);
     }
+
+    public boolean tieneSatelite() {
+        return tieneSatelite;
+    }
+    public void setTieneSatelite(boolean tieneSatelite) {
+        this.tieneSatelite = tieneSatelite;
+    }
+
+    public void addSatelite(Satelites satelite){
+        tieneSatelite = true;
+        getOrbitadoPor().add(satelite);
+    }
+
+    public void temp(){
+        getNombre();
+        test=false;
+    }
+
+
+
+
 }

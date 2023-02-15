@@ -1,105 +1,135 @@
 package e_01;
 
 import java.util.ArrayList;
-import java.util.EmptyStackException;
+import java.util.Objects;
 
 public abstract class Astros {
 
-    private String nombre;
-    private Double masaKG;
-    private Double diametroKM;
-    private Double periodoRotacionDias;
-    private Double periodoTranslacionDias;
-    private Double distanciaMediaOrbitaKM;
-    private Astros cuerpoOrbitado;
-    private ArrayList<Astros> esOrbitadoPor;
 
-    public Astros(String nombre, Double masaKG, Double diametroKM, Double periodoRotacionDias, Double periodoTranslacionDias, Double distanciaMediaOrbitaKM, Astros cuerpoOrbitado, ArrayList<Astros> esOrbitadoPor) {
+
+    private String nombre;
+    private double masaKG;
+    private double diametroKM;
+    private double periodoRotacionDias;
+    private double periodoTraslacionDias;
+    private Astros cuerpoOrbitado;
+    private ArrayList<Astros> orbitadoPor;
+    private boolean orbitable;
+    protected boolean test;
+
+
+
+    public Astros(String nombre, Double masaKG, Double diametroKM, Double periodoRotacionDias, Double periodoTraslacionDias, Astros cuerpoOrbitado, ArrayList<Astros> orbitadoPor, boolean Orbitable) {
         this.nombre = nombre;
         this.masaKG = masaKG;
         this.diametroKM = diametroKM;
         this.periodoRotacionDias = periodoRotacionDias;
-        this.periodoTranslacionDias = periodoTranslacionDias;
-        this.distanciaMediaOrbitaKM = distanciaMediaOrbitaKM;
+        this.periodoTraslacionDias = periodoTraslacionDias;
         this.cuerpoOrbitado = cuerpoOrbitado;
-        this.esOrbitadoPor = esOrbitadoPor;
+        this.orbitadoPor = orbitadoPor;
+        this.orbitable = Orbitable;
     }
 
+    /*GETTERS Y SETTERS*/
     public String getNombre() {
         return nombre;
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public Double getMasaKG() {
+    public double getMasaKG() {
         return masaKG;
     }
-    public void setMasaKG(Double masaKG) {
+    public void setMasaKG(double masaKG) {
         this.masaKG = masaKG;
     }
-
-    public Double getDiametroKM() {
+    public double getDiametroKM() {
         return diametroKM;
     }
-    public void setDiametroKM(Double diametroKM) {
+    public void setDiametroKM(double diametroKM) {
         this.diametroKM = diametroKM;
     }
-
-    public Double getPeriodoRotacionDias() {
+    public double getPeriodoRotacionDias() {
         return periodoRotacionDias;
     }
-    public void setPeriodoRotacionDias(Double periodoRotacionDias) {
+    public void setPeriodoRotacionDias(double periodoRotacionDias) {
         this.periodoRotacionDias = periodoRotacionDias;
     }
-
-    public Double getPeriodoTranslacionDias() {
-        return periodoTranslacionDias;
+    public double getPeriodoTraslacionDias() {
+        return periodoTraslacionDias;
     }
-    public void setPeriodoTranslacionDias(Double periodoTranslacionDias) {
-        this.periodoTranslacionDias = periodoTranslacionDias;
+    public void setPeriodoTraslacionDias(double periodoTraslacionDias) {
+        this.periodoTraslacionDias = periodoTraslacionDias;
     }
-
-    public Double getDistanciaMediaOrbitaKM() {
-        return distanciaMediaOrbitaKM;
-    }
-    public void setDistanciaMediaOrbitaKM(Double distanciaMediaOrbitaKM) {
-        this.distanciaMediaOrbitaKM = distanciaMediaOrbitaKM;
-    }
-
     public Astros getCuerpoOrbitado() {
         return cuerpoOrbitado;
     }
     public void setCuerpoOrbitado(Astros cuerpoOrbitado) {
         this.cuerpoOrbitado = cuerpoOrbitado;
     }
+    public ArrayList<Astros> getOrbitadoPor() {
+        return orbitadoPor;
+    }
+    public void setOrbitadoPor(ArrayList<Astros> orbitadoPor) {
+        this.orbitadoPor = orbitadoPor;
+    }
 
-    public ArrayList<Astros> getEsOrbitadoPor() {
-        return esOrbitadoPor;
+    public boolean isOrbitable() {
+        return orbitable;
     }
-    public void setEsOrbitadoPor(ArrayList<Astros> esOrbitadoPor) {
-        this.esOrbitadoPor = esOrbitadoPor;
+
+    public void setOrbitable(boolean orbitable) {
+        this.orbitable = orbitable;
     }
+
+
 
     @Override
     public String toString() {
 
-        StringBuilder texto = new StringBuilder(String.format(
-                """
+        StringBuilder sb = new StringBuilder(String.format(
+                        """
+                        =============================================
                         Astro ------------------ %s
                         Masa ------------------- %.2f
                         Diametro --------------- %.2f
                         Periodo de rotacion ---- %.2f
                         Periodo de translacion - %.2f
-                        Distancia media -------- %.2f
                         Orbita a --------------- %s
-                        Es orbitado por:""", nombre, masaKG, diametroKM, periodoRotacionDias, periodoTranslacionDias, distanciaMediaOrbitaKM, cuerpoOrbitado));
+                        """, nombre, masaKG, diametroKM, periodoRotacionDias, periodoTraslacionDias, cuerpoOrbitado));
 
-        for (Astros astros : esOrbitadoPor) {
-            texto.append(" - "+astros.nombre+"\n");
+        if (orbitable){
+            sb.append("Es orbitado por:");
+            for ( Astros astro : this.getOrbitadoPor()) {
+                sb.append(" - "+astro.nombre+"\n");
+            }
         }
 
-        return texto.toString();
+        sb.append("\n=============================================");
+
+        return sb.toString();
 
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Astros astros = (Astros) o;
+        return nombre.equals(astros.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre);
+    }
+
+    public static Astros findAstroByName(String nombre){
+        for (Astros astro : Estrella.SOL.getOrbitadoPor()) {
+            if(astro.nombre.equals(nombre))
+                return astro;
+        }
+        return null;
+    }
+
 }

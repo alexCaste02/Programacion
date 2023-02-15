@@ -37,7 +37,6 @@ public abstract class Animal {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        //TODO: aqui se puede usar animal como variable porque se "crea" en el instanceof?
         if (!(o instanceof Animal animal)) return false;
         return estancia == animal.estancia && Objects.equals(nombre, animal.nombre);
     }

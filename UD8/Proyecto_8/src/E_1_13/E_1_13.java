@@ -12,7 +12,7 @@ package Vectores_Y_Matrices;
 
 import java.util.Scanner;
 
-public class E_13 {
+public class E_1_13 {
 
     static Scanner input = new Scanner(System.in);
 
@@ -54,7 +54,7 @@ public class E_13 {
         }
     }
 
-    // TODO: 22/01/2023 -Crear validacion como funcion diferente para ++modularidad?
+
 //    public static boolean esInputValido(String inputLine){
 //
 //    }

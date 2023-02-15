@@ -30,7 +30,6 @@ public class TriAtleta implements Nadador, Saltador {
 
     @Override
     public int velocidadMS() {
-        //TODO: Deberiamos devolver una segun el deporte?
         return velNadando;
     }
 

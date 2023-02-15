@@ -1,8 +1,8 @@
-package E_2_08;
+package custom.util;
 
 import java.util.Scanner;
 
-public class Input {
+public class InputReader {
 
     static Scanner input = new Scanner(System.in);
 
@@ -24,12 +24,16 @@ public class Input {
         }
     }
 
-    public static int readAndValidateOption(){
-        while(true){
+    public static int readAndValidateOption(int maxValidOption){
+        while (true) {
             String inputLine = input.nextLine();
-            if (inputLine.matches("\\d"))
-                return Integer.parseInt(inputLine);
-            System.out.println("No ha introducido una opcion valida. Vuelve a intentarlo.");
+            if (inputLine.matches("\\d")){
+                int inputInt = Integer.parseInt(inputLine);
+                if(inputInt<=maxValidOption){
+                    return inputInt;
+                }
+            }
+            System.out.println("No se ha introducido una opcion valida. Intentelo de nuevo.");
         }
     }
 
