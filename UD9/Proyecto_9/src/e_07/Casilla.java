@@ -1,18 +1,22 @@
 package e_07;
 
+import java.util.ArrayList;
+
 public class Casilla {
+    private static ArrayList<Casilla> casillas = new ArrayList<>();
+
     private final String nombre;
-<<<<<<< Updated upstream
-    int codigo;
-=======
     private final int codigo;
 
     public Casilla(String nombre, int codigo) {
         this.nombre = nombre;
-        this.codigo = codigo;
+        casillas.add(this);
+        this.codigo = casillas.size();
     }
+
+
+
+
     
 
-
->>>>>>> Stashed changes
 }

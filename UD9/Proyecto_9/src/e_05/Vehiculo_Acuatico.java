@@ -2,7 +2,7 @@ package e_05;
 
 public class Vehiculo_Acuatico extends Vehiculo{
 
-    private final int eslora;
+    private final double eslora;
 
     public Vehiculo_Acuatico(String matricula, String modelo, int eslora) {
         super(matricula, modelo);
