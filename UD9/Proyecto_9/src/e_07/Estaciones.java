@@ -2,13 +2,17 @@ package e_07;
 
 public class Estaciones extends Propiedad{
 
-    public Estaciones(String nombre, int codigo, int precio, int hipoteca, int propietario) {
-        super(nombre, codigo, precio, hipoteca, propietario);
+    private static final int VALOR_ESTACION = 200;
+
+    public Estaciones(String nombre) {
+        super(nombre, VALOR_ESTACION, VALOR_ESTACION);
     }
 
     @Override
     public int getAlquiler(int modificacion) {
-        return 0;
+        return precio/modificacion;
     }
+
+
 
 }

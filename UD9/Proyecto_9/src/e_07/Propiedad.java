@@ -6,8 +6,8 @@ public abstract class Propiedad extends Casilla {
     protected final int hipoteca;
     private int propietario;
 
-    public Propiedad(String nombre, int codigo, int precio, int hipoteca, int propietario) {
-        super(nombre, codigo);
+    public Propiedad(String nombre, int precio, int hipoteca) {
+        super(nombre);
         this.precio = precio;
         this.hipoteca = hipoteca;
         this.propietario = -1;
