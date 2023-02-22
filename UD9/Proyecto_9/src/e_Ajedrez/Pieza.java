@@ -56,6 +56,7 @@ public abstract class Pieza {
         return Objects.hash(color, posicion, comida);
     }
 
+    //FIXME: comprueba si es una pieza en vez de si es la misma clase
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
