@@ -22,10 +22,12 @@ public class Torre extends Pieza implements JuegoTablero{
             System.err.println("Movimiento sale del tablero");
     }
 
+    //FIXME: deberia haberse puesto en pieza? // deberia haber hecho checks?
     @Override
     public char indiceAPosicion(int indice) {
-        String letrasPos = "ABCDEFGH"; // podria hacerla constante de clase
-        return letrasPos.charAt(indice);
+//        String letrasPos = "ABCDEFGH";
+//        return letrasPos.charAt(indice);
+        return  "ABCDEFGH".charAt(indice); //MUCHO MEJOR!!
     }
 
     @Override
@@ -36,7 +38,7 @@ public class Torre extends Pieza implements JuegoTablero{
     @Override
     public int posicionAIndice(char posicion) {
         String letrasPos = "ABCDEFGH";
-        return letrasPos.indexOf(posicion);
+        return letrasPos.indexOf(posicion); //PODRIA USAR MEJORA LINEA 30
     }
 
     @Override
