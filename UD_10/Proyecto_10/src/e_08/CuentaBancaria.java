@@ -1,4 +1,4 @@
-package E_2_07;
+package e_08;
 
 import java.util.ArrayList;
 
@@ -7,7 +7,7 @@ public class CuentaBancaria {
     private final String TITULAR;
     private final String IBAN;
     private double saldo = 0;
-    private static ArrayList<CuentaBancaria> listaCuentas = new ArrayList<>();
+
     private ArrayList<Double> movimientos = new ArrayList<>();
 
     /* CONS */
@@ -30,13 +30,9 @@ public class CuentaBancaria {
         this.saldo = saldo;
     }
 
-    public static ArrayList<CuentaBancaria> getListaCuentas() {
-        return listaCuentas;
-    }
 
-    public static void setListaCuentas(ArrayList<CuentaBancaria> listaCuentas) {
-        CuentaBancaria.listaCuentas = listaCuentas;
-    }
+
+
 
     public ArrayList<Double> getMovimientos() {
         return movimientos;
@@ -98,17 +94,9 @@ public class CuentaBancaria {
         return 0;
     }
 
-    public static void addCuentaBancaria(CuentaBancaria cuenta){
-        listaCuentas.add(cuenta);
-    }
 
-    public static CuentaBancaria existeCuenta (String inputIBAN){
-        for (CuentaBancaria listaCuenta : listaCuentas) {
-            if (listaCuenta.IBAN.equals(inputIBAN))
-                return listaCuenta;
-        }
-        return null;
-    }
+
+
 
     // ES1234567890123456789012
 

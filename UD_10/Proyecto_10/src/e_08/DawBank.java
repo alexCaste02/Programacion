@@ -1,8 +1,13 @@
-package E_2_07;
+package e_08;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import custom.util.InputReader;
 
 public class DawBank {
+
+    static Scanner input = new Scanner(System.in);
+    static ArrayList<CuentaBancaria> listaCuentas = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -15,12 +20,7 @@ public class DawBank {
 
 
 
-
     public static void menuInicial() {
-
-        Scanner input = new Scanner(System.in);
-
-
 
         boolean repeat = true;
         do {
@@ -34,27 +34,25 @@ public class DawBank {
                     """);
 
 
-            switch (input.nextInt()) {
+            switch (InputReader.readAndValidateOption(2)) {
                 case 1 -> crearCuenta();
                 case 2 -> {
-                    String iban;
-                    do {
-                        System.out.print("Introduce el IBAN de la cuenta a la que desea entrar: ");
-                        iban = input.next();
 
-                        System.out.print(esValidoIBAN(iban) ?
-                                "IBAN valido" :
-                                "IBAN invalido, vuelve a introducirlo");
 
-                    } while (!esValidoIBAN(iban));
 
-                   if (CuentaBancaria.existeCuenta(iban)!=null) {
-                       System.out.println("\n\n===== Cuenta accedida =====\n");
-                       menuCuenta(CuentaBancaria.existeCuenta(iban));
-                       repeat = false;
-                   }
-                   else
-                       System.out.println("La cuenta con el IBAN introducido no existe");
+                    System.out.print("Introduce el IBAN de la cuenta a la que desea entrar: ");
+                    String iban = input.nextLine();
+
+                    try {
+                        esValidoIBAN(iban);
+                        menuCuenta(existeCuenta(iban));
+                    } catch (CuentaException) {
+
+                    }
+
+
+
+
                 }
                 case 0 -> {
                     System.out.println("Finalizando programa...");
@@ -70,8 +68,6 @@ public class DawBank {
     }
 
     public static void crearCuenta() {
-
-        Scanner input = new Scanner(System.in);
 
         String titular, iban;
 
@@ -92,7 +88,7 @@ public class DawBank {
 
         System.out.println("\n\n===== Cuenta creada con exito! =====\n");
 
-        CuentaBancaria.addCuentaBancaria(new CuentaBancaria(titular, iban));
+        listaCuentas.add(new CuentaBancaria(titular, iban));
 
     }
 
@@ -104,6 +100,7 @@ public class DawBank {
         //variable conveniente
         boolean repeat = true;
 
+        System.out.println("\n\n===== Cuenta accedida =====\n");
         do {
 
             System.out.print("""
@@ -215,8 +212,18 @@ public class DawBank {
         } while (repeat);
     }
 
-    public static boolean esValidoIBAN(String iban) {
-        return iban.toUpperCase().matches("[A-Z]{2}\\d{22}");
+    public static void esValidoIBAN(String iban) throws Exception {
+        if(!iban.toUpperCase().matches("[A-Z]{2}\\d{22}")) {
+            throw new CuentaException("IBAN invalido");
+        }
+    }
+
+    public static CuentaBancaria existeCuenta (String inputIBAN){
+        for (CuentaBancaria cuenta : listaCuentas) {
+            if (cuenta.getIBAN().equals(inputIBAN))
+                return cuenta;
+        }
+        return null;
     }
 
 }
