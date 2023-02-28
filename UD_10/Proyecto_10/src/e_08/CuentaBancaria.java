@@ -1,5 +1,7 @@
 package e_08;
 
+import custom.util.InvalidInputException;
+
 import java.util.ArrayList;
 
 public class CuentaBancaria {
@@ -7,7 +9,6 @@ public class CuentaBancaria {
     private final String TITULAR;
     private final String IBAN;
     private double saldo = 0;
-
     private ArrayList<Double> movimientos = new ArrayList<>();
 
     /* CONS */
@@ -26,77 +27,54 @@ public class CuentaBancaria {
     public double getSaldo() {
         return saldo;
     }
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
-
-
-
-
     public ArrayList<Double> getMovimientos() {
         return movimientos;
     }
 
-    public void setMovimientos(ArrayList<Double> movimientos) {
-        this.movimientos = movimientos;
+    public void setSaldo(double saldo) throws SaldoInvalidoException {
+
+        if (saldo<50){
+            throw new SaldoInvalidoException();
+        }
+
+        this.saldo = saldo;
     }
 
     /* OTROS */
+    public void ingresar(double dinero) throws InvalidInputException, AvisarHaciendaException, SaldoInvalidoException {
+
+        if (dinero>3000){
+            throw new AvisarHaciendaException();
+        } else if (dinero<=0) {
+            throw new InvalidInputException();
+        }
+
+        setSaldo(saldo+dinero);
+        movimientos.add(dinero);
+    }
+
+    public void retirar(double dinero) throws InvalidInputException, AvisarHaciendaException, SaldoInvalidoException {
+
+        if(dinero<=0){
+            throw new InvalidInputException();
+        } else if (dinero>3000) {
+            throw new AvisarHaciendaException();
+        }
+
+        setSaldo(saldo-dinero);
+        movimientos.add(-dinero);
+    }
+
     @Override
     public String toString() {
-        return  "\n===================================\n"+
-                "Titular: " + TITULAR +
-                "\nIBAN: " + IBAN +
-                "\nSaldo: " + saldo+
-                "\n===================================\n";
-
+        return String.format("""
+                        ===================================
+                        Titular: %s
+                        IBAN: %s
+                        Saldo: %.2f
+                        ===================================
+                        """,TITULAR,IBAN,saldo);
     }
-
-    public boolean ingresar(double dinero){
-
-        if(dinero>0){
-
-            if (dinero>3000){
-                System.out.println("AVISO: Notificar a hacienda");
-            }
-
-            movimientos.add(dinero);
-            saldo+=dinero;
-            return true;
-
-        }
-
-        return false;
-    }
-
-    public int retirar(double dinero){
-        if(dinero>0){
-
-            if(saldo-dinero<-50)
-                return -1;
-
-            saldo-=dinero;
-
-            if (saldo<0){
-                System.out.println("AVISO: Saldo negativo");
-            }
-
-            if (dinero>3000){
-                System.out.println("AVISO: Notificar a hacienda");
-            }
-
-            movimientos.add(-dinero);
-            return 1;
-
-        }
-
-        return 0;
-    }
-
-
-
-
 
     // ES1234567890123456789012
 

@@ -6,47 +6,44 @@ public class InputReader {
 
     static Scanner input = new Scanner(System.in);
 
-    public static int readAndValidateInt(){
-        while(true){
-            String inputLine = input.nextLine();
-            if (inputLine.matches("-?\\d+"))
-                return Integer.parseInt(inputLine);
-            System.out.println("No ha introducido un numero entero. Vuelve a intentarlo.");
-        }
+    public static int readAndValidateInt() throws InvalidInputException {
+
+        String inputLine = input.nextLine();
+        if (inputLine.matches("-?\\d+")) return Integer.parseInt(inputLine);
+        throw new InvalidInputException(InputType.INT);
+
     }
 
-    public static double readAndValidateDouble(){
-        while(true){
-            String inputLine = input.nextLine();
-            if (inputLine.matches("-?\\d+([.]\\d+)?"))
-                return Double.parseDouble(inputLine);
-            System.out.println("No ha introducido un numero decimal. Vuelve a intentarlo.");
-        }
+    public static double readAndValidateDouble() throws InvalidInputException {
+
+        String inputLine = input.nextLine();
+        if (inputLine.matches("-?\\d+([.]\\d+)?")) return Double.parseDouble(inputLine);
+        throw new InvalidInputException(InputType.DOUBLE);
+
     }
 
-    public static int readAndValidateOption(int maxValidOption){
-        while (true) {
-            String inputLine = input.nextLine();
-            if (inputLine.matches("\\d")){
-                int inputInt = Integer.parseInt(inputLine);
-                if(inputInt<=maxValidOption){
-                    return inputInt;
-                }
+    public static int readAndValidateOption(int maxValidOption) throws InvalidInputException {
+
+        String inputLine = input.nextLine();
+        if (inputLine.matches("\\d")) {
+            int inputInt = Integer.parseInt(inputLine);
+            if (inputInt <= maxValidOption) {
+                return inputInt;
             }
-            System.out.println("No se ha introducido una opcion valida. Intentelo de nuevo.");
         }
+        throw new InvalidInputException(InputType.OPTION);
+
     }
 
-    public static boolean readAndValidateYN(){
-        while(true){
-            String inputLine = input.nextLine();
-            if (inputLine.matches("[Yy]"))
-                return true;
-            else if(inputLine.matches("[Nn]")){
-                return false;
-            }
-            System.out.println("No ha introducido una opcion valida. Vuelve a intentarlo.");
+    public static boolean readAndValidateYN() throws InvalidInputException {
+
+        String inputLine = input.nextLine();
+        if (inputLine.matches("[Yy]")) return true;
+        else if (inputLine.matches("[Nn]")) {
+            return false;
         }
+        throw new InvalidInputException(InputType.OPTION);
+
     }
 
 
