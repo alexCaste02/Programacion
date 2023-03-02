@@ -7,6 +7,11 @@ public class ValorIncorrecto extends Exception{
         this.num = num;
     }
 
+    public ValorIncorrecto(String message,int num) {
+        super(message);
+        this.num = num;
+    }
+
     @Override
     public String toString() {
         return "ValorIncorrecto{" +
