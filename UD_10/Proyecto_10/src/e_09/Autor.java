@@ -1,12 +1,17 @@
 package e_09;
 
-public class Autor {
+public record Autor(String nombre, String pseudonimo) {
 
-    private final String nombre;
-    private final String pseudonimo;
+    public int compareTo(Autor autor) {
+        if (nombre.compareTo(autor.nombre())!=0)
+            return nombre.compareTo(autor.nombre());
+        else
+            return pseudonimo.compareTo(autor.pseudonimo());
+    }
 
-    public Autor(String nombre, String pseudonimo) {
-        this.nombre = nombre;
-        this.pseudonimo = pseudonimo;
+    @Override
+    public String toString() {
+        return String.format("""
+                %s '%s'""",nombre,pseudonimo);
     }
 }

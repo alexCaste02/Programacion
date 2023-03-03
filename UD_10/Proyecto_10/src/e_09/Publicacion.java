@@ -1,18 +1,30 @@
 package e_09;
 
-public abstract class Publicacion {
+import java.util.Objects;
+
+public abstract class Publicacion implements Comparable<Publicacion>{
 
     private static int idTracker;
 
-    final int ID;
+    final int id;
 
     public Publicacion() {
-        this.ID = idTracker;
+        this.id = idTracker;
         idTracker++;
     }
 
     abstract void mostrarEnLinea();
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Publicacion that)) return false;
+        return id == that.id;
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
