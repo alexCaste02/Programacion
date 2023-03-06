@@ -17,8 +17,8 @@ public class Revista extends Publicacion implements Comparable<Publicacion>{
 
     @Override
     void mostrarEnLinea() {
-        System.out.printf("""
-                ISSN: %20s, Nombre: %20s, Numero: %20d""",issn,nombre,numero);
+        System.out.printf("%-2s - %-15s - %-10s - %-15s - %-2s"
+                ,super.id,issn,nombre,nombre,numero);
     }
 
 

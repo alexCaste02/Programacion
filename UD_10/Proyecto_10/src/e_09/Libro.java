@@ -57,8 +57,8 @@ public class Libro extends Publicacion implements Comparable<Publicacion> {
 
     @Override
     void mostrarEnLinea() {
-        System.out.printf("""
-                ISBN: %s, Titulo: %s, Autor: %s, Nº ejemplares: %d""",isbn,titulo,autor,numEjemplares);
+        System.out.printf("%-2s - %-15s - %-10s - %-15s - %-2s"
+                ,super.id,isbn,titulo,autor,numEjemplares);
     }
 
     @Override
@@ -77,14 +77,14 @@ public class Libro extends Publicacion implements Comparable<Publicacion> {
 
     @Override
     public int compareTo(Publicacion o) {
-        if(o.getClass() == Revista.class){
+        if(o.getClass() == Libro.class){
             Libro libro = (Libro) o;
             if (titulo.compareTo(libro.getTitulo())!=0)
                 return titulo.compareTo(libro.getTitulo());
             else
                 return autor.compareTo(libro.getAutor());
         } else {
-            return -1;
+            return -1; // Posicion de "this" respecto a lo comparado. 'Me pongo antes (-1) o despues (1) de ti'
         }
     }
 }
