@@ -1,4 +1,6 @@
 package e_09.Excepciones;
 
-public class PublicacionException extends Exception{
+public class PublicacionException extends Exception {
+
+    
 }
