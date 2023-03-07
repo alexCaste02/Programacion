@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Proyecto_10/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="module" module-name="custom.util" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Programacion" />
   </component>
 </module>

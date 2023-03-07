@@ -24,10 +24,10 @@ public class Biblioteca {
         for (Publicacion publicacion : publicaciones) {
             if (publicacion.getClass() == Libro.class){
                 Libro libro = (Libro) publicacion; //casteamos en otra linea por claridad
-                if( libro.getTitulo().equals(name)) return true;
+                if(libro.getTitulo().equals(name)) return true;
             } else {
                 Revista revista = (Revista) publicacion;
-                if( revista.getNombre().equals(name)) return true;
+                if(revista.getNombre().equals(name)) return true;
             }
         }
         return false;
@@ -42,11 +42,7 @@ public class Biblioteca {
 
     public boolean buscarLibro(String isbn, String titulo, Autor autor) throws PublicacionException {
         Libro libroBuscado = new Libro(isbn, titulo, autor); //claridad
-
-        for (Publicacion publicacion : publicaciones) {
-            if (libroBuscado.equals(publicacion)) return true;
-        }
-        return false;
+        return buscarLibro(libroBuscado);
     }
 
     public ArrayList<Revista> revistasOrdenadas() {
@@ -60,6 +56,7 @@ public class Biblioteca {
 
     public void ordenar(){
         Collections.sort(publicaciones);
+
     }
 
     public void mostrarLineas(){

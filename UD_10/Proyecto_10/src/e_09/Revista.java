@@ -13,7 +13,9 @@ public class Revista extends Publicacion implements Comparable<Publicacion>{
         this.issn = issn;
         this.nombre = nombre;
         this.numero = numero;
+
     }
+
 
     @Override
     void mostrarEnLinea() {

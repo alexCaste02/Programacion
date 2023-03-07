@@ -43,6 +43,11 @@ public class Main {
         }
 
         biblioteca.anyadir(lib1);
+        try {
+            biblioteca.anyadirLibro("","", new Autor("jacint", "2"));
+        } catch (PublicacionException e) {
+            System.out.println("puto mal");
+        }
         biblioteca.anyadir(rev1);
         biblioteca.anyadir(lib2);
         biblioteca.anyadir(rev2);

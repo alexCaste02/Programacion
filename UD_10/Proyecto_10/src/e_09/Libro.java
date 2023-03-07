@@ -69,6 +69,7 @@ public class Libro extends Publicacion implements Comparable<Publicacion> {
         return Objects.equals(isbn, libro.isbn) && Objects.equals(titulo, libro.titulo) && Objects.equals(autor, libro.autor);
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(isbn, titulo, autor);
