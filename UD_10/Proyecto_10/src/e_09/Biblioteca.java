@@ -56,7 +56,6 @@ public class Biblioteca {
 
     public void ordenar(){
         Collections.sort(publicaciones);
-
     }
 
     public void mostrarLineas(){
