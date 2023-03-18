@@ -73,6 +73,6 @@ public class Persona {
                 ", telefono='" + telefono + '\'' +
                 ", email='" + email + '\'' +
                 ", fechaNacimiento=" + fechaNacimiento +
-                '}';
+                "}\n";
     }
 }
