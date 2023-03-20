@@ -37,7 +37,7 @@ public class Main {
                 """);
         try {
 
-            switch (InputReader.readAndValidateOption(5)) {
+            switch (InputReader.readAndValidateOption(6)) {
                 case 1 -> {addJugador();}
                 case 2 -> {removeJugador();}
                 case 3 -> {consultarSalario();}
