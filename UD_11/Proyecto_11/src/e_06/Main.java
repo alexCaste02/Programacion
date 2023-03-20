@@ -53,12 +53,47 @@ public class Main {
         return true;
     }
 
-    private static void addJugador() {
+    private static void addJugador() throws InvalidInputException {
         System.out.println("Dime el nombre del jugador");
         String nombre = input.nextLine();
 
         System.out.println("Dime el salario del jugador");
         double salario =  InputReader.readAndValidateDouble();
+
+        plantilla.put(nombre,salario);
+    }
+
+    private static void removeJugador() {
+        System.out.println("Dime el nombre del jugador");
+        String nombre = input.nextLine();
+
+        if(plantilla.containsKey(nombre)){
+            plantilla.remove(nombre);
+            System.out.println("Jugador no encontrado");
+        }
+
+    }
+
+    private static void consultarSalario(){
+        System.out.println("Dime el nombre del jugador");
+        String nombre = input.nextLine();
+
+        if(plantilla.containsKey(nombre))
+            System.out.println(plantilla.get(nombre));
+    }
+
+    private static void incrementarSalario10(){
+        System.out.println("Dime el nombre del jugador");
+        String nombre = input.nextLine();
+
+        if(plantilla.containsKey(nombre))
+            plantilla.put(nombre,plantilla.get(nombre)*1.1);
+    }
+
+    private static void mostrarJugadores(){
+        for (String s : plantilla.keySet()) {
+            System.out.println(s+" - "+plantilla.get(s));
+        }
     }
 
 }
