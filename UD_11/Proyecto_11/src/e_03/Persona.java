@@ -63,7 +63,7 @@ public class Persona {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre);
+        return Objects.hash(nombre, fechaNacimiento);
     }
 
     @Override
