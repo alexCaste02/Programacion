@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    static Map<String, Integer> plantilla = new HashMap<>();
+    static Map<String, Double> plantilla = new HashMap<>();
     static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -41,7 +41,8 @@ public class Main {
                 case 1 -> {addJugador();}
                 case 2 -> {removeJugador();}
                 case 3 -> {consultarSalario();}
-                case 4 -> {}
+                case 4 -> {incrementarSalario10();}
+                case 5 -> {mostrarJugadores();}
                 case 0 -> {return false;}
             }
 
@@ -49,7 +50,15 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-
         return true;
     }
+
+    private static void addJugador() {
+        System.out.println("Dime el nombre del jugador");
+        String nombre = input.nextLine();
+
+        System.out.println("Dime el salario del jugador");
+        double salario =  InputReader.readAndValidateDouble();
+    }
+
 }
