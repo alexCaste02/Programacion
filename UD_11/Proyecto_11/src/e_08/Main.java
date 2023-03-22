@@ -36,7 +36,7 @@ public class Main {
                 if (distribTemps.containsKey(temp))
                     distribTemps.put(temp, distribTemps.get(temp) + 1);
                 else
-                    distribTemps.put(temp, 0);
+                    distribTemps.put(temp, 1);
             }
 
             //mostramos temps y reps
