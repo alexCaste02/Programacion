@@ -5,9 +5,8 @@ import custom.util.InvalidInputException;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
-public class Main {
+public class Temperaturas {
     public static void main(String[] args) {
 
         System.out.println("Introduce un año");
@@ -40,8 +39,8 @@ public class Main {
             }
 
             //mostramos temps y reps
-            for (Integer key : distribTemps.keySet()) {
-                System.out.println(key + ": " + distribTemps.get(key));
+            for (Map.Entry<Integer, Integer> entry : distribTemps.entrySet()) {
+                System.out.println(entry.getKey()+": "+entry.getValue());
             }
 
         } catch (InvalidInputException e) {

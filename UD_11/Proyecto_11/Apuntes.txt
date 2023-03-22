@@ -11,7 +11,8 @@ LinkedList    - Conectados con anterior y sig. Facil control de inicio y final
 
 [INTERFAZ] SET ----- NO REPETIBLE
 // Conjunto
-// Normalmente comprueba si se repite a traves del Hash (+equals) o interfaz comparable
+// Normalmente comprueba si se repite a traves del Hash (+equals) o interfaz comparable.
+// NO tiene indice
 
 HashSet       - Desordenado/Dispersado
 LinkedHashSet - Ordenado segun insercion, conectados con anterior y sig
