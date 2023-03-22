@@ -19,8 +19,8 @@ public class Main {
 
             //tamaño array segun bisiesto
             int[] arrayTemps = (year % 4 == 0 && !(year % 100 == 0) || year % 400 == 0) ?
-                    new int[365] :
-                    new int[366];
+                    new int[364] :
+                    new int[365];
 
             //generar temps para dias
             for (int i = 0; i < arrayTemps.length; i++) {
