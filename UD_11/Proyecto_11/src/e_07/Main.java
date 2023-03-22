@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
 
         while (menu()) ;
+        System.out.println("PROGRAMA FINALIZADO");
 
     }
 
@@ -113,4 +114,8 @@ public class Main {
         }
     }
 
+}
+
+class Plantilla{
+    //Se puede hacer esto
 }

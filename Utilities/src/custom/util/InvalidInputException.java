@@ -2,7 +2,6 @@ package custom.util;
 
 public class InvalidInputException extends Exception{
 
-
     InputType inputType;
 
     public InvalidInputException(InputType type) {
