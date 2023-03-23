@@ -4,7 +4,7 @@ package e_09;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Temperaturas {
+public class Temperaturas_TreeMap {
     public static void main(String[] args) {
 
 
@@ -34,6 +34,7 @@ public class Temperaturas {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
 
+        //minima y maxima
         System.out.println("Minima: " + distribTemps.firstKey() + " (" + distribTemps.get(distribTemps.firstKey()) + ")");
         System.out.println("Maxima: " + distribTemps.lastKey() + " (" + distribTemps.get(distribTemps.lastKey()) + ")");
 
