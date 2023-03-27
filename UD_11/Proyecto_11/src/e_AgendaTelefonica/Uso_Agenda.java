@@ -3,7 +3,12 @@ package e_AgendaTelefonica;
 import custom.util.InputReader;
 import custom.util.InvalidInputException;
 
+import java.util.Scanner;
+
 public class Uso_Agenda {
+
+    static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
         while (menu());
     }
@@ -74,7 +79,13 @@ public class Uso_Agenda {
 
     private static void addEntrada() {
         System.out.print("Introduce el nombre:");
-        String nombre = 
+        String nombre = input.nextLine();
+
+        System.out.print("Introduce el telefono: ");
+        String telefono = input.nextLine();
+
+        Agenda.registros.add(new Registro(nombre, telefono));
+
     }
 
     private static void buscarPorNombre() {
