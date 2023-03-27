@@ -2,11 +2,10 @@ package e_13;
 
 import custom.util.InputReader;
 import custom.util.InvalidInputException;
-import e_03.Persona;
 
 import java.util.*;
 
-public class Temperaturas {
+public class TemperaturasPorValor {
     public static void main(String[] args) {
 
         System.out.println("Introduce un año");
