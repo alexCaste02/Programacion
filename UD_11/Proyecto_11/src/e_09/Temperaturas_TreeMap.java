@@ -35,8 +35,8 @@ public class Temperaturas_TreeMap {
         }
 
         //minima y maxima
-        System.out.println("Minima: " + distribTemps.firstKey() + " (" + distribTemps.get(distribTemps.firstKey()) + ")");
-        System.out.println("Maxima: " + distribTemps.lastKey() + " (" + distribTemps.get(distribTemps.lastKey()) + ")");
+        System.out.println("Minima: " + distribTemps.firstKey() + " (Reps: " + distribTemps.get(distribTemps.firstKey()) + ")");
+        System.out.println("Maxima: " + distribTemps.lastKey() + " (R: " + distribTemps.get(distribTemps.lastKey()) + ")");
 
 
     }

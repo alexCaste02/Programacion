@@ -6,11 +6,11 @@ import java.time.LocalDate;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Main {
+public class Main_10 {
     public static void main(String[] args) {
 
         Set<Persona_v2> personaSet = new TreeSet<>();
-        //no es comparable
+        //no es comparable == no puede ordenarse (Tree)
 
         Set<Persona_v3> personaSetV3 = new TreeSet<>();
 

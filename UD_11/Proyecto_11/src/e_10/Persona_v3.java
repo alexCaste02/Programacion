@@ -11,6 +11,13 @@ public class Persona_v3 implements Comparable<Persona_v3> {
     private String email;
     private LocalDate fechaNacimiento;
 
+    public Persona_v3(String nombre, String telefono, String email, LocalDate fechaNacimiento) {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.email = email;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -43,15 +50,21 @@ public class Persona_v3 implements Comparable<Persona_v3> {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public Persona_v3(String nombre, String telefono, String email, LocalDate fechaNacimiento) {
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.email = email;
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
     public int getEdad(){
         return (int) ChronoUnit.YEARS.between(fechaNacimiento, LocalDate.now());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Persona_v3 personaV3 = (Persona_v3) o;
+        return Objects.equals(nombre, personaV3.nombre) && Objects.equals(telefono, personaV3.telefono) && Objects.equals(email, personaV3.email) && Objects.equals(fechaNacimiento, personaV3.fechaNacimiento);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, telefono, email, fechaNacimiento);
     }
 
     @Override
@@ -68,4 +81,6 @@ public class Persona_v3 implements Comparable<Persona_v3> {
     public int compareTo(Persona_v3 p2) {
         return this.nombre.compareToIgnoreCase(p2.nombre);
     }
+
+
 }

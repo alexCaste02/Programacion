@@ -1,15 +1,12 @@
-package e_11;
+package e_12;
 
 
 import e_10.Persona_v3;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
-public class Main {
+public class Main_12 {
     public static void main(String[] args) {
 
         List<Persona_v3> listaPersonasV3 = new ArrayList<>();
@@ -43,9 +40,9 @@ public class Main {
         );
 
         Persona_v3 p5 = new Persona_v3(
-                "Tony",
+                "Joselito",
                 "123123123",
-                "antonio@hotmail.com",
+                "jchamp2@hotmail.com",
                 LocalDate.of(1977,10,24)
         );
 
@@ -55,15 +52,13 @@ public class Main {
         listaPersonasV3.add(p4);
         listaPersonasV3.add(p5);
 
-        System.out.println("Orden entrada");
-        System.out.println(listaPersonasV3);
 
-        System.out.println("Orden natural (nombre)");
-        Collections.sort(listaPersonasV3);
         System.out.println(listaPersonasV3);
 
 
-        listaPersonasV3.sort((o1, o2) -> o1.getEmail().compareToIgnoreCase(o2.getEmail()));
+        Set<Persona_v3> setPersonaV3 = new LinkedHashSet<>(listaPersonasV3);
+
+        System.out.println(setPersonaV3);
 
 
     }
