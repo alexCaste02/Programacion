@@ -4,7 +4,7 @@ import custom.util.InputReader;
 import custom.util.InvalidInputException;
 
 import java.util.Comparator;
-import java.util.Iterator;
+
 import java.util.Scanner;
 
 public class Uso_Agenda {
@@ -61,7 +61,7 @@ public class Uso_Agenda {
 
     private static void mostrarAgenda() {
 
-        System.out.println((Agenda.getRegistros().size()==0)?
+        System.out.println((Agenda.getRegistros().isEmpty())?
                 "La agenda esta vacia":
                 Agenda.getRegistros()
         );
@@ -121,7 +121,19 @@ public class Uso_Agenda {
     }
 
     private static void ordenarPorNombre() {
+
+//        Agenda.getRegistros().sort(new Comparator<Registro>() {
+//            @Override
+//            public int compare(Registro o1, Registro o2) {
+//                return o1.nombre().compareTo(o2.nombre());
+//            }
+//        });
+
         Agenda.getRegistros().sort(Comparator.comparing(Registro::nombre));
-        System.out.println(Agenda.getRegistros());
+
+        System.out.println((Agenda.getRegistros().isEmpty())?
+                "La agenda esta vacia":
+                Agenda.getRegistros()
+        );
     }
 }
