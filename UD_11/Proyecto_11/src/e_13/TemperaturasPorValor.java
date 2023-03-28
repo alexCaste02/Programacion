@@ -42,7 +42,8 @@ public class TemperaturasPorValor {
             }
 
             ArrayList<Map.Entry<Integer,Integer>> orderedList = new ArrayList<>(distribTemps.entrySet());
-            orderedList.sort((o1, o2) -> o1.getValue() - o2.getValue());
+            // orderedList.sort((o1, o2) -> o1.getValue() - o2.getValue());
+            orderedList.sort(Comparator.comparingInt(Map.Entry::getValue));
 
             System.out.println("\n");
 
