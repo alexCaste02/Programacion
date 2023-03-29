@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Programacion" exported="" />
+    <orderEntry type="module" module-name="Utilities" />
   </component>
 </module>

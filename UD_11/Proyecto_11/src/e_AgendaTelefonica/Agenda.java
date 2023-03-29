@@ -32,7 +32,7 @@ public class Agenda {
         String nombre = input.nextLine();
 
         for (Registro registro : registros) {
-            if(registro.nombre().equalsIgnoreCase(nombre)) System.out.println(registro);
+            if(registro.nombre().contains(nombre)) System.out.println(registro);
         }
     }
 
@@ -41,7 +41,7 @@ public class Agenda {
         String telefono = input.nextLine();
 
         for (Registro registro : registros) {
-            if(registro.telefono().equalsIgnoreCase(telefono)) System.out.println(registro);
+            if(registro.telefono().contains(telefono)) System.out.println(registro);
         }
     }
 
@@ -49,12 +49,12 @@ public class Agenda {
         System.out.println("Introduce un nombre");
         String nombre = input.nextLine();
 
-        registros.removeIf(registro -> registro.nombre().equalsIgnoreCase(nombre));
+        registros.removeIf(registro -> registro.nombre().contains(nombre));
 
 //        Iterator<Registro> iter = registros.iterator();
 //        while (iter.hasNext()){
 //            Registro registro = iter.next();
-//            if(registro.nombre().equalsIgnoreCase(nombre))
+//            if(registro.nombre().contains(nombre))
 //                iter.remove();
 //        }
     }
@@ -63,7 +63,7 @@ public class Agenda {
         System.out.print("Introduce un telefono: ");
         String telefono = input.nextLine();
 
-        registros.removeIf(registro -> registro.telefono().equalsIgnoreCase(telefono));
+        registros.removeIf(registro -> registro.telefono().contains(telefono));
     }
 
     public static void ordenarPorNombre() {
