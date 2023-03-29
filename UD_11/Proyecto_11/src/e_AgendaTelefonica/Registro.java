@@ -1,10 +1,8 @@
 package e_AgendaTelefonica;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 public record Registro(String nombre, String telefono){
-
 
     @Override
     public boolean equals(Object o) {

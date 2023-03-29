@@ -2,6 +2,8 @@ package custom.util;
 
 import java.util.Scanner;
 
+
+
 public class InputReader {
 
     static Scanner input = new Scanner(System.in);
@@ -48,3 +50,10 @@ public class InputReader {
 
 
 }
+
+
+
+
+
+
+
