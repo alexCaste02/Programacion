@@ -1,6 +1,8 @@
 package e_09;
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -32,6 +34,7 @@ public class Temperaturas_TreeMap {
         //mostramos temps y reps
         for (Map.Entry<Integer, Integer> entry : distribTemps.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
+
         }
 
         //minima y maxima
@@ -40,4 +43,6 @@ public class Temperaturas_TreeMap {
 
 
     }
+
+
 }
