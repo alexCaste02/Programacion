@@ -43,10 +43,12 @@ public abstract class Personaje implements Comparable<Personaje>{
         return herido;
     }
     public void setHerido(boolean herido) {
+
         if(muerto)
             this.herido = false;
         else
             this.herido = herido;
+
     }
     public boolean isMuerto() {
         return muerto;
@@ -54,6 +56,26 @@ public abstract class Personaje implements Comparable<Personaje>{
     public void setMuerto(boolean muerto) {
         this.muerto = muerto;
         if(muerto) setHerido(false);
+
+        //herido=verdadero y pasar muerto a verdadero
+//        if(this.herido && muerto){
+//            this.muerto=true;
+//            this.herido=false;
+//
+//        } else if (this.herido && !muerto) {
+//            this.muerto=false;
+//            this.herido=true;
+//
+//        } else if (!this.herido && muerto) {
+//            this.muerto=true;
+//            this.herido=false;
+//
+//        } else if (!this.herido && !muerto) {
+//            this.muerto=false;
+//            this.herido=false;
+//
+//        }
+
     }
     public String getNombre() {
         return nombre;
