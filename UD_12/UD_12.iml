@@ -8,6 +8,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Programacion" />
+    <orderEntry type="module" module-name="Programacion" exported="" />
+    <orderEntry type="library" name="custom.util" level="project" />
   </component>
 </module>
