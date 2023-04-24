@@ -2,7 +2,6 @@ package e_A1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class MainA1_UD12 {

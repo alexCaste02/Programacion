@@ -1,4 +1,4 @@
-package E_08;
+package E_2_08;
 
 import java.util.Scanner;
 

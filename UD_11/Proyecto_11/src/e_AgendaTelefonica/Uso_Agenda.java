@@ -1,9 +1,7 @@
 package e_AgendaTelefonica;
 
-import custom.util.InputReader;
-import custom.util.InvalidInputException;
-
-import java.util.Comparator;
+import ReaderAndValidator.InputReader;
+import ReaderAndValidator.InvalidInputException;
 
 import java.util.Scanner;
 

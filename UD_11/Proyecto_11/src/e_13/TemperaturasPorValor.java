@@ -1,7 +1,7 @@
 package e_13;
 
-import custom.util.InputReader;
-import custom.util.InvalidInputException;
+import ReaderAndValidator.InputReader;
+import ReaderAndValidator.InvalidInputException;
 
 import java.util.*;
 
