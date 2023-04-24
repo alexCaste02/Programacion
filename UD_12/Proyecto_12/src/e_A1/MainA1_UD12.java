@@ -43,13 +43,17 @@ public class MainA1_UD12 {
         } else if(file.isDirectory()) {  //Creo que no hace falta, pero asi uso el metodo
 
             Arrays.stream(Objects.requireNonNull(file.listFiles())).sorted((o1, o2) -> {
+
                 if (o1.isFile() && o2.isFile() || o1.isDirectory() && o2.isDirectory())
                     return 0;
                 else if (o1.isFile() && o2.isDirectory())
                     return 1;
                 else
                     return -1;
-            }).forEach(f -> System.out.println((f.isFile()?"[A] ":"[*] ")+f.getName()));
+
+            }
+
+            ).forEach(f -> System.out.println((f.isFile()?"[A] ":"[*] ")+f.getName()));
 
 
         }
