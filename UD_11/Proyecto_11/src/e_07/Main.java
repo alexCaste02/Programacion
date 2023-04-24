@@ -1,7 +1,7 @@
 package e_07;
 
-import custom.util.InputReader;
-import custom.util.InvalidInputException;
+import ReaderAndValidator.InputReader;
+import ReaderAndValidator.InvalidInputException;
 
 import java.util.HashMap;
 import java.util.Map;

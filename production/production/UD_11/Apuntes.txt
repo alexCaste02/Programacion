@@ -1,0 +1,35 @@
+========================================================================================
+
+[INTERFAZ] LIST ---- REPETIBLE
+// Lista
+// Tiene orden, elementos en posicion determinada (indice)
+
+ArrayList     - Tamaño variable
+LinkedList    - Conectados con anterior y sig. Facil control de inicio y final
+
+========================================================================================
+
+[INTERFAZ] SET ----- NO REPETIBLE
+// Conjunto
+// Normalmente comprueba si se repite a traves del Hash (+equals) o interfaz comparable.
+// NO tiene indice
+
+HashSet       - Desordenado/Dispersado
+LinkedHashSet - Ordenado segun insercion, conectados con anterior y sig
+TreeSet       - Ordenado segun orden natural (comparable)
+
+========================================================================================
+
+[INTERFAZ] MAP ----- RELACION CLAVE-VALOR
+// Mapa
+// Clave no repetible asociada a un valor
+
+HashMap       - Desordenado/Dispersado
+TreeMap       - Ordenado segun orden natural (comparable)
+
+========================================================================================
+
+Comparable - ordenacion natural
+Comparator - clase unica que compara custom
+
+Listas - orden de insercion hasta usar Collections.sort

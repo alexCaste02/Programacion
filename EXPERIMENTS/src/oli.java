@@ -10,9 +10,9 @@ public class oli {
         patatasPower.put("batata",20);
         patatasPower.put("papita",50);
 
-        for (Map.Entry<String, Integer> papitaEntrada : patatasPower.entrySet()) {
-            System.out.println(papitaEntrada.+" - "+papitaEntrada.getValue());
-        }
+//        for (Map.Entry<String, Integer> papitaEntrada : patatasPower.entrySet()) {
+//            System.out.println(papitaEntrada.+" - "+papitaEntrada.getValue());
+//        }
 
         for (String papiClave : patatasPower.keySet()) {
             System.out.println(papiClave+" - "+patatasPower.get(papiClave));
@@ -22,7 +22,7 @@ public class oli {
 
         TreeSet<Integer> treeSet = new TreeSet<>();
 
-        treeSet.fir
+//        treeSet.fir
 
     }
 }

@@ -60,7 +60,7 @@ funciones adicionales para que el código sea lo más modular.
 • Es obligatorio utilizar la clase ‘Articulo’.
  */
 
-package E_08;
+package E_2_08;
 
 import java.util.ArrayList;
 
