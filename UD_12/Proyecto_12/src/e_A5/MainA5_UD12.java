@@ -25,10 +25,7 @@ public class MainA5_UD12 {
         
         if(!f.exists()) throw new FileNotFoundException("No existe");
 
-        for (int i = 1; i <= depth; i++) {
-            System.out.print("--");
-        }
-        System.out.print("- ");
+//        mammaMiaPizzeria(depth);
         
         if(f.isFile()) {
             System.out.println("Borrando archivo "+f.getName());
@@ -46,10 +43,7 @@ public class MainA5_UD12 {
 
                 if(file.isDirectory()) borraTodo(file,depth+1);
 
-                for (int i = 1; i <= depth; i++) {
-                    System.out.print("--");
-                }
-                System.out.print("- ");
+//                mammaMiaPizzeria(depth);
 
                 if (file.isFile()) {
                     System.out.printf(
@@ -62,10 +56,7 @@ public class MainA5_UD12 {
                 n++;
             }
 
-            for (int i = 1; i <= depth; i++) {
-                System.out.print("--");
-            }
-            System.out.print("- ");
+//            mammaMiaPizzeria(depth);
 
             System.out.println("Borrando directorio...");
 
@@ -75,7 +66,10 @@ public class MainA5_UD12 {
 
     }
 
-    public static int mammaMiaPizzeria(int d){
-        
-    }
+//    public static void mammaMiaPizzeria(int d){
+//        for (int i = 1; i <= d; i++) {
+//            System.out.print("--");
+//        }
+//        System.out.print("- ");
+//    }
 }
