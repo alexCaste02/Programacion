@@ -19,7 +19,7 @@ public class MiniFileManager {
         File newfile;
 
         if(dir.equals("..")) newfile = carpetaActual.getParentFile();
-        else if(dir.matches("C:/.*")) newfile = new File(dir);
+        else if(dir.matches("[C:/].*") || dir.matches("[C:\\ ].*")) newfile = new File(dir);
         else newfile = new File(getPathCarpetaActual() + "/" + dir);
 
         if(!newfile.exists()) throw new FileNotFoundException("No se puede encontrar ruta especificada");

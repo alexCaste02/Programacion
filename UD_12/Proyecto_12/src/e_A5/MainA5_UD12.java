@@ -45,6 +45,7 @@ public class MainA5_UD12 {
 
 //                mammaMiaPizzeria(depth);
 
+                //solo para hacerlo cuco
                 if (file.isFile()) {
                     System.out.printf(
                             (file.delete() ?

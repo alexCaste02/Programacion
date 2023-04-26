@@ -24,7 +24,7 @@ public class MiniTerminal {
             //FIXME: como tratar con espacios en ruta?
             String enter = input.nextLine();
 
-            String cmd = enter;
+            String cmd;
             String ruta1 = "";
             String ruta2 = "";
 
@@ -32,6 +32,8 @@ public class MiniTerminal {
                 String[] line = enter.split(" ");
                 cmd = line[0];
 
+
+                // SE PUEDE TRATAR A TRAVES DE INDEXOUTOFBOUNDS EN VEZ DE TRATAR LA INFO CON PARAMETROS
                 if(line.length==2)
                     ruta1 = line[1];
 
