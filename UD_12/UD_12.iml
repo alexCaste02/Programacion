@@ -10,5 +10,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="custom.util" level="project" />
     <orderEntry type="module" module-name="MyUtilities" />
+    <orderEntry type="library" name="Persona" level="project" />
   </component>
 </module>
