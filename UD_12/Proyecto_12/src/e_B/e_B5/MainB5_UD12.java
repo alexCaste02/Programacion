@@ -24,18 +24,18 @@ public class MainB5_UD12 {
                 "Carpeta 'Diccionario' no creada"
         );
 
-        Map<String,File> mapaLetras = new HashMap<>();
+        Map<String,File> mapaLetrasConArchivos = new HashMap<>();
 
         for (int i = 65; i <= 90; i++) {
             String letra = String.valueOf((char) i);
-            File archivoLetra = new File("UD_12/Proyecto_12/DOCS/Diccionario/"+letra+".txt");
-            mapaLetras.put(letra,archivoLetra);
+            File archivoLetra = new File(dicc,letra+".txt"); //!!! MUCHO MAS FACIL, RECORDAR
+            mapaLetrasConArchivos.put(letra,archivoLetra);
         }
 
 
         // Otro tipo de 'writer' seria mejor?
         //TODO: separar vocales para distinguir acentos
-        for (Map.Entry<String, File> entry : mapaLetras.entrySet()) {
+        for (Map.Entry<String, File> entry : mapaLetrasConArchivos.entrySet()) {
             try(PrintWriter pw = new PrintWriter(entry.getValue());
                 Scanner scf = new Scanner(new File("UD_12/Proyecto_12/DOCS/diccionario.txt")))
             {

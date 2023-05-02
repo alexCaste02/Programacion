@@ -31,18 +31,15 @@ public class MainB3_UD12 {
 
         ArrayList<String> lineas = new ArrayList<>();
         try(Scanner scf = new Scanner(archivoA);
-            PrintWriter pw = new PrintWriter(archivoB))
-        {
+            PrintWriter pw = new PrintWriter(archivoB)
+        ){
 
-            while (scf.hasNext()){
-                lineas.add(scf.nextLine());
-            }
+            while (scf.hasNext()) lineas.add(scf.nextLine());
 
             lineas.sort(String::compareTo);
 
-            for (String linea : lineas) {
-                pw.println(linea);
-            }
+            for (String linea : lineas) pw.println(linea);
+
 
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());

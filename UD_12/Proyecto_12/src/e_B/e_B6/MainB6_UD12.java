@@ -20,12 +20,12 @@ public class MainB6_UD12 {
         System.out.println("Introduce un numero");
         String num = input.nextLine();
 
-        int pos = -1;
+        int pos = -1;// por si no aparece
 
         try(BufferedReader reader = new BufferedReader(new FileReader("UD_12/Proyecto_12/DOCS/pi-million.txt")) ){
             String linea = reader.readLine();
-            for (int i = 0; i <= linea.length() - num.length() ; i++) {
-//              if (linea.substring(i, i+num.length()).equals(num))
+            for (int i = 0; i + num.length() <= linea.length()  ; i++) {
+//              if (linea.substring(i, i+num.length()).equals(num)) [vvv- Mas facil -vvv]
                 if (linea.startsWith(num, i)) {
                     pos = i+1;
                     break;
