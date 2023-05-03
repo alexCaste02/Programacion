@@ -1,4 +1,4 @@
-package e_B.e_B7;
+package e_B.e_B8;
 
 /*
 Implementa un programa que lea un documento de texto y muestre por pantalla
@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class MainB7_UD12 {
+public class MainB8_UD12 {
     public static void main(String[] args) {
 
         File f = new File("UD_12/Proyecto_12/DOCS/Mis Cosas/LECTURAS/lazarillo");
@@ -29,16 +29,18 @@ public class MainB7_UD12 {
         try (Scanner scf = new Scanner(f)) {
             while (scf.hasNextLine()) {
                 String linea = scf.nextLine();
-
                 nLineas++;
                 nCaracteres += linea.length();
                 String[] palabrasLinea = linea.split(" ");
                 nPalabras += palabrasLinea.length;
 
                 for (String s : palabrasLinea) {
-                    if (!s.equals("")) repsPalabras.put(s, repsPalabras.getOrDefault(s, 0) + 1);
+                    if (!s.equals("")) repsPalabras.put(s,repsPalabras.getOrDefault(s,0)+1);
                 }
+
             }
+
+
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
@@ -48,9 +50,9 @@ public class MainB7_UD12 {
                 Numero de lineas: %d
                 Numero de palabras: %d
                 Numero de caracteres: %d
-                                
+                
                 Palabras mas comunes:
-                """, nLineas, nPalabras, nCaracteres);
+                """,nLineas,nPalabras,nCaracteres);
 
         ArrayList<Map.Entry<String, Integer>> repsPalabrasOrdenado = new ArrayList<>(repsPalabras.entrySet());
         repsPalabrasOrdenado.sort(Comparator.comparingInt(Map.Entry::getValue));
