@@ -1,67 +1,88 @@
 package e_B.e_B8;
 
 /*
-Implementa un programa que lea un documento de texto y muestre por pantalla
-algunos datos estadísticos: nº de líneas, nº de palabras, nº de caracteres y cuáles son las
-10 palabras más comunes (y cuántas veces aparecen). Prueba el programa con los
-archivos de la carpeta ‘Libros’.
-NOTA: Para llevar la cuenta de cuántas veces aparece cada palabra puedes utilizar una
-HashTable. Una tabla hash es una estructura de datos tipo colección (como el ArrayList), que
-permite almacenar pares clave-valor. Por ejemplo {“elefante”, 5} o {“casa”, 10} son pares
-<String,Integer> que asocian una palabra (clave) con un nº entero (valor).
+Copia el fichero Persona.jar en el directorio de tu proyecto. Añadirlo como librería. Ya
+podemos usar la clase utilidades.Persona.
+En el fichero datos_personas.csv del directorio Documentos tenemos datos de personas.
+Crea un mapa para guardar todos los datos de las personas, referenciadas por su dni.
+Lee el fichero, crea objetos Persona con sus datos y añádelos al mapa.
+A continuación pregunta por un dni, y mostrará los datos de esa persona si se encuentra
+en el sistema, o informará que no se encuentra. Se repetirá hasta que se introduzca “fin”.
+Para finalizar genera un fichero en el directorio Documentos, con nombre
+datos_junilados.csv con los datos en formato “dni;nombre;apellidos;edad” de las
+personas jubiladas, ordenadas por dni.
  */
 
+import utilidades.Persona;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.*;
+
+import static java.lang.System.in;
 
 public class MainB8_UD12 {
     public static void main(String[] args) {
 
-        File f = new File("UD_12/Proyecto_12/DOCS/Mis Cosas/LECTURAS/lazarillo");
+        Scanner input = new Scanner(in);
 
-        int nLineas = 0;
-        int nPalabras = 0;
-        int nCaracteres = 0;
-        Map<String, Integer> repsPalabras = new HashMap<>();
+        Map<String, Persona> dniPersonaMapa = new HashMap<>();
 
-        try (Scanner scf = new Scanner(f)) {
+        try (Scanner scf = new Scanner(new File("UD_12/Proyecto_12/DOCS/datos_personas.csv"))) {
             while (scf.hasNextLine()) {
-                String linea = scf.nextLine();
-                nLineas++;
-                nCaracteres += linea.length();
-                String[] palabrasLinea = linea.split(" ");
-                nPalabras += palabrasLinea.length;
+                String[] lineaPersona = scf.nextLine().split(";");
+                dniPersonaMapa.put(lineaPersona[0], new Persona(lineaPersona[0], lineaPersona[1], lineaPersona[2], Integer.parseInt(lineaPersona[3])));
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
 
-                for (String s : palabrasLinea) {
-                    if (!s.equals("")) repsPalabras.put(s,repsPalabras.getOrDefault(s,0)+1);
-                }
+        Persona p = null;
+        boolean cont = true;
+        while (cont) {
+            System.out.println("Introduce un dni (o fin para terminar)");
+            String txt = input.nextLine();
 
+            if (txt.equals("fin")) {
+                break;
             }
 
+            if (!Persona.validarDNI(txt)) {
+                continue;
+            }
+
+            for (Map.Entry<String, Persona> entry : dniPersonaMapa.entrySet()) {
+                if (txt.equals(entry.getKey())) {
+                    p = entry.getValue();
+                    cont=false;
+                }
+            }
+        }
+
+        if (p == null) System.out.println("No se ha encontrado persona");
+        else System.out.println("Se encuentra: " + p);
+
+
+
+        //jubilados
+        try (PrintWriter pw = new PrintWriter("UD_12/Proyecto_12/DOCS/datos_junilados.csv")) {
+
+            ArrayList<Persona> personasJubiladas = new ArrayList<>();
+            for (Map.Entry<String, Persona> entry : dniPersonaMapa.entrySet()) {
+                if(entry.getValue().getEdad()>65) personasJubiladas.add(entry.getValue());
+            }
+
+            personasJubiladas.sort(Comparator.comparing(Persona::getDni));
+
+            for (Persona pj : personasJubiladas) {
+                pw.println(pj.getDni()+";"+pj.getNombre()+";"+pj.getApellidos()+";"+pj.getEdad());
+            }
 
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
 
-
-        System.out.printf("""
-                Numero de lineas: %d
-                Numero de palabras: %d
-                Numero de caracteres: %d
-                
-                Palabras mas comunes:
-                """,nLineas,nPalabras,nCaracteres);
-
-        ArrayList<Map.Entry<String, Integer>> repsPalabrasOrdenado = new ArrayList<>(repsPalabras.entrySet());
-        repsPalabrasOrdenado.sort(Comparator.comparingInt(Map.Entry::getValue));
-        Collections.reverse(repsPalabrasOrdenado);
-
-        Iterator<Map.Entry<String, Integer>> iter = repsPalabrasOrdenado.iterator();
-        for (int i = 0; i < 10; i++) {
-            if (iter.hasNext()) System.out.println(iter.next());
-        }
 
     }
 }
