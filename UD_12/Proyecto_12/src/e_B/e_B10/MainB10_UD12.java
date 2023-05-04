@@ -26,32 +26,20 @@ Es un entero
 por pantalla los valores de configuración.
 */
 
-
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
 
-public class ConfigManager {
+public class MainB10_UD12 {
+    public static void main(String[] args) {
 
-    private static Properties config = new Properties();
+        try {
+            ConfigManager.loadConfig();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-    public static void loadConfig() throws IOException {
-        config.load(new FileInputStream("UD_12/Proyecto_12/DOCS/config.properties"));
-        //FIXME: TRATAR ERROR ANTES DE LANZAR
+        System.out.println("Nombre"+ConfigManager.getNombreEmpresa());
+        System.out.println(ConfigManager.getMaxIntentos());
+        System.out.println(ConfigManager.getSesionTimeout());
+
     }
-
-    public static String getNombreEmpresa(){
-        return config.getProperty("empresa.nombre");
-    }
-
-    public static int getMaxIntentos(){
-        return Integer.parseInt(config.getProperty("login.max_intentos"));
-    }
-
-    public static int getSesionTimeout(){
-        return Integer.parseInt(config.getProperty("sesion.timeout"));
-    }
-
-
-
 }

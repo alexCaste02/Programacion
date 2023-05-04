@@ -26,9 +26,9 @@ public class MainB8_UD12 {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(in);
-
         Map<String, Persona> dniPersonaMapa = new HashMap<>();
 
+        //guardar personas en mapa
         try (Scanner scf = new Scanner(new File("UD_12/Proyecto_12/DOCS/datos_personas.csv"))) {
             while (scf.hasNextLine()) {
                 String[] lineaPersona = scf.nextLine().split(";");
@@ -38,10 +38,11 @@ public class MainB8_UD12 {
             System.out.println(e.getMessage());
         }
 
+        //buscar persona
         Persona p = null;
-        boolean cont = true;
-        while (cont) {
-            System.out.println("Introduce un dni (o fin para terminar)");
+        boolean repetir = true;
+        while (repetir) {
+            System.out.println("Introduce un dni (o 'fin' para terminar)");
             String txt = input.nextLine();
 
             if (txt.equals("fin")) {
@@ -49,13 +50,14 @@ public class MainB8_UD12 {
             }
 
             if (!Persona.validarDNI(txt)) {
+                System.out.println("DNI no valido");
                 continue;
             }
 
             for (Map.Entry<String, Persona> entry : dniPersonaMapa.entrySet()) {
                 if (txt.equals(entry.getKey())) {
                     p = entry.getValue();
-                    cont=false;
+                    repetir = false;
                 }
             }
         }
@@ -64,19 +66,18 @@ public class MainB8_UD12 {
         else System.out.println("Se encuentra: " + p);
 
 
-
         //jubilados
         try (PrintWriter pw = new PrintWriter("UD_12/Proyecto_12/DOCS/datos_junilados.csv")) {
 
             ArrayList<Persona> personasJubiladas = new ArrayList<>();
             for (Map.Entry<String, Persona> entry : dniPersonaMapa.entrySet()) {
-                if(entry.getValue().esJubilado()) personasJubiladas.add(entry.getValue());
+                if (entry.getValue().esJubilado()) personasJubiladas.add(entry.getValue());
             }
 
             personasJubiladas.sort(Comparator.comparing(Persona::getDni));
 
             for (Persona pj : personasJubiladas) {
-                pw.println(pj.getDni()+";"+pj.getNombre()+";"+pj.getApellidos()+";"+pj.getEdad());
+                pw.println(pj.getDni() + ";" + pj.getNombre() + ";" + pj.getApellidos() + ";" + pj.getEdad());
             }
 
         } catch (FileNotFoundException e) {

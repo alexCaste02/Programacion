@@ -23,8 +23,8 @@ public class MainB9_UD12 {
 
         try(FileInputStream fis = new FileInputStream(origenFile);
             BufferedInputStream bis = new BufferedInputStream(fis);
-            ObjectInputStream ois = new ObjectInputStream(bis))
-        {
+            ObjectInputStream ois = new ObjectInputStream(bis)
+        ){
 
             ArrayList<Persona> listaPersonas = new ArrayList<>();
             while(bis.available()>0){
@@ -43,6 +43,7 @@ public class MainB9_UD12 {
         }
 
 
+        //escribir
         try(FileOutputStream fos = new FileOutputStream(destinoFile);
             BufferedOutputStream bos = new BufferedOutputStream(fos);
             ObjectOutputStream oos = new ObjectOutputStream(bos))
