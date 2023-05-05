@@ -26,10 +26,9 @@ public class MainB5_UD12 {
 
         Map<String,File> mapaLetrasConArchivos = new HashMap<>();
 
-        for (int i = 65; i <= 90; i++) {
-            String letra = String.valueOf((char) i);
+        for (char letra = 65; letra <= 90; letra++) {
             File archivoLetra = new File(dicc,letra+".txt"); //!!! MUCHO MAS FACIL, RECORDAR
-            mapaLetrasConArchivos.put(letra,archivoLetra);
+            mapaLetrasConArchivos.put(String.valueOf(letra),archivoLetra);
         }
 
 

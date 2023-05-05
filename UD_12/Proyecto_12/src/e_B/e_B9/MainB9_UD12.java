@@ -19,6 +19,9 @@ public class MainB9_UD12 {
         File origenFile = new File("UD_12/Proyecto_12/DOCS/datos_personas.bin");
         File destinoFile = new File(origenFile.getParent(),"datos_veintes.ser");
 
+        ArrayList<Persona> listaPersonas = new ArrayList<>();
+
+
         ArrayList<Persona> listaPersonasVeintes = new ArrayList<>();
 
         try(FileInputStream fis = new FileInputStream(origenFile);
@@ -26,15 +29,10 @@ public class MainB9_UD12 {
             ObjectInputStream ois = new ObjectInputStream(bis)
         ){
 
-            ArrayList<Persona> listaPersonas = new ArrayList<>();
-            while(bis.available()>0){
+
+//            while(bis.available()>0){
                 listaPersonas = (ArrayList<Persona>) ois.readObject();
-            }
-            for (Persona p : listaPersonas) {
-                if(p.getEdad() <= 29 && p.getEdad() >=20) {
-                    listaPersonasVeintes.add(p);
-                }
-            }
+//            }
 
 
 
@@ -42,17 +40,35 @@ public class MainB9_UD12 {
             e.printStackTrace();
         }
 
+        for (Persona p : listaPersonas) {
+            if(p.getEdad() <= 29 && p.getEdad() >=20) {
+            listaPersonasVeintes.add(p);
+        }
+    }
+
+
 
         //escribir
         try(FileOutputStream fos = new FileOutputStream(destinoFile);
             BufferedOutputStream bos = new BufferedOutputStream(fos);
             ObjectOutputStream oos = new ObjectOutputStream(bos))
         {
+
             oos.writeObject(listaPersonasVeintes);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+
+
+
+
+
+
+
+
+        //COMPROBAR QUE SE HA GUARDADO BIEN
         try(FileInputStream fis = new FileInputStream(destinoFile);
             BufferedInputStream bis = new BufferedInputStream(fis);
             ObjectInputStream ois = new ObjectInputStream(bis))
