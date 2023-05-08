@@ -10,8 +10,9 @@ public class Main {
         ventana.setLocation(10,10);
         ventana.setSize(100,100);
         ventana.getBounds();
+        ventana.setAlwaysOnTop(true);
 
-        Point velocidad = new Point(10,10);
+        Point velocidad = new Point(100,100);
         Point pos = ventana.getLocation();
 
         for (int t = 0; t < 10000; t++) {
@@ -30,7 +31,9 @@ public class Main {
             if(pos.getX()+100>=1920 || pos.getX()<=0)
                 velocidad = new Point(-velocidad.x,velocidad.y);
 
+
         }
+
 
 
     }
