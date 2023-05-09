@@ -95,7 +95,7 @@ public abstract class Astros {
                         Diametro --------------- %.2f
                         Periodo de rotacion ---- %.2f
                         Periodo de translacion - %.2f
-                        Orbita a --------------- %s
+                        orbit a --------------- %s
                         """, nombre, masaKG, diametroKM, periodoRotacionDias, periodoTraslacionDias, cuerpoOrbitado));
 
         if (orbitable){
