@@ -9,8 +9,8 @@ public class Espacio {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                Astro astro1 = new Astro("planetita",false);
-                Astro fijo = new Astro("FIJO",true);
+                Astro astro1 = new Astro("planetita",false,50,50);
+                Astro fijo = new Astro("FIJO",true,150,100);
 
                 ArrayList<Astro> astros = new ArrayList<>();
                 astros.add(astro1);

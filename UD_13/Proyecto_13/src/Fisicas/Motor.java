@@ -5,37 +5,36 @@ import java.util.ArrayList;
 
 public class Motor {
 
-    private static final int G = 5;
-    public static void calcularFisicas(Astro a, ArrayList<Astro> otros){
+    private static final double G = 100000;
 
-        if(!a.isFijo()){
-            Point cambioVel=new Point();
+    //FIXME: ARREGLAR NEGATIVOS OTRA VEZ
+    public static void calcularFisicas(Astro a, ArrayList<Astro> otros) {
+        if (!a.isFijo()) {
+            System.out.println(a);
 
+            Point sumatorioFuerzas = new Point();
             for (Astro otro : otros) {
-                Point dist = new Point(a.getX()-otro.getX(),a.getY()-otro.getY());
-                if(dist.x==0){
-                    dist.x=1;
-                }
-                if(dist.y==0){
-                    dist.y=1;
-                }
+                if(a.equals(otro)) continue;
 
-                System.out.println("Dist:"+dist);
+                double distX = a.getX()-otro.getX();
+                double distY = a.getY()-otro.getY();
+                double ang = Math.tan(distY/distX);
+                double dist = Math.sqrt(Math.pow(distX,2)+Math.pow(distY,2));
+                double fuerza = G*((a.getMasa()*otro.getMasa()/(dist*dist)));
 
-                int varX = G*(a.getMasa()*otro.getMasa())/(dist.x*dist.x);
-                int varY = G*(a.getMasa()*otro.getMasa())/(dist.y*dist.y);
+                double fuerzaX = fuerza*Math.cos(ang);
+                double fuerzaY = fuerza*Math.sin(ang);
 
-                if(!otro.equals(a)){
-                    cambioVel.translate(varX,varY);
+                sumatorioFuerzas.translate((int) fuerzaX, (int) fuerzaY);
 
-                }
             }
 
-            a.getVelocidad().translate(cambioVel.x,cambioVel.y);
+            a.getVelocidad().translate(sumatorioFuerzas.x, sumatorioFuerzas.y);
 
-            Point nuevaPos = new Point(a.getPosicion().x+a.getVelocidad().x,a.getPosicion().y+a.getVelocidad().y);
-            a.setPosicion(nuevaPos);
-            System.out.println(a);
+
         }
+        Point nuevaPos = new Point(a.getX()+a.getVelocidad().x,a.getY()+a.getVelocidad().y);
+        a.setPosicion(nuevaPos);
+
     }
 }

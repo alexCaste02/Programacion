@@ -10,16 +10,16 @@ public class Astro extends JFrame{
     private Point velocidad;
     private boolean fijo;
 
-    private int masa=1;
+    private int masa=2;
 
 
 
     private static int idCounter;
     private final int id;
 
-    public Astro(String cadena, boolean fijo){
+    public Astro(String cadena, boolean fijo, int x, int y){
         super(cadena);
-        setBounds(25,25,500,500);
+        setBounds(x,y,200,200);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -51,6 +51,11 @@ public class Astro extends JFrame{
     }
 
     public void setPosicion(Point posicion) {
+        if(posicion.x+this.getWidth()>1920) posicion.x=1920-this.getWidth();
+        if(posicion.x<0) posicion.x=0;
+        if(posicion.y+this.getHeight()>1080) posicion.y=1080-this.getHeight();
+        if(posicion.y<0) posicion.y=0;
+
         this.setLocation(posicion);
     }
 
