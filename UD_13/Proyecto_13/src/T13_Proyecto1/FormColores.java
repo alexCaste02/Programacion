@@ -11,50 +11,75 @@ public class FormColores extends JFrame{
             @Override
             public void run() {
                 try {
-                    FormColores ventana = new FormColores();
+                    FormColores ventana = new FormColores("Alejandro Castellanos - Selector de colores");
 //                    ventana.setBounds(100,100,500,400);
-                    ventana.setContentPane(ventana.panelPrincipal);
-                    ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-                    ventana.pack();
-                    ventana.setVisible(true);
-
-
-
-                    ventana.redSlider.addChangeListener(new ChangeListener() {
-                        @Override
-                        public void stateChanged(ChangeEvent e) {
-                            String hex = Integer.toHexString(ventana.redSlider.getValue());
-                            if(hex.length()<2) hex="0"+hex;
-                            
-                            ventana.redLabel.setText(""+ Math.round(ventana.redSlider.getValue()*2.55));
-
-                            ventana.hexLabel.setText("#"+hex+ventana.hexLabel.getText().substring(3));
-                        }
-                    });
-
-                    ventana.greenSlider.addChangeListener(new ChangeListener() {
-                        @Override
-                        public void stateChanged(ChangeEvent e) {
-                            ventana.greenLabel.setText(""+ Math.round(ventana.greenSlider.getValue()*2.55));
-                        }
-                    });
-
-                    ventana.blueSlider.addChangeListener(new ChangeListener() {
-                        @Override
-                        public void stateChanged(ChangeEvent e) {
-                            ventana.blueLabel.setText(""+ Math.round(ventana.blueSlider.getValue()*2.55));
-                        }
-                    });
-
-
-
-
                 } catch (Exception e){
                     System.out.println(e.getMessage());
                 }
             }
         });
+    }
+
+    public FormColores(String title) throws HeadlessException {
+        super(title);
+
+        setContentPane(panelPrincipal);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        colorPanel.setBackground(Color.BLACK);
+        pack();
+        setVisible(true);
+
+
+
+        redSlider.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                redLabel.setText(""+redSlider.getValue());
+                setHex();
+                colorPanel.setBackground(new Color(
+                        redSlider.getValue(),
+                        greenSlider.getValue(),
+                        blueSlider.getValue()
+                        ));
+            }
+        });
+
+        greenSlider.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                greenLabel.setText(""+greenSlider.getValue());
+                setHex();
+                colorPanel.setBackground(new Color(
+                        redSlider.getValue(),
+                        greenSlider.getValue(),
+                        blueSlider.getValue()
+                ));
+            }
+        });
+
+        blueSlider.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                blueLabel.setText(""+blueSlider.getValue());
+                setHex();
+                colorPanel.setBackground(new Color(
+                        redSlider.getValue(),
+                        greenSlider.getValue(),
+                        blueSlider.getValue()
+                ));
+            }
+        });
+
+    }
+
+    private void setHex(){
+        hexLabel.setText(String.format(
+                "#%02X%02X%02X",
+                redSlider.getValue(),
+                greenSlider.getValue(),
+                blueSlider.getValue())
+        );
+
     }
 
     private JPanel panelPrincipal;
@@ -65,5 +90,6 @@ public class FormColores extends JFrame{
     private JLabel greenLabel;
     private JLabel blueLabel;
     private JLabel hexLabel;
+    private JPanel colorPanel;
     private JTextPane RedValue;
 }
