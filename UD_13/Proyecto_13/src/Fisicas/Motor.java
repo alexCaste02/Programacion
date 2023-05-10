@@ -29,7 +29,7 @@ public class Motor {
                 double distY = nucleoAstroImagen.y - nucleObj.y;
 
                 double dist = Math.sqrt(distX * distX + distY * distY);
-                double fuerza = G * a.getMasa() * otro.getMasa() / (1);
+                double fuerza = G * a.getMasa() * otro.getMasa() / (1); // (dist^2) es demasiado
 
                 double ang = Math.atan2(distY, distX);
                 double fuerzaX = fuerza * Math.cos(ang);
