@@ -9,37 +9,47 @@ import java.io.IOException;
 import java.util.Objects;
 
 
-public class AstroImagen {
+public class AstroImagen extends  JFrame{
 
     private Point velocidad;
     private boolean fijo;
 
     private double masa;
-    JFrame frame;
+
 
 
 
     private static int idCounter;
     private final int id;
 
-    public AstroImagen(String cadena, double masa, boolean fijo, int posX, int posY, int sizeX, int sizeY) throws IOException {
-//        super(cadena);
-        
-//        setVisible(true);
-//        setDefaultCloseOperation(EXIT_ON_CLOSE);
-//        setAlwaysOnTop(true);
+    public AstroImagen(String cadena, double masa, boolean fijo, int posX, int posY, int sizeX, int sizeY) {
+        super(cadena);
 
-        BufferedImage img= ImageIO.read(new File("UD_13/Resources/Terran1.png"));
-        ImageIcon icon=new ImageIcon(img);
-        this.frame=new JFrame(cadena);
-        frame.setLayout(new FlowLayout());
-        frame.setBounds(posX,posY,sizeX,sizeY);
-//        frame.setSize(sizeX,sizeY);
-        JLabel lbl=new JLabel();
-        lbl.setIcon(icon);
-        frame.add(lbl);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        BufferedImage img = null;
+
+        try {
+            img = ImageIO.read(new File("UD_13/Resources/Terran1.png"));
+        } catch (IOException e) {
+            System.out.println("puto cagaste");
+        }
+
+        if(!fijo) {
+            img = resize(img, 100, 100);
+            ImageIcon icon = new ImageIcon(img);
+
+            setUndecorated(true);
+            setBackground(new Color(0, 0, 0, 0));
+            setLayout(new FlowLayout());
+
+            JLabel lbl = new JLabel();
+            lbl.setIcon(icon);
+            add(lbl);
+        }
+        setBounds(posX, posY, sizeX, sizeY);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+
 
 
 
@@ -67,16 +77,16 @@ public class AstroImagen {
     }
 
     public Point getPosicion() {
-        return frame.getLocation();
+        return getLocation();
     }
 
     public void setPosicion(Point posicion) {
-        if(posicion.x+frame.getWidth()>1920) posicion.x=1920-frame.getWidth();
+        if(posicion.x+this.getWidth()>1920) posicion.x=1920-this.getWidth();
         if(posicion.x<0) posicion.x=0;
-        if(posicion.y+frame.getHeight()>1080) posicion.y=1080-frame.getHeight();
+        if(posicion.y+this.getHeight()>1080) posicion.y=1080-this.getHeight();
         if(posicion.y<0) posicion.y=0;
 
-        frame.setLocation(posicion);
+        this.setLocation(posicion);
     }
 
     public double getMasa() {
@@ -110,5 +120,18 @@ public class AstroImagen {
                 ", masa=" + masa +
                 ", id=" + id +
                 '}';
+    }
+
+
+    // [StackOverflow] cambia tamaño del bufferedimage
+    public static BufferedImage resize(BufferedImage img, int newW, int newH) {
+        Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
+        BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
+
+        Graphics2D g2d = dimg.createGraphics();
+        g2d.drawImage(tmp, 0, 0, null);
+        g2d.dispose();
+
+        return dimg;
     }
 }
