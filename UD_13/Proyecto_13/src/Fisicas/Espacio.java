@@ -13,10 +13,14 @@ public class Espacio {
 
                 astros.add(new Astro("FIJO", 1000,true,700,700,200,200));
 
-                astros.add(new Astro("planetita1",1000,false,800,400,50,50));
+                astros.add(new Astro("planetita1",100,false,800,400,50,50));
+                astros.add(new Astro("planetita1",100,false,800,400,50,50));
+                astros.add(new Astro("planetita1",100,false,800,400,50,50));
+                astros.add(new Astro("planetita1",100,false,800,400,50,50));
 
-                
-//                astros.add(new Astro("planetita2",2,false,500,500,50,50));
+
+
+//                astros.add(new Astro("planetita2",1000,false,500,500,50,50));
                 while(true){
                     try {
                         Thread.sleep(Motor.T);
