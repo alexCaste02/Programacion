@@ -1,3 +1,2 @@
 Manifest-Version: 1.0
-Pruebas.Main-Class: me.alexcaste.Pruebas.Main
 
