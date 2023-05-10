@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 public class Motor {
 
-    private static final double G = 1;
-    private static final int F = 300; //frame de sim
-    public static final int T = 10; //milis por frame
+    private static final double G = 0.5;
+    private static final int F = 1000; //frame de sim
+    public static final int T = 3; //milis por frame (30 fps aprox)
 
     public static void calcularFisicas(AstroImagen a, ArrayList<AstroImagen> otros) {
         if (!a.isFijo()) {
@@ -37,9 +37,10 @@ public class Motor {
 
 
                 sumatorioFuerzas.translate(-(int) fuerzaX, -(int) fuerzaY);
-                System.out.println("sumatorioFuerzas: " + sumatorioFuerzas);
+
             }
-            sumatorioFuerzas= new Point(sumatorioFuerzas.x/ F, sumatorioFuerzas.y/ F);
+            sumatorioFuerzas = new Point(sumatorioFuerzas.x/F, sumatorioFuerzas.y/F);
+            System.out.println("sumatorioFuerzas: " + sumatorioFuerzas);
             a.setVelocidad(sumatorioFuerzas);
         }
         Point nuevaPos = new Point(a.getX() + a.getVelocidad().x, a.getY() + a.getVelocidad().y);

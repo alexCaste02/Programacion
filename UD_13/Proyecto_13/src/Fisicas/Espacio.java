@@ -11,8 +11,9 @@ public class Espacio {
             public void run() {
                 ArrayList<AstroImagen> astros = new ArrayList<>();
 
-                astros.add(new AstroImagen("FIJO", 1000,true,700,700,200,200));
-                astros.add(new AstroImagen("planetita1",1000,false,800,400,200,200));
+
+                astros.add(new AstroImagen("FIJO", 1,true,700,700,200,200));
+                astros.add(new AstroImagen("planetita1",100,false,800,400,200,200));
 
 
 //                astros.add(new AstroImagen("planetita2",2,false,500,500,50,50));

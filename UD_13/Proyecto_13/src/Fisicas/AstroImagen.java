@@ -25,26 +25,31 @@ public class AstroImagen extends  JFrame{
     public AstroImagen(String cadena, double masa, boolean fijo, int posX, int posY, int sizeX, int sizeY) {
         super(cadena);
 
-        BufferedImage img= null;
+        BufferedImage img = null;
+
         try {
             img = ImageIO.read(new File("UD_13/Resources/Terran1.png"));
         } catch (IOException e) {
             System.out.println("puto cagaste");
         }
-        img=resize(img,100,100);
-        ImageIcon icon=new ImageIcon(img);
 
-        setUndecorated(true);
-        setBackground(new Color(0,0,0,0));
-        setLayout(new FlowLayout());
-        setBounds(posX,posY,sizeX,sizeY);
-//        frame.setSize(sizeX,sizeY);
-        JLabel lbl=new JLabel();
-        lbl.setIcon(icon);
-        add(lbl);
+        if(!fijo) {
+            img = resize(img, 100, 100);
+            ImageIcon icon = new ImageIcon(img);
+
+            setUndecorated(true);
+            setBackground(new Color(0, 0, 0, 0));
+            setLayout(new FlowLayout());
+
+            JLabel lbl = new JLabel();
+            lbl.setIcon(icon);
+            add(lbl);
+        }
+        setBounds(posX, posY, sizeX, sizeY);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
+
 
 
 
