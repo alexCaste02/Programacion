@@ -22,16 +22,24 @@ public class AstroImagen {
     private static int idCounter;
     private final int id;
 
-    public AstroImagen(String cadena, double masa, boolean fijo, int posX, int posY, int sizeX, int sizeY) throws IOException {
+    public AstroImagen(String cadena, double masa, boolean fijo, int posX, int posY, int sizeX, int sizeY) {
 //        super(cadena);
         
 //        setVisible(true);
 //        setDefaultCloseOperation(EXIT_ON_CLOSE);
 //        setAlwaysOnTop(true);
 
-        BufferedImage img= ImageIO.read(new File("UD_13/Resources/Terran1.png"));
+        BufferedImage img= null;
+        try {
+            img = ImageIO.read(new File("UD_13/Resources/Terran1.png"));
+        } catch (IOException e) {
+            System.out.println("puto cagaste");
+        }
         ImageIcon icon=new ImageIcon(img);
-        this.frame=new JFrame(cadena);
+        img=resize(img,100,100);
+        this.frame=new JFrame();
+        frame.setUndecorated(true);
+        frame.setBackground(new Color(0,0,0,0));
         frame.setLayout(new FlowLayout());
         frame.setBounds(posX,posY,sizeX,sizeY);
 //        frame.setSize(sizeX,sizeY);
@@ -40,6 +48,7 @@ public class AstroImagen {
         frame.add(lbl);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setAlwaysOnTop(true);
 
 
 
@@ -110,5 +119,32 @@ public class AstroImagen {
                 ", masa=" + masa +
                 ", id=" + id +
                 '}';
+    }
+
+    public int getX() {
+       return frame.getX();
+    }
+
+    public int getWidth() {
+        return frame.getWidth();
+    }
+
+    public int getY() {
+        return frame.getY();
+    }
+
+    public int getHeight() {
+        return frame.getHeight();
+    }
+
+    public static BufferedImage resize(BufferedImage img, int newW, int newH) {
+        Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
+        BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
+
+        Graphics2D g2d = dimg.createGraphics();
+        g2d.drawImage(tmp, 0, 0, null);
+        g2d.dispose();
+
+        return dimg;
     }
 }

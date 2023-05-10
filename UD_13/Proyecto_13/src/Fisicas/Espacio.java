@@ -9,18 +9,17 @@ public class Espacio {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                ArrayList<Astro> astros = new ArrayList<>();
+                ArrayList<AstroImagen> astros = new ArrayList<>();
 
-                astros.add(new Astro("FIJO", 1000,true,700,700,200,200));
+                astros.add(new AstroImagen("FIJO", 1000,true,700,700,200,200));
+                astros.add(new AstroImagen("planetita1",1000,false,800,400,200,200));
 
-                astros.add(new Astro("planetita1",1000,false,800,400,50,50));
 
-                
-//                astros.add(new Astro("planetita2",2,false,500,500,50,50));
+//                astros.add(new AstroImagen("planetita2",2,false,500,500,50,50));
                 while(true){
                     try {
                         Thread.sleep(Motor.T);
-                        for (Astro astro : astros) {
+                        for (AstroImagen astro : astros) {
                             Motor.calcularFisicas(astro,astros);
                         }
                     } catch (InterruptedException e) {
