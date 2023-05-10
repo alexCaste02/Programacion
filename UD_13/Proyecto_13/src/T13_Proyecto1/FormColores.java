@@ -24,9 +24,30 @@ public class FormColores extends JFrame{
                     ventana.redSlider.addChangeListener(new ChangeListener() {
                         @Override
                         public void stateChanged(ChangeEvent e) {
-                            ventana.redLabel.setText(""+ventana.redSlider.getValue());
+                            String hex = Integer.toHexString(ventana.redSlider.getValue());
+                            if(hex.length()<2) hex="0"+hex;
+                            
+                            ventana.redLabel.setText(""+ Math.round(ventana.redSlider.getValue()*2.55));
+
+                            ventana.hexLabel.setText("#"+hex+ventana.hexLabel.getText().substring(3));
                         }
                     });
+
+                    ventana.greenSlider.addChangeListener(new ChangeListener() {
+                        @Override
+                        public void stateChanged(ChangeEvent e) {
+                            ventana.greenLabel.setText(""+ Math.round(ventana.greenSlider.getValue()*2.55));
+                        }
+                    });
+
+                    ventana.blueSlider.addChangeListener(new ChangeListener() {
+                        @Override
+                        public void stateChanged(ChangeEvent e) {
+                            ventana.blueLabel.setText(""+ Math.round(ventana.blueSlider.getValue()*2.55));
+                        }
+                    });
+
+
 
 
                 } catch (Exception e){
