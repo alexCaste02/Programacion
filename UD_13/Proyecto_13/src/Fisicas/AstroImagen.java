@@ -44,11 +44,12 @@ public class AstroImagen extends  JFrame{
             JLabel lbl = new JLabel();
             lbl.setIcon(icon);
             add(lbl);
+            setAlwaysOnTop(true);
         }
         setBounds(posX, posY, sizeX, sizeY);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
+
 
 
 
@@ -85,6 +86,29 @@ public class AstroImagen extends  JFrame{
         if(posicion.x<0) posicion.x=0;
         if(posicion.y+this.getHeight()>1080) posicion.y=1080-this.getHeight();
         if(posicion.y<0) posicion.y=0;
+
+//        //DERECHA
+//        if(posicion.x>=1920) {
+//            posicion.x=-getWidth();
+//            posicion.y=1080-posicion.y;
+//        }
+//        //IZ
+//        if(posicion.x+getWidth()<=0){
+//            posicion.x=1920;
+//            posicion.y=1080-posicion.y;
+//        }
+//
+//        //ARRIBA
+//        if(posicion.y+getHeight()<=0){
+//            posicion.y=1080;
+//            posicion.x=1920-posicion.x;
+//        }
+//
+//        //ABAJO
+//        if(posicion.y>=1080) {
+//            posicion.y=-getWidth();
+//            posicion.x=1920-posicion.x;
+//        }
 
         this.setLocation(posicion);
     }
