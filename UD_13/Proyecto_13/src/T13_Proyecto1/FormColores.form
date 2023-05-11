@@ -53,30 +53,6 @@
           <value value="0"/>
         </properties>
       </component>
-      <component id="ab339" class="javax.swing.JLabel" binding="redLabel">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="0"/>
-        </properties>
-      </component>
-      <component id="61c50" class="javax.swing.JLabel" binding="greenLabel">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="0"/>
-        </properties>
-      </component>
-      <component id="337e2" class="javax.swing.JLabel" binding="blueLabel">
-        <constraints>
-          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="0"/>
-        </properties>
-      </component>
       <component id="65d35" class="javax.swing.JLabel" binding="hexLabel">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -118,6 +94,36 @@
         </constraints>
         <properties>
           <text value="B"/>
+        </properties>
+      </component>
+      <component id="f39a3" class="javax.swing.JTextField" binding="redTF">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="100" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="0"/>
+        </properties>
+      </component>
+      <component id="6c31c" class="javax.swing.JTextField" binding="greenTF">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="100" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="0"/>
+        </properties>
+      </component>
+      <component id="3d636" class="javax.swing.JTextField" binding="blueTF">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="100" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="0"/>
         </properties>
       </component>
     </children>

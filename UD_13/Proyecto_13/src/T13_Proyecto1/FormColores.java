@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class FormColores extends JFrame{
     public static void main(String[] args) {
@@ -34,7 +36,7 @@ public class FormColores extends JFrame{
         redSlider.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
-                redLabel.setText(""+redSlider.getValue());
+                redTF.setText(""+redSlider.getValue());
                 setHex();
                 colorPanel.setBackground(new Color(
                         redSlider.getValue(),
@@ -47,7 +49,7 @@ public class FormColores extends JFrame{
         greenSlider.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
-                greenLabel.setText(""+greenSlider.getValue());
+                greenTF.setText(""+greenSlider.getValue());
                 setHex();
                 colorPanel.setBackground(new Color(
                         redSlider.getValue(),
@@ -60,7 +62,7 @@ public class FormColores extends JFrame{
         blueSlider.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
-                blueLabel.setText(""+blueSlider.getValue());
+                blueTF.setText(""+blueSlider.getValue());
                 setHex();
                 colorPanel.setBackground(new Color(
                         redSlider.getValue(),
@@ -70,6 +72,19 @@ public class FormColores extends JFrame{
             }
         });
 
+
+        redTF.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                try{
+                    redSlider.setValue(Integer.parseInt(redTF.getText()));
+                } catch (NumberFormatException ex){
+                    redSlider.setValue(255);
+                }
+
+            }
+        });
     }
 
     private void setHex(){
@@ -86,10 +101,15 @@ public class FormColores extends JFrame{
     private JSlider redSlider;
     private JSlider greenSlider;
     private JSlider blueSlider;
-    private JLabel redLabel;
-    private JLabel greenLabel;
-    private JLabel blueLabel;
+
     private JLabel hexLabel;
     private JPanel colorPanel;
-    private JTextPane RedValue;
+    private JTextField redTF;
+    private JTextField greenTF;
+    private JTextField blueTF;
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+
+    }
 }
