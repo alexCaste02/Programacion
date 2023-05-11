@@ -4,10 +4,12 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Motor {
+    private static int FPS = 30;
 
-    private static final double G = 0.5;
-    private static final int F = 1000; //frame de sim
-    public static final int T = 3; //milis por frame (30 fps aprox)
+    private static final double G = 1;
+    private static final int F = 75; //frame de sim
+    //NO TOQUES
+    public static final int MILS_X_FRAME = 1000/FPS; //milis por frame (3 ms = 30 fps aprox)
 
     public static void calcularFisicas(AstroImagen a, ArrayList<AstroImagen> otros) {
         if (!a.isFijo()) {
