@@ -4,7 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class ElAhorcado {
 
@@ -22,9 +26,7 @@ public class ElAhorcado {
             setBounds(350, 300, 600, 500);
             setTitle("Juego del Ahorcado");
 
-
             add(new LaminaPrincipal());
-//            add(new LaminaBotones());
 
             setVisible(true);
         }
@@ -35,12 +37,15 @@ public class ElAhorcado {
         private JLabel imagen, respuesta;
         private JPanel panelLetras;
 
-        private String secreta = "THIAR";
+        private String secreta;
         private int fallos = 0;
         private final int MAX_FALLOS = 6;
         private ArrayList<Character> letrasPulsadas = new ArrayList<>();
 
         public LaminaPrincipal() {
+
+            secreta=elegirPalabraAleatoria();
+//            secreta="test";
             setLayout(new BorderLayout());
 
             JLabel titulo = new JLabel("DAM. IES Thiar");
@@ -51,7 +56,7 @@ public class ElAhorcado {
             JPanel panelTitulo = new JPanel();
             panelTitulo.add(titulo);
             panelTitulo.setBackground(Color.GRAY);
-            add(panelTitulo,BorderLayout.NORTH);
+            add(panelTitulo,BorderLayout. PAGE_START);
 
 
             imagen=new JLabel();
@@ -61,9 +66,9 @@ public class ElAhorcado {
             ponerBotones();
 
             JPanel panelCentro = new JPanel();
-            panelCentro.setLayout(new FlowLayout());
+            panelCentro.setLayout(new BorderLayout());
             panelCentro.add(imagen,BorderLayout.PAGE_START);
-            panelCentro.add(panelLetras,BorderLayout.PAGE_END);
+            panelCentro.add(panelLetras);
             add(panelCentro,BorderLayout.CENTER);
 
             JPanel panelRespuesta = new JPanel();
@@ -76,6 +81,16 @@ public class ElAhorcado {
 
 
             formaLetrasSecretas();
+        }
+
+        private String elegirPalabraAleatoria() {
+            ArrayList<String> palabras = new ArrayList<>();
+            try(Scanner scf = new Scanner(new File("UD_13/Resources/archivos/diccionario.txt"))){
+                while (scf.hasNext()) palabras.add(scf.next());
+            } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+            return palabras.get(ThreadLocalRandom.current().nextInt(palabras.size())).toLowerCase();
         }
 
         public void ponerBotones() {
@@ -99,7 +114,7 @@ public class ElAhorcado {
         public void comprobarLetra(String c) {
             boolean acertada = true; // Para saber si la palabra está completa
             letrasPulsadas.add(c.charAt(0)); // Añadimos la letra a la lista
-            if (secreta.contains(c)) { // La letra pulsada está en la palabra
+            if (secreta.contains(c.toLowerCase())) { // La letra pulsada está en la palabra
                 // Ponemos el texto de la etiqueta ocultando las letras
                 // que todavía no se han pulsado
                 String formaSecreto = "";
