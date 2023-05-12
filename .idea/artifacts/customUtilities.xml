@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="customUtilities">
+    <output-path>$PROJECT_DIR$/production/artifacts/customUtilities</output-path>
+    <root id="archive" name="custom.util.jar">
+      <element id="module-output" name="MyUtilities" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/MyUtilities/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
