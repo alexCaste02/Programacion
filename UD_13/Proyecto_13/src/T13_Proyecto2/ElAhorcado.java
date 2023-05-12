@@ -86,7 +86,10 @@ public class ElAhorcado {
         private String elegirPalabraAleatoria() {
             ArrayList<String> palabras = new ArrayList<>();
             try(Scanner scf = new Scanner(new File("UD_13/Resources/archivos/diccionario.txt"))){
-                while (scf.hasNext()) palabras.add(scf.next());
+                while (scf.hasNext())
+                    String p = scf.next();
+                if(p.len)
+                    palabras.add(scf.next());
             } catch (FileNotFoundException e) {
                 System.out.println(e.getMessage());
             }
