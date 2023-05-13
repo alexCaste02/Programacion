@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 
-public class AstroImagen extends  JFrame{
+public class AstroImagen extends JFrame{
 
     private Point velocidad;
     private boolean fijo;
@@ -24,8 +24,10 @@ public class AstroImagen extends  JFrame{
 
     public AstroImagen(String cadena, double masa, boolean fijo, int posX, int posY, int sizeX, int sizeY) {
         super(cadena);
+        //TODO: Usar JPanel y DoubleBuffered
 
         BufferedImage img = null;
+
 
         try {
             img = ImageIO.read(new File("UD_13/Resources/Terran1.png"));

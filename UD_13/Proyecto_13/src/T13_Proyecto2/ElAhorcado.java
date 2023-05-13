@@ -16,17 +16,21 @@ public class ElAhorcado {
         new ElAhorcado().iniciar();
     }
 
+    Ventana ventana;
     private void iniciar() {
-        Ventana ventana = new Ventana();
+        ventana = new Ventana();
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     class Ventana extends JFrame {
         public Ventana() {
-            setBounds(350, 300, 600, 600);
-            setTitle("Juego del Ahorcado");
+
 
             add(new LaminaPrincipal());
+
+            setBounds(600, 300, 600, 600);
+            setSize(600, 600);
+            setTitle("Juego del Ahorcado");
 
             setVisible(true);
         }
@@ -44,7 +48,7 @@ public class ElAhorcado {
 
         public LaminaPrincipal() {
 
-            secreta=elegirPalabraAleatoria();
+            secreta = elegirPalabraAleatoria();
 //            secreta="test";
             setLayout(new BorderLayout());
 
@@ -56,10 +60,10 @@ public class ElAhorcado {
             JPanel panelTitulo = new JPanel();
             panelTitulo.add(titulo);
             panelTitulo.setBackground(Color.GRAY);
-            add(panelTitulo,BorderLayout. PAGE_START);
+            add(panelTitulo, BorderLayout.PAGE_START);
 
 
-            imagen=new JLabel();
+            imagen = new JLabel();
             imagen.setIcon(new ImageIcon("UD_13/Resources/archivos/Hangman-0.png"));
 
             panelLetras = new JPanel();
@@ -67,9 +71,9 @@ public class ElAhorcado {
 
             JPanel panelCentro = new JPanel();
             panelCentro.setLayout(new BorderLayout());
-            panelCentro.add(imagen,BorderLayout.PAGE_START);
+            panelCentro.add(imagen, BorderLayout.PAGE_START);
             panelCentro.add(panelLetras);
-            add(panelCentro,BorderLayout.CENTER);
+            add(panelCentro, BorderLayout.CENTER);
 
             JPanel panelRespuesta = new JPanel();
             panelRespuesta.setBackground(new Color(150, 150, 150));
@@ -77,7 +81,7 @@ public class ElAhorcado {
             respuesta.setFont(new Font("Ubuntu", Font.BOLD, 48));
             respuesta.setForeground(new Color(255, 0, 0));
             panelRespuesta.add(respuesta);
-            add(panelRespuesta,BorderLayout.PAGE_END);
+            add(panelRespuesta, BorderLayout.PAGE_END);
 
 
             formaLetrasSecretas();
@@ -85,10 +89,10 @@ public class ElAhorcado {
 
         private String elegirPalabraAleatoria() {
             ArrayList<String> palabras = new ArrayList<>();
-            try(Scanner scf = new Scanner(new File("UD_13/Resources/archivos/diccionario.txt"))){
+            try (Scanner scf = new Scanner(new File("UD_13/Resources/archivos/diccionario.txt"))) {
                 while (scf.hasNext()) {
                     String p = scf.next();
-                    if (p.length()>=4) palabras.add(scf.next().toUpperCase());
+                    if (p.length() >= 4) palabras.add(scf.next().toUpperCase());
                 }
             } catch (FileNotFoundException e) {
                 System.out.println(e.getMessage());
@@ -109,7 +113,7 @@ public class ElAhorcado {
         public void formaLetrasSecretas() {
             String formaSecreto = "";
             for (int i = 0; i < secreta.length(); i++) {
-                formaSecreto+="_ ";
+                formaSecreto += "_ ";
             }
             respuesta.setText(formaSecreto.trim());
         }
@@ -136,15 +140,38 @@ public class ElAhorcado {
                 fallos++;
                 acertada = false;
                 // Usamos el número de fallos para cambiar la imagen
-                imagen.setIcon(new ImageIcon("UD_13/Resources/archivos/Hangman-"+fallos+".png"));
+                imagen.setIcon(new ImageIcon("UD_13/Resources/archivos/Hangman-" + fallos + ".png"));
             }
-            if (acertada) {
-                // Se ha acertado la palabra
-                System.out.println("Has ganado");
-            }
-            if (fallos == MAX_FALLOS) {
-                // Ahorcado
-                System.out.println("AHORCADO");
+            if (acertada || fallos == MAX_FALLOS) {
+
+                Component[] botonesLetras = panelLetras.getComponents();
+                for (Component boton : botonesLetras) {
+                    boton.setEnabled(false);
+                }
+
+                if (acertada) {
+                    // Se ha acertado la palabra
+                    System.out.println("Has ganado");
+                } else {
+                    // Ahorcado
+                    System.out.println("AHORCADO");
+
+
+
+                    JPanel panelPerdido = new JPanel();
+                    JOptionPane.showMessageDialog(panelPerdido,
+                            "Lo siento, has perdido",
+                            "AHORCADO",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+
+
+                    int opcion = JOptionPane.showConfirmDialog(panelPerdido, "¿Desea Continuar?");
+                    ventana.dispose();
+                    if (opcion == JOptionPane.YES_OPTION) {
+                        iniciar();
+                    }
+                }
             }
         }
 
