@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -19,7 +21,8 @@ public class ElAhorcado {
     Ventana ventana;
     private void iniciar() {
         ventana = new Ventana();
-        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventana.addWindowListener(new AdaptadorVentana());
+        ventana.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 
     class Ventana extends JFrame {
@@ -148,6 +151,7 @@ public class ElAhorcado {
                 for (Component boton : botonesLetras) {
                     boton.setEnabled(false);
                 }
+                JPanel panel = new JPanel();
 
                 if (acertada) {
                     // Se ha acertado la palabra
@@ -158,19 +162,17 @@ public class ElAhorcado {
 
 
 
-                    JPanel panelPerdido = new JPanel();
-                    JOptionPane.showMessageDialog(panelPerdido,
+                    JOptionPane.showMessageDialog(panel,
                             "Lo siento, has perdido",
                             "AHORCADO",
                             JOptionPane.INFORMATION_MESSAGE
                     );
 
-
-                    int opcion = JOptionPane.showConfirmDialog(panelPerdido, "¿Desea Continuar?");
-                    ventana.dispose();
-                    if (opcion == JOptionPane.YES_OPTION) {
-                        iniciar();
-                    }
+                }
+                int opcion = JOptionPane.showConfirmDialog(panel, "¿Desea Continuar?");
+                ventana.dispose();
+                if (opcion == JOptionPane.YES_OPTION) {
+                    iniciar();
                 }
             }
         }
@@ -184,6 +186,30 @@ public class ElAhorcado {
             }
         }
 
+
+
+    }
+
+    class AdaptadorVentana extends WindowAdapter {
+
+        public void windowClosing(WindowEvent e) {
+            super.windowClosing(e);
+            System.out.println("Cerrando la ventana");
+            JPanel panel = new JPanel();
+
+            int opcion = JOptionPane.showConfirmDialog(panel, "¿Realmente deseas salir?","Confirmacion",JOptionPane.YES_NO_OPTION);
+            if (opcion == JOptionPane.YES_OPTION) ventana.dispose();
+        }
+
+        public void windowClosed(WindowEvent e) {
+            super.windowClosed(e);
+            System.out.println("Ventana cerrada");
+        }
+
+        public void windowActivated(WindowEvent e) {
+            super.windowActivated(e);
+            System.out.println("Ventana activada");
+        }
     }
 
 }
