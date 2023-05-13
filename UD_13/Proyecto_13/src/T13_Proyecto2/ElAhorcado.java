@@ -23,7 +23,7 @@ public class ElAhorcado {
 
     class Ventana extends JFrame {
         public Ventana() {
-            setBounds(350, 300, 600, 500);
+            setBounds(350, 300, 600, 600);
             setTitle("Juego del Ahorcado");
 
             add(new LaminaPrincipal());
@@ -86,14 +86,14 @@ public class ElAhorcado {
         private String elegirPalabraAleatoria() {
             ArrayList<String> palabras = new ArrayList<>();
             try(Scanner scf = new Scanner(new File("UD_13/Resources/archivos/diccionario.txt"))){
-                while (scf.hasNext())
+                while (scf.hasNext()) {
                     String p = scf.next();
-                if(p.len)
-                    palabras.add(scf.next());
+                    if (p.length()>=4) palabras.add(scf.next().toUpperCase());
+                }
             } catch (FileNotFoundException e) {
                 System.out.println(e.getMessage());
             }
-            return palabras.get(ThreadLocalRandom.current().nextInt(palabras.size())).toLowerCase();
+            return palabras.get(ThreadLocalRandom.current().nextInt(palabras.size()));
         }
 
         public void ponerBotones() {
@@ -117,7 +117,7 @@ public class ElAhorcado {
         public void comprobarLetra(String c) {
             boolean acertada = true; // Para saber si la palabra está completa
             letrasPulsadas.add(c.charAt(0)); // Añadimos la letra a la lista
-            if (secreta.contains(c.toLowerCase())) { // La letra pulsada está en la palabra
+            if (secreta.contains(c)) { // La letra pulsada está en la palabra
                 // Ponemos el texto de la etiqueta ocultando las letras
                 // que todavía no se han pulsado
                 String formaSecreto = "";
