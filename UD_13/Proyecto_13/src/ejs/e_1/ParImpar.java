@@ -16,7 +16,6 @@ public class ParImpar extends JFrame{
     private JLabel infoLabel;
     private JTextField numeroTextField;
     private JButton calcButton;
-    private JButton button1;
 
     public static void main(String[] args) {
         start();
