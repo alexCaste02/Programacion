@@ -27,13 +27,11 @@ public class ElAhorcado {
 
     class Ventana extends JFrame {
         public Ventana() {
-
-
             add(new LaminaPrincipal());
 
             setBounds(600, 300, 600, 600);
             setSize(600, 600);
-            setTitle("Juego del Ahorcado");
+            setTitle("Juego del Ahorcado - Alejandro Castellanos");
 
             setVisible(true);
         }
@@ -52,7 +50,6 @@ public class ElAhorcado {
         public LaminaPrincipal() {
 
             secreta = elegirPalabraAleatoria();
-//            secreta="test";
             setLayout(new BorderLayout());
 
             JLabel titulo = new JLabel("DAM. IES Thiar");
@@ -85,7 +82,6 @@ public class ElAhorcado {
             respuesta.setForeground(new Color(255, 0, 0));
             panelRespuesta.add(respuesta);
             add(panelRespuesta, BorderLayout.PAGE_END);
-
 
             formaLetrasSecretas();
         }
@@ -160,8 +156,6 @@ public class ElAhorcado {
                     // Ahorcado
                     System.out.println("AHORCADO");
 
-
-
                     JOptionPane.showMessageDialog(panel,
                             "Lo siento, has perdido",
                             "AHORCADO",
@@ -185,13 +179,9 @@ public class ElAhorcado {
                 comprobarLetra(e.getActionCommand());
             }
         }
-
-
-
     }
 
     class AdaptadorVentana extends WindowAdapter {
-
         public void windowClosing(WindowEvent e) {
             super.windowClosing(e);
             System.out.println("Cerrando la ventana");
@@ -199,16 +189,6 @@ public class ElAhorcado {
 
             int opcion = JOptionPane.showConfirmDialog(panel, "¿Realmente deseas salir?","Confirmacion",JOptionPane.YES_NO_OPTION);
             if (opcion == JOptionPane.YES_OPTION) ventana.dispose();
-        }
-
-        public void windowClosed(WindowEvent e) {
-            super.windowClosed(e);
-            System.out.println("Ventana cerrada");
-        }
-
-        public void windowActivated(WindowEvent e) {
-            super.windowActivated(e);
-            System.out.println("Ventana activada");
         }
     }
 
