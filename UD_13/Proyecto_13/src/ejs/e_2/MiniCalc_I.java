@@ -1,5 +1,7 @@
 package ejs.e_2;
 
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,7 +24,11 @@ public class MiniCalc_I extends JFrame{
     private JLabel resultadoLabel;
 
     public static void main(String[] args) {
-        start();
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception ignored){}
+
+        EventQueue.invokeLater(MiniCalc_I::start);
     }
 
     public static void start(){

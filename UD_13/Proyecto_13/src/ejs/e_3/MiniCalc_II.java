@@ -1,6 +1,8 @@
 package ejs.e_3;
 
 
+import ejs.e_9.InicioSesion;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,7 +28,11 @@ public class MiniCalc_II extends JFrame{
     private JPanel botHalf;
 
     public static void main(String[] args) {
-        start();
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception ignored){}
+
+        EventQueue.invokeLater(MiniCalc_II::start);
     }
 
     public static void start(){

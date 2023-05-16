@@ -1,5 +1,7 @@
 package ejs.e_5;
 
+import ejs.e_9.InicioSesion;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -12,7 +14,15 @@ public class NumAleatorio extends JFrame{
     private JLabel sliderLabel;
 
     public static void main(String[] args) {
-        new NumAleatorio("Random - Alex.C.D");
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception ignored){}
+
+        EventQueue.invokeLater(NumAleatorio::start);
+    }
+
+    static void start(){
+        NumAleatorio win = new NumAleatorio("");
     }
 
     public NumAleatorio(String titulo) throws HeadlessException {

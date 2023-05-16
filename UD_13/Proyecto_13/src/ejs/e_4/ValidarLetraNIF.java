@@ -1,5 +1,7 @@
 package ejs.e_4;
 
+import ejs.e_9.InicioSesion;
+
 import javax.swing.*;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
@@ -18,9 +20,12 @@ public class ValidarLetraNIF extends JFrame {
     private JButton comprobarButton;
 
     public static void main(String[] args) {
-        start();
-    }
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception ignored){}
 
+        EventQueue.invokeLater(ValidarLetraNIF::start);
+    }
     static void start() {
         ValidarLetraNIF window = new ValidarLetraNIF("Validar NIF - Alex.C.D");
     }

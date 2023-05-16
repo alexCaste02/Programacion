@@ -1,5 +1,7 @@
 package ejs.e_1;
 
+import ejs.e_9.InicioSesion;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,7 +20,11 @@ public class ParImpar extends JFrame{
     private JButton calcButton;
 
     public static void main(String[] args) {
-        start();
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception ignored){}
+
+        EventQueue.invokeLater(ParImpar::start);
     }
 
     static void start(){

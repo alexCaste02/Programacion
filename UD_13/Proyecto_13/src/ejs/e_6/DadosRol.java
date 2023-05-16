@@ -1,6 +1,9 @@
 package ejs.e_6;
 
+import ejs.e_9.InicioSesion;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.ThreadLocalRandom;
@@ -18,7 +21,11 @@ public class DadosRol extends JFrame {
     private JLabel resLabel;
 
     public static void main(String[] args) {
-        start();
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception ignored){}
+
+        EventQueue.invokeLater(DadosRol::start);
     }
 
     static void start(){
