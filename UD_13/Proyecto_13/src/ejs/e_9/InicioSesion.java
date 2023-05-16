@@ -18,7 +18,7 @@ public class InicioSesion extends JFrame{
     private JButton entrarButton;
     private JButton crearButton;
 
-    private Map<String,String> userPassMap = new HashMap<>();
+    private final Map<String,String> userPassMap = new HashMap<>();
 
     public static void main(String[] args) {
         try {
@@ -75,12 +75,10 @@ public class InicioSesion extends JFrame{
     private void loadSavedUsers(){
         File users = new File("UD_13/Resources/users.txt");
         try(Scanner scf = new Scanner(users)){
-
             while (scf.hasNextLine()) {
                 String[] linea = scf.nextLine().split(";");
                 userPassMap.put(linea[0],linea[1]);
             }
-
         } catch (FileNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
@@ -88,13 +86,18 @@ public class InicioSesion extends JFrame{
 
     private void createUser(String user, String pass){
         File users = new File("UD_13/Resources/users.txt");
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(users,true))) {
 
-            bw.newLine();
-            bw.write(user+";"+pass);
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if(userPassMap.containsKey(user)){
+            JOptionPane.showMessageDialog(null, "Nombre de usuario ya en uso", "Usuario no creado", JOptionPane.ERROR_MESSAGE);
+        } else {
+            userPassMap.put(user,pass);
+            try(BufferedWriter bw = new BufferedWriter(new FileWriter(users,true))) {
+                bw.newLine();
+                bw.write(user+";"+pass);
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+            JOptionPane.showMessageDialog(null, "Usuario creado con exito", "Usuario creado", JOptionPane.PLAIN_MESSAGE);
         }
 
     }
