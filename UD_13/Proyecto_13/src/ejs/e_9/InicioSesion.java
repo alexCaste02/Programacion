@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
 
 public class InicioSesion extends JFrame{
@@ -30,10 +29,11 @@ public class InicioSesion extends JFrame{
     }
 
     static void start(){
-        InicioSesion win = new InicioSesion();
+        InicioSesion win = new InicioSesion("Inicio de sesion - Alex.C.D");
     }
 
-    public InicioSesion() throws HeadlessException {
+    public InicioSesion(String titulo) throws HeadlessException {
+        super(titulo);
         setContentPane(mainPanel);
         setVisible(true);
         setLocationRelativeTo(null);
@@ -44,29 +44,31 @@ public class InicioSesion extends JFrame{
         entrarButton.addActionListener(e -> {
             boolean valido = false;
 
-            for (Map.Entry<String, String> entry : userPassMap.entrySet()) {
-                if(userTextF.getText().equals(entry.getKey())){
-                    //se podria pasar el passField a String pero zzzz
-                    char[] passInput = passField.getPassword();
-                    char[] passCheck = entry.getValue().toCharArray();
-                    for (int i = 0; i < passInput.length; i++) {
-                        if(passInput[i]!=passCheck[i]) break;
-                        valido=true;
-                    }
-                }
+            if (userPassMap.containsKey(userTextF.getText())) {
+                char[] passInput = passField.getPassword();
+                char[] passCheck = userPassMap.get(userTextF.getText()).toCharArray();
+
+                if (Arrays.equals(passInput, passCheck)) valido = true;
             }
 
-            if(valido)
-                JOptionPane.showMessageDialog(new JPanel(),
-                        "Acceso concedido",
-                        "Validado",
-                        JOptionPane.INFORMATION_MESSAGE);
-            else
-                JOptionPane.showMessageDialog(new JPanel(),
-                        "Acceso denegado",
-                        "Usuario o contraseña no es valido",
-                        JOptionPane.ERROR_MESSAGE);
+            if (valido) {
+                JOptionPane.showMessageDialog(null, "Acceso concedido", "Validado", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Acceso denegado", "Usuario o contraseña no es válido", JOptionPane.ERROR_MESSAGE);
+            }
+        });
 
+        crearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                char[] passCharArray = passField.getPassword();
+                StringBuilder passSB = new StringBuilder();
+                for (char c : passCharArray) {
+                    passSB.append(c);
+                }
+
+                createUser(userTextF.getText(), passSB.toString());
+            }
         });
     }
 
@@ -82,5 +84,18 @@ public class InicioSesion extends JFrame{
         } catch (FileNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    private void createUser(String user, String pass){
+        File users = new File("UD_13/Resources/users.txt");
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(users,true))) {
+
+            bw.newLine();
+            bw.write(user+";"+pass);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
