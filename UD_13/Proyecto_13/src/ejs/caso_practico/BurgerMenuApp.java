@@ -49,18 +49,15 @@ public class BurgerMenuApp extends JFrame{
     private JTextField pvpTextF;
     private JPanel resPanel;
 
-
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception ignored) {
-        }
-
+        } catch (Exception ignored) {}
         EventQueue.invokeLater(BurgerMenuApp::start);
     }
 
     static void start() {
-        MiniEditor win = new MiniEditor("MiniEditor - Alex.C.D");
+        BurgerMenuApp win = new BurgerMenuApp("MiniEditor - Alex.C.D");
     }
 
     public BurgerMenuApp(String titulo) {
@@ -69,7 +66,5 @@ public class BurgerMenuApp extends JFrame{
         setVisible(true);
         setLocationRelativeTo(null);
         pack();
-
-
     }
 }
