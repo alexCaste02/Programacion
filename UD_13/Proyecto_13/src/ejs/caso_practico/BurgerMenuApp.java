@@ -1,11 +1,9 @@
 package ejs.caso_practico;
 
-import ejs.e_10.MiniEditor;
-
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class BurgerMenuApp extends JFrame {
 
@@ -56,6 +54,7 @@ public class BurgerMenuApp extends JFrame {
     private ButtonGroup bebGroup = new ButtonGroup();
     private ButtonGroup reGroup = new ButtonGroup();
 
+    //TODO: NO NEGATIVOS
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -106,6 +105,23 @@ public class BurgerMenuApp extends JFrame {
             ivaTextF.setText(String.format("%.2f €", calcularIVA()));
             pvpTextF.setText(String.format("%.2f €", calcularPVP()));
         });
+
+        ketchupSpinner.addChangeListener(new CambioSpinnerListener());
+        bbqSpinner.addChangeListener(new CambioSpinnerListener());
+        mostazaSpinner.addChangeListener(new CambioSpinnerListener());
+        thaiSpinner.addChangeListener(new CambioSpinnerListener());
+    }
+
+    static class CambioSpinnerListener implements ChangeListener {
+        @Override
+        public void stateChanged(ChangeEvent e) {
+            JSpinner spinner = (JSpinner) e.getSource();
+            int spinnerValue = (int) spinner.getValue();
+
+            if (spinnerValue < 0) {
+                spinner.setValue(0);
+            }
+        }
     }
 
     private double calcularPrecio() {

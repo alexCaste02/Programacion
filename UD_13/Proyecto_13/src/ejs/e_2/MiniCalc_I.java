@@ -1,7 +1,5 @@
 package ejs.e_2;
 
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,17 +15,15 @@ public class MiniCalc_I extends JFrame{
     private JButton restaBoton;
     private JButton multiBoton;
     private JButton diviBoton;
-    private JPanel topLeft;
     private JPanel topMid;
     private JTextField numBTextField;
-    private JPanel topRight;
     private JLabel resultadoLabel;
+    private JLabel title;
 
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch(Exception ignored){}
-
+        //Cambio del "Look and Feel"
+        try {UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());} catch(Exception ignored){}
+        //Llamada a iniciador
         EventQueue.invokeLater(MiniCalc_I::start);
     }
 
@@ -39,45 +35,51 @@ public class MiniCalc_I extends JFrame{
         super(titulo);
         setContentPane(mainPanel);
         setVisible(true);
-        setSize(500,500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        pack();
 
+        //añadimos un objeto actionlistener de nuestra clase custom a cada boton
         sumaBoton.addActionListener(new calcularListener());
         restaBoton.addActionListener(new calcularListener());
         multiBoton.addActionListener(new calcularListener());
         diviBoton.addActionListener(new calcularListener());
-
-        //podemos hacer lo mismo 4 veces y ya
-//        sumaBoton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                double a = Integer.parseInt(numATextField.getText());
-//                double b = Integer.parseInt(numBTextField.getText());
-//                resultadoLabel.setText(String.valueOf(a + b));
-//            }
-//        });
     }
 
+    //Clase que implementa ActionListener
     class calcularListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            String textoA = numATextField.getText();
+            String textoB = numBTextField.getText();
 
-            double a = Double.parseDouble(numATextField.getText());
-            double b = Double.parseDouble(numBTextField.getText());
-            double r;
+            //Comprueba que el contenido de los campos son numeros reales
+            if(textoA.matches("\\d*[.]\\d*") && textoB.matches("\\d*[.]\\d*")) {
+                double a = Double.parseDouble(textoA);
+                double b = Double.parseDouble(textoB);
+                double r;
 
-            if (e.getSource() == sumaBoton) {
-                r = a + b;
-            } else if (e.getSource() == restaBoton) {
-                r = a - b;
-            } else if (e.getSource() == multiBoton) {
-                r = a * b;
+                //A traves de 'e.getSource()' podemos ver que boton ha sido la fuente de la accion
+                // y con eso podemos realizar calculos diferentes a partir del boton pulsado
+                if (e.getSource() == sumaBoton) {
+                    r = a + b;
+                } else if (e.getSource() == restaBoton) {
+                    r = a - b;
+                } else if (e.getSource() == multiBoton) {
+                    r = a * b;
+                } else {
+                    r = a / b;
+                }
+
+                resultadoLabel.setText(r + "");
+
+            //Mensaje de error si no tiene valores valido
             } else {
-                r = a / b;
+                JPanel alerta = new JPanel();
+                JOptionPane.showMessageDialog(alerta,"Debes introducir un numero","Valor invalido",JOptionPane.ERROR_MESSAGE);
+                numATextField.setText("");
+                numBTextField.setText("");
             }
-
-            resultadoLabel.setText(r+"");
         }
     }
 

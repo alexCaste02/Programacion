@@ -1,11 +1,9 @@
 package ejs.e_8;
 
-import ejs.e_9.InicioSesion;
-
-import java.awt.*;
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import java.awt.*;
 
 public class TablasMultiplicar extends JFrame {
 
@@ -31,30 +29,21 @@ public class TablasMultiplicar extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-
-        tablaMulti.setModel(new AbstractTableModel() {
-            @Override
-            public int getRowCount() {
-                return 10;
+        Integer[][] array10 = new Integer[10][10];
+        String[] a = new String[10];
+        for (int i = 0; i < 10; i++) {
+            a[i] = ""+i+1;
+            for (int j = 0; j < 10; j++) {
+                array10[i][j] = (i+1) * (j+1);
             }
+        }
 
-            @Override
-            public int getColumnCount() {
-                return 10;
-            }
-
-            @Override
-            public Object getValueAt(int rowIndex, int columnIndex) {
-                return (rowIndex+1)*(columnIndex+1);
-            }
-
-        });
+        TableModel tm = new DefaultTableModel(array10,a);
+        tablaMulti.setModel(tm);
 
         setSize(350,350);
 
         //TODO: EXTRA
-
-
     }
 
 }

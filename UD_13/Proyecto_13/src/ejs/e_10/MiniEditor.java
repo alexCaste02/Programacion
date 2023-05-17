@@ -2,8 +2,6 @@ package ejs.e_10;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -37,6 +35,8 @@ public class MiniEditor extends JFrame {
         setLocationRelativeTo(null);
         pack();
 
+        //TODO: Usar scrollPane
+
         archivoEnEdicion = (new File("UD_13/Resources")).getAbsoluteFile();
 
         abrirButton.addActionListener(e -> {
@@ -48,9 +48,7 @@ public class MiniEditor extends JFrame {
                 textArea.setText("");
 
                 try (Scanner scf = new Scanner(archivoEnEdicion)) {
-                    while (scf.hasNextLine()) {
-                        textArea.append(scf.nextLine() + "\n");
-                    }
+                    while (scf.hasNextLine()) textArea.append(scf.nextLine() + "\n");
                 } catch (FileNotFoundException ex) {
                     System.out.println(ex.getMessage());
                 }
@@ -58,25 +56,17 @@ public class MiniEditor extends JFrame {
 
         });
 
-        guardarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        guardarButton.addActionListener(e -> {
+            JFileChooser jfc = new JFileChooser(archivoEnEdicion);
+            int r = jfc.showSaveDialog(null);
 
-                JFileChooser jfc = new JFileChooser(archivoEnEdicion);
-                int r = jfc.showSaveDialog(null);
+            if (r == JFileChooser.APPROVE_OPTION) {
+                archivoEnEdicion = jfc.getSelectedFile().getAbsoluteFile();
 
-                if (r == JFileChooser.APPROVE_OPTION) {
-                    archivoEnEdicion = jfc.getSelectedFile().getAbsoluteFile();
-
-                    try (PrintWriter pw = new PrintWriter(archivoEnEdicion)) {
-                        pw.print(textArea.getText());
-                        JOptionPane.showMessageDialog(null, "Archivo guardado", "Guardado", JOptionPane.INFORMATION_MESSAGE);
-                    } catch (FileNotFoundException ex) {
-                        System.out.println(ex.getMessage());
-                    }
-                }
-
-
+                try (PrintWriter pw = new PrintWriter(archivoEnEdicion)) {
+                    pw.print(textArea.getText());
+                    JOptionPane.showMessageDialog(null, "Archivo guardado", "Guardado", JOptionPane.INFORMATION_MESSAGE);
+                } catch (FileNotFoundException ex) {System.out.println(ex.getMessage());}
             }
         });
     }
