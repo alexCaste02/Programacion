@@ -61,12 +61,22 @@ public class MiniEditor extends JFrame {
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try (PrintWriter pw = new PrintWriter(archivoEnEdicion)) {
-                    pw.print(textArea.getText());
-                    JOptionPane.showMessageDialog(null, "Archivo guardado", "Guardado", JOptionPane.INFORMATION_MESSAGE);
-                } catch (FileNotFoundException ex) {
-                    System.out.println(ex.getMessage());
+
+                JFileChooser jfc = new JFileChooser(archivoEnEdicion);
+                int r = jfc.showSaveDialog(null);
+
+                if (r == JFileChooser.APPROVE_OPTION) {
+                    archivoEnEdicion = jfc.getSelectedFile().getAbsoluteFile();
+
+                    try (PrintWriter pw = new PrintWriter(archivoEnEdicion)) {
+                        pw.print(textArea.getText());
+                        JOptionPane.showMessageDialog(null, "Archivo guardado", "Guardado", JOptionPane.INFORMATION_MESSAGE);
+                    } catch (FileNotFoundException ex) {
+                        System.out.println(ex.getMessage());
+                    }
                 }
+
+
             }
         });
     }

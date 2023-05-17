@@ -4,8 +4,10 @@ import ejs.e_10.MiniEditor;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class BurgerMenuApp extends JFrame{
+public class BurgerMenuApp extends JFrame {
 
     private JPanel mainPanel;
     private JLabel Titulo;
@@ -48,11 +50,17 @@ public class BurgerMenuApp extends JFrame{
     private JTextField ivaTextF;
     private JTextField pvpTextF;
     private JPanel resPanel;
+    private ButtonGroup hamGroup = new ButtonGroup();
+    private ButtonGroup panGroup = new ButtonGroup();
+    private ButtonGroup patGroup = new ButtonGroup();
+    private ButtonGroup bebGroup = new ButtonGroup();
+    private ButtonGroup reGroup = new ButtonGroup();
 
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
         EventQueue.invokeLater(BurgerMenuApp::start);
     }
 
@@ -66,5 +74,68 @@ public class BurgerMenuApp extends JFrame{
         setVisible(true);
         setLocationRelativeTo(null);
         pack();
+
+
+        hamGroup.add(polloRadioButton);
+        hamGroup.add(cerdoRadioButton);
+        hamGroup.add(terneraRadioButton);
+        hamGroup.add(veganaRadioButton);
+
+        panGroup.add(normalRadioButton);
+        panGroup.add(integralRadioButton);
+        panGroup.add(centenoRadioButton);
+
+
+        patGroup.add(fritasRadioButton);
+        patGroup.add(gajoRadioButton);
+        patGroup.add(caserasRadioButton);
+
+
+        bebGroup.add(colaRadioButton);
+        bebGroup.add(naranjaRadioButton);
+        bebGroup.add(limonRadioButton);
+        bebGroup.add(aguaRadioButton);
+        bebGroup.add(cervezaRadioButton);
+
+
+        reGroup.add(repartoADomicilioRadioButton);
+        reGroup.add(recogidaEnLocalRadioButton);
+
+        calcButton.addActionListener(e -> {
+            precioTextF.setText(String.format("%.2f €", calcularPrecio()));
+            ivaTextF.setText(String.format("%.2f €", calcularIVA()));
+            pvpTextF.setText(String.format("%.2f €", calcularPVP()));
+        });
     }
+
+    private double calcularPrecio() {
+        double t = 8;
+        if (terneraRadioButton.isSelected() || veganaRadioButton.isSelected()) t += 1;
+        if (caserasRadioButton.isSelected()) t += 1;
+        if (hamburgesaDobleCheckBox.isSelected()) t += 2;
+        if (extraDeQuesoCheckBox.isSelected()) t += 0.5;
+        if (extraDePatatasCheckBox.isSelected()) t += 1;
+        t += (((int) ketchupSpinner.getValue())
+                + ((int) mostazaSpinner.getValue())
+                + ((int) bbqSpinner.getValue())
+                + ((int) thaiSpinner.getValue())
+        ) * 0.5;
+
+        if (recogidaEnLocalRadioButton.isSelected()) t -= t * 0.2;
+
+        return t;
+    }
+
+    private double calcularIVA() {
+        double p = calcularPrecio();
+        return p * 0.21;
+    }
+
+    private double calcularPVP() {
+        double p = calcularPrecio();
+        double iva = calcularIVA();
+        return p + iva;
+    }
+
+
 }

@@ -108,8 +108,5 @@ public class FormColores extends JFrame{
     private JTextField greenTF;
     private JTextField blueTF;
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
 
-    }
 }
