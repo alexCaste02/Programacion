@@ -31,6 +31,7 @@ public class TablasMultiplicar extends JFrame {
 
         Integer[][] array10 = new Integer[10][10];
         String[] a = new String[10];
+
         for (int i = 0; i < 10; i++) {
             a[i] = ""+i+1;
             for (int j = 0; j < 10; j++) {

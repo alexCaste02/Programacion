@@ -54,7 +54,7 @@ public class MiniCalc_I extends JFrame{
             String textoB = numBTextField.getText();
 
             //Comprueba que el contenido de los campos son numeros reales
-            if(textoA.matches("\\d*[.]\\d*") && textoB.matches("\\d*[.]\\d*")) {
+            if(textoA.matches("\\d*([.]\\d*)?") && textoB.matches("\\d*([.]\\d*)?")) {
                 double a = Double.parseDouble(textoA);
                 double b = Double.parseDouble(textoB);
                 double r;

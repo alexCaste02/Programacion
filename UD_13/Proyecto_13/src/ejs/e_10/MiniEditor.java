@@ -16,11 +16,7 @@ public class MiniEditor extends JFrame {
     private File archivoEnEdicion;
 
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception ignored) {
-        }
-
+        try {UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());} catch (Exception ignored) {}
         EventQueue.invokeLater(MiniEditor::start);
     }
 
@@ -35,7 +31,7 @@ public class MiniEditor extends JFrame {
         setLocationRelativeTo(null);
         pack();
 
-        //TODO: Usar scrollPane
+        //TODO: Usar JScrollPane
 
         archivoEnEdicion = (new File("UD_13/Resources")).getAbsoluteFile();
 

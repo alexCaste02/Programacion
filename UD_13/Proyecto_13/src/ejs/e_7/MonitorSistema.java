@@ -1,12 +1,9 @@
 package ejs.e_7;
 
 import com.sun.management.OperatingSystemMXBean;
-import ejs.e_9.InicioSesion;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.lang.management.ManagementFactory;
 
 
@@ -27,10 +24,7 @@ public class MonitorSistema extends JFrame{
     private JLabel refreshLabel;
 
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch(Exception ignored){}
-
+        try {UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());} catch(Exception ignored){}
         EventQueue.invokeLater(MonitorSistema::start);
     }
 
@@ -45,24 +39,21 @@ public class MonitorSistema extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setContentPane(mainPanel);
-        pack(); // TODO: PONER HASTA EN LA SOPA
+        pack();
 
-        actualizarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // 2 OpSysMXBean(s) diferentes?? -- Uno extends otro???
-                OperatingSystemMXBean osBean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+        actualizarButton.addActionListener(e -> {
+            // 2 OpSysMXBean(s) diferentes?? -- Uno extends otro???
+            OperatingSystemMXBean osBean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 
-                double cpuV = osBean.getCpuLoad()*100;
-                double usedRam = osBean.getTotalMemorySize()-osBean.getFreeMemorySize();
-                double ramV = (usedRam/osBean.getTotalMemorySize())*100;
+            double cpuV = osBean.getCpuLoad()*100;
+            double usedRam = osBean.getTotalMemorySize()-osBean.getFreeMemorySize();
+            double ramV = (usedRam/osBean.getTotalMemorySize())*100;
 
-                cpuBar.setValue((int) cpuV);
-                cpuLabel.setText(String.format("%.2f",cpuV));
+            cpuBar.setValue((int) cpuV);
+            cpuValueL.setText(String.format("%.2f",cpuV));
 
-                ramBar.setValue((int) ramV);
-                ramLabel.setText(String.format("%.2f",ramV));
-            }
+            ramBar.setValue((int) ramV);
+            ramValueL.setText(String.format("%.2f",ramV));
         });
 
     }

@@ -1,7 +1,5 @@
 package ejs.e_5;
 
-import ejs.e_9.InicioSesion;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -32,7 +30,7 @@ public class NumAleatorio extends JFrame{
         setLocationRelativeTo(null);
         setContentPane(mainPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        generarButton.addActionListener(e -> resLabel.setText(ThreadLocalRandom.current().nextInt(maxSlider.getValue())+""));
+        generarButton.addActionListener(e -> resLabel.setText(ThreadLocalRandom.current().nextInt(maxSlider.getValue()+1)+""));
         maxSlider.addChangeListener(e -> sliderLabel.setText(maxSlider.getValue()+""));
     }
 }
