@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.util.stream.Stream;
 
 public class BurgerMenuApp extends JFrame {
 
@@ -74,17 +75,6 @@ public class BurgerMenuApp extends JFrame {
         setLocationRelativeTo(null);
         pack();
 
-
-        hamGroup.add(polloRadioButton);
-        hamGroup.add(cerdoRadioButton);
-        hamGroup.add(terneraRadioButton);
-        hamGroup.add(veganaRadioButton);
-
-        panGroup.add(normalRadioButton);
-        panGroup.add(integralRadioButton);
-        panGroup.add(centenoRadioButton);
-
-
         patGroup.add(fritasRadioButton);
         patGroup.add(gajoRadioButton);
         patGroup.add(caserasRadioButton);
@@ -125,22 +115,31 @@ public class BurgerMenuApp extends JFrame {
     }
 
     private double calcularPrecio() {
-        double t = 8;
-        if (terneraRadioButton.isSelected() || veganaRadioButton.isSelected()) t += 1;
-        if (caserasRadioButton.isSelected()) t += 1;
-        if (hamburgesaDobleCheckBox.isSelected()) t += 2;
-        if (extraDeQuesoCheckBox.isSelected()) t += 0.5;
-        if (extraDePatatasCheckBox.isSelected()) t += 1;
-        t += (((int) ketchupSpinner.getValue())
-                + ((int) mostazaSpinner.getValue())
-                + ((int) bbqSpinner.getValue())
-                + ((int) thaiSpinner.getValue())
-        ) * 0.5;
+        double basePrice = 8.0;
 
-        if (recogidaEnLocalRadioButton.isSelected()) t -= t * 0.2;
+        double extraCharge = Stream.of(
+                terneraRadioButton.isSelected() ? 1.0 : 0.0,
+                veganaRadioButton.isSelected() ? 1.0 : 0.0,
+                caserasRadioButton.isSelected() ? 1.0 : 0.0,
+                hamburgesaDobleCheckBox.isSelected() ? 2.0 : 0.0,
+                extraDeQuesoCheckBox.isSelected() ? 0.5 : 0.0,
+                extraDePatatasCheckBox.isSelected() ? 1.0 : 0.0
+        ).mapToDouble(Double::doubleValue).sum();
 
-        return t;
+        extraCharge += (int) ketchupSpinner.getValue()
+                + (int) mostazaSpinner.getValue()
+                + (int) bbqSpinner.getValue()
+                + (int) thaiSpinner.getValue();
+        extraCharge *= 0.5;
+
+        if (recogidaEnLocalRadioButton.isSelected()) {
+            basePrice -= basePrice * 0.2;
+        }
+
+        return basePrice + extraCharge;
     }
+
+
 
     private double calcularIVA() {
         double p = calcularPrecio();

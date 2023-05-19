@@ -495,4 +495,19 @@
       </grid>
     </children>
   </grid>
+  <buttonGroups>
+    <group name="hamGroup">
+      <member id="ec5eb"/>
+      <member id="ec5eb"/>
+      <member id="a23ab"/>
+      <member id="1b58c"/>
+      <member id="76e5d"/>
+    </group>
+    <group name="panGroup">
+      <member id="24b70"/>
+      <member id="24b70"/>
+      <member id="ee512"/>
+      <member id="a55da"/>
+    </group>
+  </buttonGroups>
 </form>
