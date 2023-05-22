@@ -51,7 +51,7 @@ public class Casota extends JFrame {
             Polygon p = new Polygon(pointsX,pointsY,3);
             g2.fill(p);
 
-            
+
 
 
         }
