@@ -17,6 +17,7 @@ public class Casota extends JFrame {
         setVisible(true);
         setTitle("AlexTest");
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     static class Lamina extends JPanel{
@@ -25,34 +26,32 @@ public class Casota extends JFrame {
             super.paintComponent(g);
             Graphics2D g2 = (Graphics2D) g;
 
-//            g2.setColor(Color.BLACK);
-//            Rectangle2D r1 = new Rectangle2D.Double(0,0,100,100);
-//            g2.fill(r1);
-//
-//            g2.setColor(Color.BLUE);
-//            Rectangle2D r2 = new Rectangle2D.Double(100,0,100,100);
-//            g2.fill(r2);
-//
-//            g2.setColor(Color.GREEN);
-//            Rectangle2D r3 = new Rectangle2D.Double(200,0,100,100);
-//            g2.fill(r3);
-//
-//
-//            g2.setColor(Color.RED);
-//            Rectangle2D r4 = new Rectangle2D.Double(300,0,100,100);
-//            g2.fill(r4);
-//
-//
-//            g2.setColor(Color.YELLOW);
-//            Rectangle2D r5 = new Rectangle2D.Double(400,0,100,100);
-//            g2.fill(r5);
-            g2.setColor(new Color(121, 224, 238));
+            g2.setColor(new Color(174, 226, 255));
             Rectangle2D fondo = new Rectangle2D.Double(0,0,500,500);
             g2.fill(fondo);
 
-            g2.setColor(Color.ORANGE);
-            Ellipse2D sol = new Ellipse2D.Double(-50,-50,100,100);
+            g2.setColor(new Color(255, 229, 105));
+            Ellipse2D sol = new Ellipse2D.Double(-100,-100,200,200);
             g2.fill(sol);
+
+            g2.setColor(new Color(39, 55, 77));
+            Rectangle2D cuadCasa = new Rectangle2D.Double(100,300,300,200);
+            g2.fill(cuadCasa);
+
+            g2.setColor(new Color(155, 164, 181));
+            Rectangle2D chimenea = new Rectangle2D.Double(340,220,40,80);
+            g2.fill(chimenea);
+
+            //TODO: humo?
+
+            g2.setColor(new Color(82, 109, 130));
+            int[] pointsX = {100,400,250};
+            int[] pointsY = {300,300,200};
+
+            Polygon p = new Polygon(pointsX,pointsY,3);
+            g2.fill(p);
+
+            
 
 
         }
