@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Resources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/UD_12/Resources/gson-2.10.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/UD_12/Resources/Documentos.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
