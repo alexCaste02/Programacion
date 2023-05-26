@@ -23,6 +23,7 @@ public class MainAccesoV2 {
             //Se obtienen las columnas necesarias para crear el objeto de clase Pais
             // y guardamos los datos correspondientes en el mapa
             while (rs.next()) {
+
                 // (Uso de variables para facilitar lectura)
                 String code = rs.getString("Code");
                 String name = rs.getString("Name");
