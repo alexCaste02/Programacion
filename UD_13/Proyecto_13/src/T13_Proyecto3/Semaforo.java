@@ -19,19 +19,6 @@ public class Semaforo extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    class Lamina extends JPanel{
-        @Override
-        protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
 
-
-
-
-
-
-
-
-        }
-    }
 
 }
