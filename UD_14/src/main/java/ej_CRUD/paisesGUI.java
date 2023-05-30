@@ -5,13 +5,8 @@ import javax.swing.*;
 public class paisesGUI extends JFrame{
     private JPanel mainPanel;
     private JPanel topSplit;
-    private JPanel botSplit;
     private JPanel paisPanel;
     private JTable table;
-    private JTextField idTextField;
-    private JTextField nombreTextField;
-    private JTextField distritoTextField;
-    private JTextField poblacionTextField;
     private JScrollPane tableScroll;
 
     public static paisesGUI start(){
