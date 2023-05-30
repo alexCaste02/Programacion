@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.*;
+import java.util.Arrays;
 
 public class TablasMultiplicar extends JFrame {
 
@@ -38,6 +39,8 @@ public class TablasMultiplicar extends JFrame {
                 array10[i][j] = (i+1) * (j+1);
             }
         }
+
+        System.out.println(Arrays.deepToString(array10));
 
         TableModel tm = new DefaultTableModel(array10,a);
         tablaMulti.setModel(tm);

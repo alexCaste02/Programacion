@@ -16,6 +16,7 @@
         </constraints>
         <properties>
           <orientation value="0"/>
+          <visible value="true"/>
         </properties>
         <border type="none"/>
         <children>
@@ -62,6 +63,15 @@
               </scrollpane>
             </children>
           </grid>
+          <component id="7925b" class="javax.swing.JLabel">
+            <constraints>
+              <splitpane position="right"/>
+            </constraints>
+            <properties>
+              <text value="Label"/>
+              <visible value="false"/>
+            </properties>
+          </component>
         </children>
       </splitpane>
     </children>
