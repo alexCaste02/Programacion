@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
 
-public class CiudadDaoMySQL implements Dao<Ciudad>{
+public class CiudadDaoMySQL implements Dao<Ciudad> {
 
-    private DataSource dataSource;
+    private final DataSource dataSource;
 
     public CiudadDaoMySQL() {
         // Configurar el BasicDataSource con los datos de la base de datos
@@ -35,8 +35,7 @@ public class CiudadDaoMySQL implements Dao<Ciudad>{
 
     @Override
     public Optional<Ciudad> obtener(String id) {
-        try (Connection con = dataSource.getConnection();
-             PreparedStatement ps = con.prepareStatement("SELECT * FROM city WHERE code = ?")) {
+        try (Connection con = dataSource.getConnection(); PreparedStatement ps = con.prepareStatement("SELECT * FROM city WHERE code = ?")) {
 
             ps.setString(1, id);
 
@@ -81,12 +80,13 @@ public class CiudadDaoMySQL implements Dao<Ciudad>{
     }
 
     @Override
-    public void guardar(Ciudad pais) {
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("INSERT INTO country(codigo,nombre) VALUES (?,?)")) {
-
-            ps.setString(1,pais.getCodigo());
-            ps.setString(2,pais.getNombre());
+    public void guardar(Ciudad ciudad) {
+        try (Connection conn = dataSource.getConnection(); PreparedStatement ps = conn.prepareStatement("INSERT INTO city(id,name,district,population,countrycode) VALUES (?,?,?,?,?)")) {
+            ps.setString(1, ciudad.getId());
+            ps.setString(2, ciudad.getNombre());
+            ps.setString(3, ciudad.getDistrito());
+            ps.setInt(4, ciudad.getPoblacion());
+            ps.setString(5, ciudad.getCodigoPais());
 
             ps.executeUpdate();
         } catch (SQLException e) {
@@ -95,14 +95,16 @@ public class CiudadDaoMySQL implements Dao<Ciudad>{
     }
 
     @Override
-    public void actualizar(Ciudad pais) {
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement pst = conn.prepareStatement("UPDATE country SET nombre=? WHERE id=?")) {
+    public void actualizar(Ciudad ciudad) {
+        try (Connection conn = dataSource.getConnection(); PreparedStatement ps = conn.prepareStatement("UPDATE city SET name=?,district=?,population=?,countrycode=? WHERE id=?")) {
+            ps.setString(1, ciudad.getNombre());
+            ps.setString(2, ciudad.getDistrito());
+            ps.setInt(3, ciudad.getPoblacion());
+            ps.setString(4, ciudad.getCodigoPais());
 
-            pst.setString(1,pais.getNombre());
-            pst.setString(2,pais.getCodigo());
+            ps.setString(5, ciudad.getId());
 
-            pst.executeUpdate();
+            ps.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -110,10 +112,8 @@ public class CiudadDaoMySQL implements Dao<Ciudad>{
 
     @Override
     public void borrar(Ciudad pais) {
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement pst = conn.prepareStatement("delete from country where id=?")) {
-
-            pst.setString(1,pais.getCodigo());
+        try (Connection conn = dataSource.getConnection(); PreparedStatement pst = conn.prepareStatement("DELETE FROM country WHERE id=?")) {
+            pst.setString(1, pais.getId());
 
             pst.executeUpdate();
         } catch (SQLException e) {

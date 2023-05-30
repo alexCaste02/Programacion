@@ -14,7 +14,7 @@ import java.util.Properties;
 public class PaisDaoMySQL implements Dao<Pais> {
     // TODO: pasar todo esto a pais
 
-    private DataSource dataSource;
+    private final DataSource dataSource;
 
     public PaisDaoMySQL() {
         Properties datos = new Properties();
@@ -41,25 +41,9 @@ public class PaisDaoMySQL implements Dao<Pais> {
                 if (rs1.next()) {
 
                     String nombrePais = rs1.getString("Name");
-                    ArrayList<Ciudad> ciudades = new ArrayList<>();
 
-                    //TODO: usar dao de ciudades
-                    //IDEA! recorrer lista de ciudades (obtenerTodos)
-                    try (PreparedStatement ps2 = con.prepareStatement("SELECT * FROM city WHERE countrycode = ?")) {
-                        ps2.setString(1, codigo);
-
-                        try (ResultSet rs2 = ps2.executeQuery()) {
-                            if (rs2.next()) {
-                                String id = rs2.getString("ID");
-                                String nombreCiudad = rs2.getString("Name");
-                                String distrito = rs2.getString("District");
-                                int poblacion = rs2.getInt("Population");
-
-                                ciudades.add(new Ciudad(id, nombreCiudad, distrito, poblacion, codigo));
-                            }
-                        }
-                    }
-                    //TODO: -----
+                    Dao<Ciudad> daoCiudades = new CiudadDaoMySQL();
+                    List<Ciudad> ciudades = daoCiudades.obtenerTodos();
 
                     return Optional.of(new Pais(codigo, nombrePais, ciudades));
                 }
@@ -81,7 +65,9 @@ public class PaisDaoMySQL implements Dao<Pais> {
 
                 if (rs.next()) {
                     String codigo = rs.getString(1);
-                    if (obtener(codigo).isPresent()) paisList.add(obtener(codigo).get());
+                    Optional<Pais> pais = obtener(codigo);
+                    pais.ifPresent(paisList::add);
+//                    if (obtener(codigo).isPresent()) paisList.add(obtener(codigo).get());
                 }
             }
 
@@ -93,11 +79,10 @@ public class PaisDaoMySQL implements Dao<Pais> {
 
     @Override
     public void guardar(Pais pais) {
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("INSERT INTO country(codigo,nombre) VALUES (?,?)")) {
+        try (Connection conn = dataSource.getConnection(); PreparedStatement ps = conn.prepareStatement("INSERT INTO country(code,name) VALUES (?,?)")) {
 
-            ps.setString(1,pais.getCodigo());
-            ps.setString(2,pais.getNombre());
+            ps.setString(1, pais.getCodigo());
+            ps.setString(2, pais.getNombre());
 
             ps.executeUpdate();
         } catch (SQLException e) {
@@ -107,13 +92,12 @@ public class PaisDaoMySQL implements Dao<Pais> {
 
     @Override
     public void actualizar(Pais pais) {
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement pst = conn.prepareStatement("UPDATE country SET nombre=? WHERE id=?")) {
+        try (Connection conn = dataSource.getConnection(); PreparedStatement ps = conn.prepareStatement("UPDATE country SET name=? WHERE code=?")) {
 
-            pst.setString(1,pais.getNombre());
-            pst.setString(2,pais.getCodigo());
+            ps.setString(1, pais.getNombre());
+            ps.setString(2, pais.getCodigo());
 
-            pst.executeUpdate();
+            ps.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -121,12 +105,11 @@ public class PaisDaoMySQL implements Dao<Pais> {
 
     @Override
     public void borrar(Pais pais) {
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement pst = conn.prepareStatement("delete from country where id=?")) {
+        try (Connection conn = dataSource.getConnection(); PreparedStatement ps = conn.prepareStatement("DELETE FROM country WHERE code=?")) {
 
-            pst.setString(1,pais.getCodigo());
+            ps.setString(1, pais.getCodigo());
 
-            pst.executeUpdate();
+            ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

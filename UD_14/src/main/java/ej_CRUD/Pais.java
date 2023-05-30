@@ -1,17 +1,18 @@
 package ej_CRUD;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Pais {
     private String codigo;
     private String nombre;
-    private ArrayList<Ciudad> ciudades;
+    private List<Ciudad> ciudades;
 
-    public Pais(String codigo, String nombre, ArrayList<Ciudad> ciudades) {
+    public Pais(String codigo, String nombre, List<Ciudad> ciudades) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.ciudades = ciudades;
     }
+
 
     public String getCodigo() {
         return codigo;
@@ -29,11 +30,11 @@ public class Pais {
         this.nombre = nombre;
     }
 
-    public ArrayList<Ciudad> getCiudades() {
+    public List<Ciudad> getCiudades() {
         return ciudades;
     }
 
-    public void setCiudades(ArrayList<Ciudad> ciudades) {
+    public void setCiudades(List<Ciudad> ciudades) {
         this.ciudades = ciudades;
     }
 }
