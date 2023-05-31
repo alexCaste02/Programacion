@@ -37,4 +37,9 @@ public class Pais {
     public void setCiudades(List<Ciudad> ciudades) {
         this.ciudades = ciudades;
     }
+
+    @Override
+    public String toString() {
+        return getNombre();
+    }
 }

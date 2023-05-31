@@ -12,9 +12,9 @@ import java.util.Optional;
 import java.util.Properties;
 
 public class PaisDaoMySQL implements Dao<Pais> {
-    // TODO: pasar todo esto a pais
 
     private final DataSource dataSource;
+    private final Dao<Ciudad> daoCiudades = new CiudadDaoMySQL();
 
     public PaisDaoMySQL() {
         Properties datos = new Properties();
@@ -42,7 +42,7 @@ public class PaisDaoMySQL implements Dao<Pais> {
 
                     String nombrePais = rs1.getString("Name");
 
-                    Dao<Ciudad> daoCiudades = new CiudadDaoMySQL();
+
                     List<Ciudad> ciudades = daoCiudades.obtenerTodos();
 
                     return Optional.of(new Pais(codigo, nombrePais, ciudades));
@@ -59,15 +59,22 @@ public class PaisDaoMySQL implements Dao<Pais> {
     public List<Pais> obtenerTodos() {
         List<Pais> paisList = new ArrayList<>();
         try (Connection con = dataSource.getConnection();
-             PreparedStatement ps = con.prepareStatement("SELECT code FROM country")) {
+             PreparedStatement ps = con.prepareStatement("SELECT * FROM country")) {
 
             try (ResultSet rs = ps.executeQuery()) {
 
-                if (rs.next()) {
-                    String codigo = rs.getString(1);
-                    Optional<Pais> pais = obtener(codigo);
-                    pais.ifPresent(paisList::add);
-//                    if (obtener(codigo).isPresent()) paisList.add(obtener(codigo).get());
+                while (rs.next()) {
+                    String codigo = rs.getString("code");
+                    String nombre = rs.getString("name");
+                    List<Ciudad> ciudadesFiltradas = new ArrayList<>();
+                    List<Ciudad> todasCiudades = daoCiudades.obtenerTodos();
+
+                    for (Ciudad ciudad : todasCiudades) {
+                        if (ciudad.getCodigoPais().equals(codigo))
+                            ciudadesFiltradas.add(ciudad);
+                    }
+
+                    paisList.add(new Pais(codigo,nombre,ciudadesFiltradas));
                 }
             }
 

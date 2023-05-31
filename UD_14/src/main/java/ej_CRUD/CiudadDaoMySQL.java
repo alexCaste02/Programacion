@@ -35,7 +35,7 @@ public class CiudadDaoMySQL implements Dao<Ciudad> {
 
     @Override
     public Optional<Ciudad> obtener(String id) {
-        try (Connection con = dataSource.getConnection(); PreparedStatement ps = con.prepareStatement("SELECT * FROM city WHERE code = ?")) {
+        try (Connection con = dataSource.getConnection(); PreparedStatement ps = con.prepareStatement("SELECT * FROM city WHERE id = ?")) {
 
             ps.setString(1, id);
 
@@ -61,15 +61,18 @@ public class CiudadDaoMySQL implements Dao<Ciudad> {
     public List<Ciudad> obtenerTodos() {
         List<Ciudad> ciudadList = new ArrayList<>();
         try (Connection con = dataSource.getConnection();
-             PreparedStatement ps = con.prepareStatement("SELECT id FROM city")) {
+             PreparedStatement ps = con.prepareStatement("SELECT * FROM city")) {
 
             try (ResultSet rs = ps.executeQuery()) {
 
-                if (rs.next()) {
-                    String id = rs.getString(1);
-                    Optional<Ciudad> ciudad = obtener(id);
-                    ciudad.ifPresent(ciudadList::add);
-//                    if (ciudad.isPresent()) ciudadList.add(ciudad.get());
+                while (rs.next()) {
+                    String id = rs.getString("Id");
+                    String nombreCiudad = rs.getString("Name");
+                    String distrito = rs.getString("District");
+                    int poblacion = rs.getInt("Population");
+                    String codigo = rs.getString("CountryCode");
+
+                    ciudadList.add(new Ciudad(id,nombreCiudad,distrito,poblacion,codigo));
                 }
             }
 
