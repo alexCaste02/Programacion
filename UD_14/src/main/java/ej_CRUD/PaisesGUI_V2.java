@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class PaisesGUI extends JFrame{
+public class PaisesGUI_V2 extends JFrame{
 
     static Dao<Ciudad> daoCiudad = new CiudadDaoMySQL();
     static Dao<Pais> daoPais = new PaisDaoMySQL();
@@ -34,25 +34,19 @@ public class PaisesGUI extends JFrame{
     private JSplitPane paneSplit;
 
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch(Exception ignored){}
-        EventQueue.invokeLater(PaisesGUI::start);
+        try {UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());} catch(Exception ignored){}
+        EventQueue.invokeLater(PaisesGUI_V2::start);
     }
 
-    public static void start(){
-        PaisesGUI win = new PaisesGUI();
-    }
+    public static void start(){PaisesGUI_V2 win = new PaisesGUI_V2();}
 
-    public PaisesGUI() {
+    public PaisesGUI_V2() {
         setContentPane(mainPanel);
         setSize(400,600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
         rellenarComboBox();
         generarTabla();
-
         setVisible(true);
 
         comboBox.addActionListener(e -> {
@@ -60,40 +54,25 @@ public class PaisesGUI extends JFrame{
             generarTabla();
         });
 
-
         citiesTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                mostrarInfo();
 
-                if(citiesTable.getSelectedRow()==-1) {
-                    botSplit.setVisible(false);
-                } else {
-                    botSplit.setVisible(true);
-                    paneSplit.resetToPreferredSizes();
-                    String id = citiesTable.getValueAt(citiesTable.getSelectedRow(), 0) + "";
-                    Ciudad ciudad = daoCiudad.obtener(id).orElse(null);
-
-                    assert ciudad != null;
-                    idField.setText(ciudad.getId());
-                    nameField.setText(ciudad.getNombre());
-                    distField.setText(ciudad.getDistrito());
-                    pobField.setText(ciudad.getPoblacion() + "");
-                }
             }
         });
+
     }
 
     private void rellenarComboBox() {
         List<Pais> listaPaises = daoPais.obtenerTodos();
-
         for (Pais p : listaPaises) {
             comboBox.addItem(p);
         }
     }
 
     private void generarTabla() {
-
         List<Ciudad> listaCiudades = daoCiudad.obtenerTodos();
         Pais paisFiltro = (Pais) comboBox.getSelectedItem();
         if (paisFiltro == null) {
@@ -124,6 +103,20 @@ public class PaisesGUI extends JFrame{
         };
 
         citiesTable.setModel(tm);
+    }
+
+    private void mostrarInfo() {
+        botSplit.setVisible(true);
+
+        paneSplit.resetToPreferredSizes();
+        String id = citiesTable.getValueAt(citiesTable.getSelectedRow(), 0) + "";
+        Ciudad ciudad = daoCiudad.obtener(id).orElse(null);
+
+        assert ciudad != null;
+        idField.setText(ciudad.getId());
+        nameField.setText(ciudad.getNombre());
+        distField.setText(ciudad.getDistrito());
+        pobField.setText(ciudad.getPoblacion() + "");
     }
 
 

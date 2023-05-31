@@ -18,7 +18,7 @@ public class PaisDaoMySQL implements Dao<Pais> {
 
     public PaisDaoMySQL() {
         Properties datos = new Properties();
-        try (InputStream configStream = MainCRUD.class.getClassLoader().getResourceAsStream("db_config.properties")) {
+        try (InputStream configStream = PaisDaoMySQL.class.getClassLoader().getResourceAsStream("db_config.properties")) {
             datos.load(configStream);
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -40,12 +40,17 @@ public class PaisDaoMySQL implements Dao<Pais> {
             try (ResultSet rs1 = ps1.executeQuery()) {
                 if (rs1.next()) {
 
-                    String nombrePais = rs1.getString("Name");
+                    String nombre = rs1.getString("Name");
 
 
-                    List<Ciudad> ciudades = daoCiudades.obtenerTodos();
+                    List<Ciudad> ciudadesFiltradas = new ArrayList<>();
+                    List<Ciudad> todasCiudades = daoCiudades.obtenerTodos();
 
-                    return Optional.of(new Pais(codigo, nombrePais, ciudades));
+                    for (Ciudad ciudad : todasCiudades) {
+                        if (ciudad.getCodigoPais().equals(codigo)) ciudadesFiltradas.add(ciudad);
+                    }
+
+                    return Optional.of(new Pais(codigo,nombre,ciudadesFiltradas));
                 }
             }
         } catch (SQLException e) {
@@ -70,8 +75,7 @@ public class PaisDaoMySQL implements Dao<Pais> {
                     List<Ciudad> todasCiudades = daoCiudades.obtenerTodos();
 
                     for (Ciudad ciudad : todasCiudades) {
-                        if (ciudad.getCodigoPais().equals(codigo))
-                            ciudadesFiltradas.add(ciudad);
+                        if (ciudad.getCodigoPais().equals(codigo)) ciudadesFiltradas.add(ciudad);
                     }
 
                     paisList.add(new Pais(codigo,nombre,ciudadesFiltradas));

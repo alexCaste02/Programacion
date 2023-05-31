@@ -21,7 +21,7 @@ public class CiudadDaoMySQL implements Dao<Ciudad> {
     public CiudadDaoMySQL() {
         // Configurar el BasicDataSource con los datos de la base de datos
         Properties datos = new Properties();
-        try (InputStream configStream = MainCRUD.class.getClassLoader().getResourceAsStream("db_config.properties")) {
+        try (InputStream configStream = CiudadDaoMySQL.class.getClassLoader().getResourceAsStream("db_config.properties")) {
             datos.load(configStream);
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -35,13 +35,13 @@ public class CiudadDaoMySQL implements Dao<Ciudad> {
 
     @Override
     public Optional<Ciudad> obtener(String id) {
-        try (Connection con = dataSource.getConnection(); PreparedStatement ps = con.prepareStatement("SELECT * FROM city WHERE id = ?")) {
-
+        try (Connection con = dataSource.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT * FROM city WHERE id = ?"))
+        {
             ps.setString(1, id);
 
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-
                     String nombreCiudad = rs.getString("Name");
                     String distrito = rs.getString("District");
                     int poblacion = rs.getInt("Population");
@@ -84,7 +84,8 @@ public class CiudadDaoMySQL implements Dao<Ciudad> {
 
     @Override
     public void guardar(Ciudad ciudad) {
-        try (Connection conn = dataSource.getConnection(); PreparedStatement ps = conn.prepareStatement("INSERT INTO city(id,name,district,population,countrycode) VALUES (?,?,?,?,?)")) {
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement ps = conn.prepareStatement("INSERT INTO city(id,name,district,population,countrycode) VALUES (?,?,?,?,?)")) {
             ps.setString(1, ciudad.getId());
             ps.setString(2, ciudad.getNombre());
             ps.setString(3, ciudad.getDistrito());
