@@ -4,13 +4,15 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class PaisesGUI extends JFrame{
+public class PaisesGUI extends JFrame {
 
     static Dao<Ciudad> daoCiudad = new CiudadDaoMySQL();
     static Dao<Pais> daoPais = new PaisDaoMySQL();
@@ -27,61 +29,167 @@ public class PaisesGUI extends JFrame{
     private JButton modificarButton;
     private JPanel datosPanel;
     private JTextField idField;
-    private JTextField pobField;
+    private JTextField popField;
     private JTextField distField;
     private JTextField nameField;
     private JPanel operationsPanel;
     private JSplitPane paneSplit;
+    private JButton aplicarButton;
+    private JButton cancelarButton;
+    private JPanel confirmPanel;
 
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch(Exception ignored){}
+        } catch (Exception ignored) {
+        }
         EventQueue.invokeLater(PaisesGUI::start);
     }
 
-    public static void start(){
+    public static void start() {
         PaisesGUI win = new PaisesGUI();
     }
 
     public PaisesGUI() {
         setContentPane(mainPanel);
-        setSize(400,600);
+        setSize(400, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         rellenarComboBox();
         generarTabla();
 
+        //Editamos visibilidad aqui para poder editar el form con mas facilidad
+        hideCityEditor();
+        confirmPanel.setVisible(false);
+
+
         setVisible(true);
 
         comboBox.addActionListener(e -> {
-            botSplit.setVisible(false);
+            hideCityEditor();
             generarTabla();
         });
-
 
         citiesTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
 
-                if(citiesTable.getSelectedRow()==-1) {
-                    botSplit.setVisible(false);
+                if (citiesTable.getSelectedRow() == -1) {
+                    hideCityEditor();
                 } else {
-                    botSplit.setVisible(true);
+                    datosPanel.setVisible(true);
+                    operationsPanel.setVisible(true);
                     paneSplit.resetToPreferredSizes();
-                    String id = citiesTable.getValueAt(citiesTable.getSelectedRow(), 0) + "";
+                    String id = String.valueOf(citiesTable.getValueAt(citiesTable.getSelectedRow(), 0));
                     Ciudad ciudad = daoCiudad.obtener(id).orElse(null);
 
                     assert ciudad != null;
                     idField.setText(ciudad.getId());
                     nameField.setText(ciudad.getNombre());
                     distField.setText(ciudad.getDistrito());
-                    pobField.setText(ciudad.getPoblacion() + "");
+                    popField.setText(String.valueOf(ciudad.getPoblacion()));
                 }
             }
         });
+
+        crearButton.addActionListener(e -> {
+            moverBotones();
+            clearFields();
+            datosPanel.setVisible(true);
+
+            idField.setEnabled(false);
+            idField.setText("AUTOGENERADO");
+
+            refreshSizes();
+
+            aplicarButton.addActionListener(e1 -> {
+
+                String name = nameField.getText();
+                String district = distField.getText();
+                int population = Integer.parseInt(popField.getText());
+                String countrycode = ( (Pais) comboBox.getSelectedItem()).getCodigo();
+
+                daoCiudad.guardar(new Ciudad(name,district,population,countrycode));
+            });
+
+        });
+
+
+        modificarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                moverBotones();
+            }
+        });
+
+        eliminarButton.addActionListener(e -> {
+            int r = JOptionPane.showConfirmDialog(null, "¿Esta seguro de que quiere eliminar esta ciudad?", "Confirmar operacion", JOptionPane.YES_NO_OPTION);
+
+            if(r == JOptionPane.YES_OPTION){
+                String id = idField.getText();
+                daoCiudad.borrar(new Ciudad(id));
+            } else {
+
+            }
+            generarTabla();
+        });
+
+    }
+
+    private void refreshSizes() {
+        setSize(400, 610);
+        setSize(400, 600);
+    }
+
+    private void showOnlyCrear(){
+
+    }
+
+    private void hideCityEditor() {
+        datosPanel.setVisible(false);
+        operationsPanel.setVisible(false);
+        refreshSizes();
+        botSplit.setVisible(true);
+    }
+
+    private void showCityEditor() {
+        datosPanel.setVisible(true);
+        operationsPanel.setVisible(true);
+    }
+
+    private void enableCityEditor() {
+        idField.setEnabled(true);
+        nameField.setEnabled(true);
+        distField.setEnabled(true);
+        popField.setEnabled(true);
+    }
+    private void disableCityEditor() {
+        idField.setEnabled(false);
+        nameField.setEnabled(false);
+        distField.setEnabled(false);
+        popField.setEnabled(false);
+    }
+
+    private void clearFields() {
+        idField.setText("");
+        nameField.setText("");
+        distField.setText("");
+        popField.setText("");
+    }
+
+    /**
+     *
+     */
+    private void moverBotones() {
+        confirmPanel.setVisible(true);
+        operationsPanel.setVisible(false);
+        crearButton.setVisible(false);
+        nameField.setEnabled(true);
+        distField.setEnabled(true);
+        popField.setEnabled(true);
+        generarTabla();
     }
 
     private void rellenarComboBox() {
@@ -102,21 +210,21 @@ public class PaisesGUI extends JFrame{
 
         List<Ciudad> ciudadesFiltradas = new ArrayList<>();
         for (Ciudad ciudad : listaCiudades) {
-            if(ciudad.getCodigoPais().equals(paisFiltro.getCodigo()))
+            if (ciudad.getCodigoPais().equals(paisFiltro.getCodigo()))
                 ciudadesFiltradas.add(ciudad);
         }
 
-        String[] nombresColumna = {"ID","Nombre","Distrito","Poblacion"};
+        String[] nombresColumna = {"ID", "Nombre", "Distrito", "Poblacion"};
         String[][] valoresTabla = new String[ciudadesFiltradas.size()][4];
 
         for (int fila = 0; fila < ciudadesFiltradas.size(); fila++) {
             valoresTabla[fila][0] = ciudadesFiltradas.get(fila).getId();
             valoresTabla[fila][1] = ciudadesFiltradas.get(fila).getNombre();
             valoresTabla[fila][2] = ciudadesFiltradas.get(fila).getDistrito();
-            valoresTabla[fila][3] = ciudadesFiltradas.get(fila).getPoblacion()+"";
+            valoresTabla[fila][3] = String.valueOf(ciudadesFiltradas.get(fila).getPoblacion());
         }
 
-        TableModel tm = new DefaultTableModel(valoresTabla,nombresColumna){
+        TableModel tm = new DefaultTableModel(valoresTabla, nombresColumna) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false; // Make all cells non-editable
@@ -125,7 +233,6 @@ public class PaisesGUI extends JFrame{
 
         citiesTable.setModel(tm);
     }
-
 
 
 }

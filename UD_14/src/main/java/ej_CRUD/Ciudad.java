@@ -17,6 +17,17 @@ public class Ciudad {
         this.codigoPais = codigoPais;
     }
 
+    public Ciudad(String nombre, String distrito, int poblacion, String codigoPais) {
+        this.nombre = nombre;
+        this.distrito = distrito;
+        this.poblacion = poblacion;
+        this.codigoPais = codigoPais;
+    }
+
+    public Ciudad(String id) {
+        this.id = id;
+    }
+
 
     public String getId() {
         return id;

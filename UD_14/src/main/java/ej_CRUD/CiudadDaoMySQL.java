@@ -85,12 +85,11 @@ public class CiudadDaoMySQL implements Dao<Ciudad> {
     @Override
     public void guardar(Ciudad ciudad) {
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("INSERT INTO city(id,name,district,population,countrycode) VALUES (?,?,?,?,?)")) {
-            ps.setString(1, ciudad.getId());
-            ps.setString(2, ciudad.getNombre());
-            ps.setString(3, ciudad.getDistrito());
-            ps.setInt(4, ciudad.getPoblacion());
-            ps.setString(5, ciudad.getCodigoPais());
+             PreparedStatement ps = conn.prepareStatement("INSERT INTO city(name,district,population,countrycode) VALUES (?,?,?,?)")) {
+            ps.setString(1, ciudad.getNombre());
+            ps.setString(2, ciudad.getDistrito());
+            ps.setInt(3, ciudad.getPoblacion());
+            ps.setString(4, ciudad.getCodigoPais());
 
             ps.executeUpdate();
         } catch (SQLException e) {
