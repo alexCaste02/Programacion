@@ -60,14 +60,13 @@ public class PaisesGUI extends JFrame {
         generarTabla();
 
         //Editamos visibilidad aqui para poder editar el form con mas facilidad
-        hideCityEditor();
-        confirmPanel.setVisible(false);
+        showOnlyCrear();
 
 
         setVisible(true);
 
         comboBox.addActionListener(e -> {
-            hideCityEditor();
+            showOnlyCrear();
             generarTabla();
         });
 
@@ -77,11 +76,9 @@ public class PaisesGUI extends JFrame {
                 super.mouseClicked(e);
 
                 if (citiesTable.getSelectedRow() == -1) {
-                    hideCityEditor();
+                    showOnlyCrear();
                 } else {
-                    datosPanel.setVisible(true);
-                    operationsPanel.setVisible(true);
-                    paneSplit.resetToPreferredSizes();
+
                     String id = String.valueOf(citiesTable.getValueAt(citiesTable.getSelectedRow(), 0));
                     Ciudad ciudad = daoCiudad.obtener(id).orElse(null);
 
@@ -141,35 +138,32 @@ public class PaisesGUI extends JFrame {
     private void refreshSizes() {
         setSize(400, 610);
         setSize(400, 600);
+        botSplit.setPreferredSize(new Dimension(320,1));
+        paneSplit.resetToPreferredSizes();
     }
 
     private void showOnlyCrear(){
-
-    }
-
-    private void hideCityEditor() {
         datosPanel.setVisible(false);
         operationsPanel.setVisible(false);
+        confirmPanel.setVisible(false);
+        crearButton.setVisible(true);
         refreshSizes();
-        botSplit.setVisible(true);
     }
 
-    private void showCityEditor() {
+    private void showCityOperations(){
         datosPanel.setVisible(true);
         operationsPanel.setVisible(true);
+        confirmPanel.setVisible(false);
+        crearButton.setVisible(true);
+        refreshSizes();
     }
 
-    private void enableCityEditor() {
-        idField.setEnabled(true);
-        nameField.setEnabled(true);
-        distField.setEnabled(true);
-        popField.setEnabled(true);
-    }
-    private void disableCityEditor() {
-        idField.setEnabled(false);
-        nameField.setEnabled(false);
-        distField.setEnabled(false);
-        popField.setEnabled(false);
+    private void showCityConfirm(){
+        datosPanel.setVisible(true);
+        operationsPanel.setVisible(false);
+        confirmPanel.setVisible(true);
+        crearButton.setVisible(false);
+        refreshSizes();
     }
 
     private void clearFields() {
@@ -182,15 +176,7 @@ public class PaisesGUI extends JFrame {
     /**
      *
      */
-    private void moverBotones() {
-        confirmPanel.setVisible(true);
-        operationsPanel.setVisible(false);
-        crearButton.setVisible(false);
-        nameField.setEnabled(true);
-        distField.setEnabled(true);
-        popField.setEnabled(true);
-        generarTabla();
-    }
+
 
     private void rellenarComboBox() {
         List<Pais> listaPaises = daoPais.obtenerTodos();
