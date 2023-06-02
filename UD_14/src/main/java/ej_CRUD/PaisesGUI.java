@@ -4,8 +4,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -64,61 +62,50 @@ public class PaisesGUI extends JFrame {
 
 
         setVisible(true);
+        setResizable(false);
 
+        // Detecta cambios en el 'selector de pais'
         comboBox.addActionListener(e -> {
             showOnlyCrear();
             generarTabla();
         });
 
+        // Detecta la seleccion de una fila en la tabla de ciudades
         citiesTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
 
+                setAllFieldsEditability(false);
+
                 if (citiesTable.getSelectedRow() == -1) {
                     showOnlyCrear();
                 } else {
-
-                    String id = String.valueOf(citiesTable.getValueAt(citiesTable.getSelectedRow(), 0));
-                    Ciudad ciudad = daoCiudad.obtener(id).orElse(null);
-
-                    assert ciudad != null;
-                    idField.setText(ciudad.getId());
-                    nameField.setText(ciudad.getNombre());
-                    distField.setText(ciudad.getDistrito());
-                    popField.setText(String.valueOf(ciudad.getPoblacion()));
+                    showCityOperations();
+                    insertCityInfoIntoFields();
                 }
             }
         });
 
+        // Pulsado boton 'crear'
         crearButton.addActionListener(e -> {
-            moverBotones();
-            clearFields();
-            datosPanel.setVisible(true);
+
+            clearTextFields();
+            showCityConfirm();
 
             idField.setEnabled(false);
+            nameField.setEditable(true);
+            distField.setEditable(true);
+            popField.setEditable(true);
             idField.setText("AUTOGENERADO");
 
             refreshSizes();
 
-            aplicarButton.addActionListener(e1 -> {
-
-                String name = nameField.getText();
-                String district = distField.getText();
-                int population = Integer.parseInt(popField.getText());
-                String countrycode = ( (Pais) comboBox.getSelectedItem()).getCodigo();
-
-                daoCiudad.guardar(new Ciudad(name,district,population,countrycode));
-            });
-
         });
 
-
-        modificarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                moverBotones();
-            }
+        modificarButton.addActionListener(e -> {
+            setAllFieldsEditability(true);
+            showCityConfirm();
         });
 
         eliminarButton.addActionListener(e -> {
@@ -127,14 +114,70 @@ public class PaisesGUI extends JFrame {
             if(r == JOptionPane.YES_OPTION){
                 String id = idField.getText();
                 daoCiudad.borrar(new Ciudad(id));
-            } else {
-
+                clearTextFields();
             }
             generarTabla();
         });
 
+        cancelarButton.addActionListener(e -> {
+            resetButtonState();
+        });
+
+        aplicarButton.addActionListener(e -> {
+            String name = nameField.getText();
+            String district = distField.getText();
+
+            try{
+                int population = Integer.parseInt(popField.getText());
+
+                String countrycode = ((Pais) comboBox.getSelectedItem()).getCodigo();
+
+                //Comprobamos si el id es "autogenerado" para saber si estamos creando o editando
+                if(idField.getText().equals("AUTOGENERADO")) {
+                    Ciudad ciudad = new Ciudad(name, district, population, countrycode);
+                    daoCiudad.guardar(ciudad);
+                } else {
+                    String id = idField.getText();
+                    Ciudad ciudad = new Ciudad(id, name, district, population, countrycode);
+                    daoCiudad.actualizar(ciudad);
+                }
+            } catch (NumberFormatException nfe){
+                JOptionPane.showMessageDialog(null,"Por favor introduzca un numero valido en la poblacion","Valor no valido",JOptionPane.ERROR_MESSAGE);
+            }
+
+            resetButtonState();
+        });
+
     }
 
+    private void resetButtonState() {
+        setAllFieldsEditability(false);
+        if(isAnyRowSelected()){
+            showCityOperations();
+            insertCityInfoIntoFields();
+        } else {
+            showOnlyCrear();
+        }
+        generarTabla();
+    }
+
+    //TODO: no usar dao para optimizar velocidad
+    private void insertCityInfoIntoFields() {
+        String id = String.valueOf(citiesTable.getValueAt(citiesTable.getSelectedRow(), 0));
+        Ciudad ciudad = daoCiudad.obtener(id).orElse(null);
+
+        assert ciudad != null;
+        idField.setText(ciudad.getId());
+        nameField.setText(ciudad.getNombre());
+        distField.setText(ciudad.getDistrito());
+        popField.setText(String.valueOf(ciudad.getPoblacion()));
+    }
+
+    private boolean isAnyRowSelected(){
+        return citiesTable.getSelectedRow()!=-1;
+    }
+
+    //No estoy seguro como hacer que se recuperen los tamaños preferidos por los paneles
     private void refreshSizes() {
         setSize(400, 610);
         setSize(400, 600);
@@ -150,6 +193,9 @@ public class PaisesGUI extends JFrame {
         refreshSizes();
     }
 
+    /**
+     * Muestra los FieldText, los botones de operacion y el boton de crear
+     */
     private void showCityOperations(){
         datosPanel.setVisible(true);
         operationsPanel.setVisible(true);
@@ -166,7 +212,7 @@ public class PaisesGUI extends JFrame {
         refreshSizes();
     }
 
-    private void clearFields() {
+    private void clearTextFields() {
         idField.setText("");
         nameField.setText("");
         distField.setText("");
@@ -174,13 +220,26 @@ public class PaisesGUI extends JFrame {
     }
 
     /**
-     *
+     * Permite que se puedan editar o no todos los fieldText (excepto id)
+     * @param b - Valor que se quiere asignar
      */
+   private void setAllFieldsEditability(boolean b){
+       if(b){
+           idField.setEnabled(true);
+           nameField.setEditable(true);
+           distField.setEditable(true);
+           popField.setEditable(true);
+       } else {
+           idField.setEnabled(false);
+           nameField.setEditable(false);
+           distField.setEditable(false);
+           popField.setEditable(false);
+       }
+   }
 
 
     private void rellenarComboBox() {
         List<Pais> listaPaises = daoPais.obtenerTodos();
-
         for (Pais p : listaPaises) {
             comboBox.addItem(p);
         }
@@ -217,7 +276,10 @@ public class PaisesGUI extends JFrame {
             }
         };
 
+
         citiesTable.setModel(tm);
+        citiesTable.getTableHeader().setEnabled(false);
+
     }
 
 

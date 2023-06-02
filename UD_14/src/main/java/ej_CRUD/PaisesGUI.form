@@ -83,7 +83,7 @@
               </vspacer>
             </children>
           </grid>
-          <grid id="3dbe3" binding="botSplit" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="3dbe3" binding="botSplit" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="2" left="2" bottom="2" right="2"/>
             <constraints>
               <splitpane position="right"/>
@@ -247,7 +247,7 @@
               </grid>
               <component id="bb45a" class="javax.swing.JButton" binding="crearButton" default-binding="true">
                 <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                     <minimum-size width="100" height="-1"/>
                     <preferred-size width="100" height="-1"/>
                   </grid>
@@ -255,6 +255,12 @@
                 <properties>
                   <text value="Crear"/>
                 </properties>
+              </component>
+              <component id="4c7ec" class="javax.swing.JSeparator">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
               </component>
             </children>
           </grid>

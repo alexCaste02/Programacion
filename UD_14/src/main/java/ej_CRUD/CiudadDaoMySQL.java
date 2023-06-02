@@ -99,13 +99,13 @@ public class CiudadDaoMySQL implements Dao<Ciudad> {
 
     @Override
     public void actualizar(Ciudad ciudad) {
-        try (Connection conn = dataSource.getConnection(); PreparedStatement ps = conn.prepareStatement("UPDATE city SET name=?,district=?,population=?,countrycode=? WHERE id=?")) {
+        try (Connection conn = dataSource.getConnection(); PreparedStatement ps = conn.prepareStatement("UPDATE city SET name=?,district=?,population=? WHERE id=?")) {
             ps.setString(1, ciudad.getNombre());
             ps.setString(2, ciudad.getDistrito());
             ps.setInt(3, ciudad.getPoblacion());
-            ps.setString(4, ciudad.getCodigoPais());
 
-            ps.setString(5, ciudad.getId());
+            System.out.println(Integer.parseInt(ciudad.getId()));
+            ps.setInt(4, Integer.parseInt(ciudad.getId()));
 
             ps.executeUpdate();
         } catch (SQLException e) {
@@ -115,7 +115,7 @@ public class CiudadDaoMySQL implements Dao<Ciudad> {
 
     @Override
     public void borrar(Ciudad pais) {
-        try (Connection conn = dataSource.getConnection(); PreparedStatement pst = conn.prepareStatement("DELETE FROM country WHERE id=?")) {
+        try (Connection conn = dataSource.getConnection(); PreparedStatement pst = conn.prepareStatement("DELETE FROM city WHERE id=?")) {
             pst.setString(1, pais.getId());
 
             pst.executeUpdate();
